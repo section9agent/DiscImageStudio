@@ -43,6 +43,17 @@ public sealed class CdDiscModule : IOpticalDiscModule
         new("tone-gamma", "sRGB linearization", DiscOptionValueType.Boolean, DefaultValue: "false"),
     ];
 
+    /// <summary>Music plus hidden art on one audio CD (see <see cref="CdHiddenArt"/>).</summary>
+    private static readonly IReadOnlyList<DiscOptionDefinition> HiddenArtOptions =
+    [
+        new("placement", "Art placement", DiscOptionValueType.Choice, DefaultValue: "whole",
+            Choices: ["whole", "pregap", "session2"]),
+        new("music", "Music WAV files, separated by ';' (pregap and session2)", DiscOptionValueType.String),
+        new("art-radius", "Art ring outer radius (pregap; optional for session2)", DiscOptionValueType.Decimal, Unit: "mm"),
+        new("session-start", "Measured session 2 start sector from cdrecord -msinfo (session2)", DiscOptionValueType.Integer),
+        new("music-gap", "Gap between songs", DiscOptionValueType.Choice, DefaultValue: "2s", Choices: ["2s", "none"]),
+    ];
+
     private static readonly DiscModuleDescriptor ModuleDescriptor = new(
         ModuleId,
         "CD",
@@ -66,6 +77,7 @@ public sealed class CdDiscModule : IOpticalDiscModule
                     new("interleave", "CD-DA delay interleave", DiscOptionValueType.Boolean, DefaultValue: "true"),
                     new("cue", "Write a CUE sheet next to the WAV track", DiscOptionValueType.Boolean, DefaultValue: "true"),
                     .. ToneOptions,
+                    .. HiddenArtOptions,
                 ]),
             new DiscCommandDescriptor(
                 "cd-preview-warp",
@@ -127,6 +139,9 @@ public sealed class CdDiscModule : IOpticalDiscModule
         IProgress<DiscJobProgress>? progress,
         CancellationToken cancellationToken)
     {
+        CdArtPlacement placement = ReadPlacement(options);
+        if (placement != CdArtPlacement.WholeDisc)
+            return GenerateHiddenArt(request, options, placement, progress, cancellationToken);
         CdImageRequest image = new(
             options.Require("input"),
             options.Require("output"),
@@ -230,6 +245,46 @@ public sealed class CdDiscModule : IOpticalDiscModule
                 : options.Contains("sectors") ? null : fallback?.UsableSectors,
             options.Contains("sectors") || options.Contains("usable-sectors") ? null : fallback?.SourceImageOuterRadiusMm);
     }
+
+    private static DiscJobResult GenerateHiddenArt(DiscJobRequest request, CdCommandOptions options,
+        CdArtPlacement placement, IProgress<DiscJobProgress>? progress, CancellationToken cancellationToken)
+    {
+        CdDiscParameters parameters = ReadParameters(options);
+        IReadOnlyList<CdMusicTrack> music = options.GetString("music", string.Empty)
+            .Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+            .Select(CdMusicTrack.Load).ToArray();
+        long gap = options.GetString("music-gap", "2s").ToLowerInvariant() switch
+        {
+            "2s" or "150" => CdHiddenArtPlan.StandardPregapSectors,
+            "none" or "0" => 0,
+            _ => throw new ArgumentException("--music-gap must be 2s or none."),
+        };
+        double? radius = options.Contains("art-radius") ? options.GetDouble("art-radius", 0) : null;
+        CdHiddenArtPlan plan = placement == CdArtPlacement.HiddenPregap
+            ? CdHiddenArtPlan.ForPregap(parameters,
+                radius ?? throw new ArgumentException("--placement pregap needs --art-radius (mm)."), music, gap)
+            : CdHiddenArtPlan.ForSecondSession(parameters, music, gap,
+                options.Contains("session-start") ? options.GetLong("session-start", 0) : null, radius);
+        progress?.Report(new DiscJobProgress(ModuleId, "plan", plan.Describe(parameters)));
+        CdHiddenArtResult result = CdHiddenArt.Generate(options.Require("input"), options.Require("output"),
+            parameters, plan, ReadTone(options), options.GetBoolean("interleave", true),
+            value => progress?.Report(new DiscJobProgress(ModuleId, "generate",
+                $"CD progress {value.Fraction:P1}", value.Fraction, value.CompletedBytes,
+                value.TotalBytes, value.Elapsed)), cancellationToken);
+        string message = $"Hidden-art CD ({placement}) complete: {result.Summary} output={result.ArtWavePath}"
+            + (result.CueSheetPath is null ? string.Empty : $", cue={result.CueSheetPath}")
+            + (result.CdRecordScriptPath is null ? string.Empty : $", cdrecord script={result.CdRecordScriptPath}");
+        return new DiscJobResult(ModuleId, request.Command, 0, message, result.ArtWavePath);
+    }
+
+    private static CdArtPlacement ReadPlacement(CdCommandOptions options)
+        => options.GetString("placement", "whole").ToLowerInvariant() switch
+        {
+            "whole" => CdArtPlacement.WholeDisc,
+            "pregap" => CdArtPlacement.HiddenPregap,
+            "session2" => CdArtPlacement.SecondSession,
+            _ => throw new ArgumentException("--placement must be whole, pregap or session2."),
+        };
 
     private static bool ReadFilePosition(CdCommandOptions options)
         => options.GetString("file-position", "inner").ToLowerInvariant() switch
