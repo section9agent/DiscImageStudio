@@ -455,7 +455,7 @@ public partial class BurnViewModel : ObservableObject
             Devices = null;
             SelectedDevice = null;
             _deviceStatusError = exception.Message;
-            DeviceStatusText = L.T("检测刻录机失败：") + exception.Message;
+            DeviceStatusText = L.T("检测刻录机失败：") + LibraryText.Translate(exception.Message);
         }
         finally
         {
@@ -526,7 +526,7 @@ public partial class BurnViewModel : ObservableObject
             {
                 _speedStatusError = exception.Message;
                 SpeedStatusText =
-                    L.T("未能读取当前盘片速度，将使用刻录接口的保守回退设置：") + exception.Message;
+                    L.T("未能读取当前盘片速度，将使用刻录接口的保守回退设置：") + LibraryText.Translate(exception.Message);
             }
         }
         finally

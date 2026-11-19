@@ -222,6 +222,7 @@ OuterRingBleedTests.Run();
 FilePlacementPreviewTests.Run();
 DesignComposerTests.Run();
 CdAudioCompatibilityTests.Run();
+CdHiddenArtTests.Run();
 CdParallelAudioTests.Run();
 CdDataImageTests.Run();
 VolumeLabelTests.Run();

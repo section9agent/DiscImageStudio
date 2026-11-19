@@ -116,7 +116,7 @@ public static class L
         ArgumentNullException.ThrowIfNull(exception);
         return DiagnosticMessage.Template(exception) is { } template
             ? Diagnostic(template)
-            : T(exception.Message);
+            : LibraryText.Translate(T(exception.Message));
     }
 
     private static string Diagnostic(FormattableString template)

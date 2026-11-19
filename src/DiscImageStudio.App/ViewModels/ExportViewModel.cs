@@ -1,3 +1,4 @@
+using System.IO;
 using DiscImageStudio.Localization;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -30,6 +31,12 @@ public partial class ExportViewModel : ObservableObject
         _shell = shell;
         _state = state;
         _design = design;
+        HiddenArt = new HiddenArtViewModel(shell, state, BuildCdParameters, () => _design.EnsureExportCompositeAsync());
+        HiddenArt.PropertyChanged += (_, args) =>
+        {
+            if (args.PropertyName == nameof(HiddenArtViewModel.PlacementIndex))
+                OnPropertyChanged(nameof(GenerateButtonText));
+        };
         BrowseOutputCommand = new RelayCommand(BrowseOutput, () => !_shell.IsBusy);
         BrowseDataCommand = new RelayCommand(BrowseData, () => !_shell.IsBusy);
         GenerateCommand = new AsyncRelayCommand(GenerateAsync, () => !_shell.IsBusy);
@@ -58,6 +65,9 @@ public partial class ExportViewModel : ObservableObject
         };
     }
 
+    /// <summary>Music + hidden art card (CD audio projects).</summary>
+    public HiddenArtViewModel HiddenArt { get; }
+
     public bool IsCd => _shell.CurrentProject?.IsCd ?? true;
 
     public bool IsDvd => _shell.CurrentProject?.IsDvd ?? false;
@@ -72,7 +82,8 @@ public partial class ExportViewModel : ObservableObject
     public string FamilyLabel => _shell.CurrentProject?.FamilyLabel ?? "CD";
 
     /// <summary>Primary action label: the artifact differs per family (WAV track vs ISO).</summary>
-    public string GenerateButtonText => !IsCd || _state.HasCdFiles ? L.T("生成镜像") : L.T("生成音轨");
+    public string GenerateButtonText => !IsCd || _state.HasCdFiles ? L.T("生成镜像")
+        : HiddenArt.IsHidden ? "Generate art track + burn files" : L.T("生成音轨");
 
     /// <summary>The source card's jump into the project dialog, where the generation geometry
     /// is edited; every other workspace shows the same affordance for the same reason.</summary>
@@ -221,14 +232,15 @@ public partial class ExportViewModel : ObservableObject
     {
         string output = RequirePath(_state.CdOutputPath,
             _state.HasCdFiles ? L.T("请选择 CD ISO 输出位置。") : L.T("请选择 CD 音轨输出位置。"));
-        CdDiscParameters parameters = new(
-            ParameterParser.ParsePositiveDouble(_state.CdInnerRadius, L.T("内半径")),
-            ParameterParser.ParsePositiveDouble(_state.CdOuterRadius, L.T("外半径")),
-            ParameterParser.ParsePositiveLong(_state.CdSectors, L.T("总扇区数")),
-            PitchLinear: ParameterParser.ParseDouble(_state.CdPitchLinear, L.T("相对一次项")),
-            PitchQuadratic: ParameterParser.ParseDouble(_state.CdPitchQuadratic, L.T("相对二次项")),
-            PitchCubic: ParameterParser.ParseDouble(_state.CdPitchCubic, L.T("相对三次项")),
-            UsableSectors: _state.GetUsableSectors(OpticalDiscFamily.CompactDisc));
+        if (!_state.HasCdFiles && HiddenArt.IsHidden)
+        {
+            if (!Path.GetExtension(output).Equals(".wav", StringComparison.OrdinalIgnoreCase))
+                throw new ArgumentException("Music + hidden art needs a .wav output file.");
+            if (await HiddenArt.ExportAsync(compositePath, output)) _state.CdTrackPath = output;
+            return;
+        }
+
+        CdDiscParameters parameters = BuildCdParameters();
         CdImageRequest request = new(compositePath, output, parameters, _state.Tone,
             _state.CdInterleave, _state.CdWriteCue, _state.CdDataDirectory.Trim(),
             _state.ResolveVolumeLabel(OpticalDiscFamily.CompactDisc),
@@ -238,6 +250,16 @@ public partial class ExportViewModel : ObservableObject
                 output, (progress, token) => CdImageGenerator.Generate(request, progress, token), request.ToString()))
             _state.CdTrackPath = output;
     }
+
+    /// <summary>The project's CD generation geometry; shared with the hidden-art card.</summary>
+    private CdDiscParameters BuildCdParameters() => new(
+        ParameterParser.ParsePositiveDouble(_state.CdInnerRadius, L.T("内半径")),
+        ParameterParser.ParsePositiveDouble(_state.CdOuterRadius, L.T("外半径")),
+        ParameterParser.ParsePositiveLong(_state.CdSectors, L.T("总扇区数")),
+        PitchLinear: ParameterParser.ParseDouble(_state.CdPitchLinear, L.T("相对一次项")),
+        PitchQuadratic: ParameterParser.ParseDouble(_state.CdPitchQuadratic, L.T("相对二次项")),
+        PitchCubic: ParameterParser.ParseDouble(_state.CdPitchCubic, L.T("相对三次项")),
+        UsableSectors: _state.GetUsableSectors(OpticalDiscFamily.CompactDisc));
 
     private async Task GenerateDvdAsync(string compositePath)
     {

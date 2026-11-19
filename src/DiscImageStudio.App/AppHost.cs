@@ -13,6 +13,8 @@ internal static class AppHost
         AppSettingsStore store = new();
         AppSettings settings = store.Load();
         Application application = CreateApplication(ShutdownMode.OnMainWindowClose, settings.Theme, settings.Language);
+        // Engine messages are translated where the app shows them (see LibraryText).
+        LibraryText.Enabled = true;
         // New jobs must honor the saved cache folder; previously written files keep their
         // paths, which is why switching never migrates old cache.
         TempFiles.TryConfigureCacheDirectory(settings.CacheDirectory);

@@ -430,12 +430,12 @@ internal static class LocalizationTests
     {
         AppSettingsStore store = new(Path.Combine(directory, "default-settings.json"));
         SettingsViewModel viewModel = new(new AppSettings(), store);
-        Require(viewModel.ThemeIndex == 2 && viewModel.LanguageIndex == 0,
-            "new settings select Follow system for both theme and language");
+        Require(viewModel.ThemeIndex == 2 && viewModel.LanguageIndex == 3,
+            "new settings follow the system theme and default to English");
         Require(viewModel.TrySave(), "default settings save successfully");
         AppSettings saved = store.Load();
-        Require(saved.Theme == AppTheme.System && saved.Language == L.SystemLanguage,
-            "saving defaults preserves the system preferences");
+        Require(saved.Theme == AppTheme.System && saved.Language == L.English,
+            "saving defaults preserves the system theme and English language");
 
         SettingsViewModel normalized = new(new AppSettings { Theme = (AppTheme)99, Language = "unknown" }, store);
         Require(normalized.ThemeIndex == 2 && normalized.LanguageIndex == 0,
@@ -444,8 +444,8 @@ internal static class LocalizationTests
         normalized.LanguageIndex = 99;
         Require(normalized.TrySave(), "invalid selector indices normalize on save");
         AppSettings normalizedSaved = store.Load();
-        Require(normalizedSaved.Theme == AppTheme.System && normalizedSaved.Language == L.SystemLanguage,
-            "invalid selector indices fall back to system preferences");
+        Require(normalizedSaved.Theme == AppTheme.System && normalizedSaved.Language == L.English,
+            "invalid selector indices fall back to the system theme and English");
     }
 
     private static void TestLanguageSettings(string directory)
