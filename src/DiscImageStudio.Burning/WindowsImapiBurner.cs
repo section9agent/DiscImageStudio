@@ -8,7 +8,7 @@ namespace DiscImageStudio.Burning;
 public sealed class WindowsImapiBurner : IOpticalDiscBurner
 {
     private readonly OpticalBurnOperationGate _operationGate = new();
-    private const int CdDaoFallbackSpeedSectorsPerSecond = 1200;
+    internal const int CdDaoFallbackSpeedSectorsPerSecond = 1200;
     private const int BlankMediaState = 0x2;
     // IMAPI_FORMAT2_DATA_MEDIA_STATE_OVERWRITE_ONLY / _RANDOMLY_WRITABLE (imapi2.h).
     // A DVD+RW never returns to BLANK after its first format: erasing only replaces

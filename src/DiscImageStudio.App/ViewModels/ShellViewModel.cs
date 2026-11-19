@@ -1327,6 +1327,13 @@ public partial class ShellViewModel : ObservableObject
         JobProgressValue = _burnProgressDisplay.Percent;
     }
 
+    /// <summary>Runs <paramref name="action"/> on the UI thread (for callbacks from worker threads).</summary>
+    internal void ReportOnDispatcher(Action action)
+    {
+        if (_dispatcher.CheckAccess()) action();
+        else _dispatcher.BeginInvoke(action);
+    }
+
     internal void ReportDockJob(string status, double percent)
     {
         JobStatusText = status;

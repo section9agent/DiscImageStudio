@@ -4,6 +4,9 @@
              xmlns:loc="clr-namespace:DiscImageStudio.Localization"
              xmlns:controls="clr-namespace:DiscImageStudio.Controls"
              xmlns:vm="clr-namespace:DiscImageStudio.ViewModels">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="HiddenArtBoolToVisibility" />
+    </UserControl.Resources>
     <ScrollViewer controls:ScrollMaskBehavior.Enabled="True">
         <StackPanel Margin="{StaticResource PagePadding}">
             <controls:PageHeader Title="{loc:Text Xaml.Export}" Badge="{Binding FamilyLabel}"
@@ -109,6 +112,130 @@
                     </StackPanel>
                 </StackPanel>
             </controls:SectionCard>
+
+            <!-- Fork addition: music plus hidden art on one audio CD. -->
+            <controls:VisibilityGate IsOpen="{Binding IsCd}">
+                <controls:VisibilityGate IsOpen="{Binding State.IsCdAudioMode}">
+                    <controls:SectionCard Header="Music + hidden art" IconKind="Disc" Margin="0,24,0,0"
+                                          DataContext="{Binding HiddenArt}">
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource FieldLabel}" Margin="0,0,0,6" Text="Art placement" />
+                            <ComboBox SelectedIndex="{Binding PlacementIndex}">
+                                <ComboBoxItem Content="Whole disc (art only, original behaviour)" />
+                                <ComboBoxItem Content="Hidden pre-gap: art in track 1's pre-gap, then music" />
+                                <ComboBoxItem Content="Second session: music in session 1, art in session 2" />
+                            </ComboBox>
+                            <TextBlock Style="{StaticResource HintText}" Margin="0,4,0,0" TextWrapping="Wrap"
+                                       Text="Pre-gap art sits at the inner ring; players start at track 1 and skip it, but rewinding into it plays loud noise. Second-session art sits at the outer ring; normal CD players only read session 1. Session 2 is burned with cdrecord." />
+
+                            <controls:VisibilityGate IsOpen="{Binding IsHidden}">
+                                <StackPanel Margin="0,14,0,0">
+                                    <TextBlock Style="{StaticResource FieldLabel}" Margin="0,0,0,6"
+                                               Text="Music (44.1 kHz 16-bit stereo WAV, in play order)" />
+                                    <ListBox ItemsSource="{Binding Tracks}" SelectedItem="{Binding SelectedTrack}"
+                                             SelectedIndex="{Binding SelectedIndex}" MinHeight="90" MaxHeight="220">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
+                                                    <TextBlock Grid.Column="1" Margin="12,0,0,0" Text="{Binding DurationText}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                    <WrapPanel Margin="0,8,0,0">
+                                        <Button Style="{StaticResource CompactButton}" Content="Add songs…" Command="{Binding AddMusicCommand}" Margin="0,0,6,6" />
+                                        <Button Style="{StaticResource CompactButton}" Content="Remove" Command="{Binding RemoveMusicCommand}" Margin="0,0,6,6" />
+                                        <Button Style="{StaticResource CompactButton}" Content="Move up" Command="{Binding MoveUpCommand}" Margin="0,0,6,6" />
+                                        <Button Style="{StaticResource CompactButton}" Content="Move down" Command="{Binding MoveDownCommand}" Margin="0,0,6,6" />
+                                        <Button Style="{StaticResource CompactButton}" Content="Clear" Command="{Binding ClearMusicCommand}" Margin="0,0,6,6" />
+                                    </WrapPanel>
+                                    <CheckBox Content="2-second gap between songs" IsChecked="{Binding TwoSecondGaps}" Margin="0,6,0,0" />
+
+                                    <controls:VisibilityGate IsOpen="{Binding IsPregap}">
+                                        <StackPanel Margin="0,14,0,0">
+                                            <TextBlock Style="{StaticResource FieldLabel}" Margin="0,0,0,6" Text="Art ring outer radius (mm)" />
+                                            <TextBox Text="{Binding PregapArtRadius, UpdateSourceTrigger=PropertyChanged}" MaxWidth="160" HorizontalAlignment="Left" MinWidth="120" />
+                                            <TextBlock Style="{StaticResource HintText}" Margin="0,4,0,0" TextWrapping="Wrap"
+                                                       Text="The art fills the ring from the inner edge out to this radius; the music follows it. Around 30-35 mm uses roughly 10-15 minutes of the disc." />
+                                        </StackPanel>
+                                    </controls:VisibilityGate>
+
+                                    <controls:VisibilityGate IsOpen="{Binding IsSecondSession}">
+                                        <StackPanel Margin="0,14,0,0">
+                                            <TextBlock Style="{StaticResource FieldLabel}" Margin="0,0,0,6" Text="Session 2 start sector (empty = estimate)" />
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBox Text="{Binding SessionStart, UpdateSourceTrigger=PropertyChanged}" MinWidth="120" />
+                                                <Button Style="{StaticResource CompactButton}" Margin="8,0,0,0" Content="Read from disc (-msinfo)"
+                                                        Command="{Binding ReadSessionStartCommand}" />
+                                            </StackPanel>
+                                            <TextBlock Style="{StaticResource HintText}" Margin="0,4,0,0" TextWrapping="Wrap"
+                                                       Text="Burning from here reads the real address automatically after session 1. Fill this only when exporting files for a disc whose session 1 is already burned." />
+                                            <TextBlock Style="{StaticResource FieldLabel}" Margin="0,12,0,6" Text="Art outer radius (mm, empty = to the disc edge)" />
+                                            <TextBox Text="{Binding SessionArtRadius, UpdateSourceTrigger=PropertyChanged}" MinWidth="120" HorizontalAlignment="Left" />
+                                        </StackPanel>
+                                    </controls:VisibilityGate>
+
+                                    <Border Margin="0,14,0,0" Padding="10" CornerRadius="6" BorderThickness="1"
+                                            BorderBrush="{DynamicResource DividerBrush}">
+                                        <TextBlock Text="{Binding LayoutSummary}" TextWrapping="Wrap" />
+                                    </Border>
+
+                                    <TextBlock Style="{StaticResource FieldLabel}" Margin="0,18,0,6" Text="Burn" />
+                                    <controls:VisibilityGate IsOpen="{Binding IsSecondSession}">
+                                        <StackPanel Margin="0,0,0,10">
+                                            <TextBlock Style="{StaticResource HintText}" Margin="0,0,0,4" Text="cdrecord.exe (cdrtools)" />
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBox Text="{Binding CdRecordPath, UpdateSourceTrigger=PropertyChanged}" />
+                                                <Button Grid.Column="1" Style="{StaticResource CompactButton}" Margin="8,0,0,0" Content="Browse…"
+                                                        Command="{Binding BrowseCdRecordCommand}" />
+                                            </Grid>
+                                        </StackPanel>
+                                    </controls:VisibilityGate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid>
+                                            <ComboBox ItemsSource="{Binding ImapiDevices}" SelectedItem="{Binding SelectedImapiDevice}"
+                                                      DisplayMemberPath="DisplayName"
+                                                      Visibility="{Binding IsPregap, Converter={StaticResource HiddenArtBoolToVisibility}}" />
+                                            <ComboBox ItemsSource="{Binding CdRecordDevices}" SelectedItem="{Binding SelectedCdRecordDevice}"
+                                                      Visibility="{Binding IsSecondSession, Converter={StaticResource HiddenArtBoolToVisibility}}" />
+                                        </Grid>
+                                        <Button Grid.Column="1" Style="{StaticResource CompactButton}" Margin="8,0,0,0" Content="Scan"
+                                                Command="{Binding ScanDevicesCommand}" />
+                                    </Grid>
+                                    <TextBlock Style="{StaticResource HintText}" Margin="0,4,0,0" TextWrapping="Wrap" Text="{Binding DeviceStatus}" />
+                                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                        <TextBlock VerticalAlignment="Center" Text="Speed (x, optional)" Margin="0,0,8,0" />
+                                        <TextBox Text="{Binding WriteSpeed, UpdateSourceTrigger=PropertyChanged}" MinWidth="60" />
+                                        <controls:VisibilityGate IsOpen="{Binding IsSecondSession}">
+                                            <CheckBox Margin="16,0,0,0" VerticalAlignment="Center" IsChecked="{Binding TestMode}"
+                                                      Content="Test mode (cdrecord -dummy, laser off)" />
+                                        </controls:VisibilityGate>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+                                        <Button Style="{StaticResource PrimaryButton}" Content="{Binding BurnButtonText}"
+                                                Command="{Binding BurnCommand}" />
+                                        <TextBlock Style="{StaticResource HintText}" VerticalAlignment="Center" Margin="10,0,0,0" TextWrapping="Wrap"
+                                                   Text="Uses the output .wav above for the art track." />
+                                    </StackPanel>
+                                </StackPanel>
+                            </controls:VisibilityGate>
+                        </StackPanel>
+                    </controls:SectionCard>
+                </controls:VisibilityGate>
+            </controls:VisibilityGate>
         </StackPanel>
     </ScrollViewer>
 </UserControl>
