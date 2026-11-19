@@ -83,6 +83,9 @@ jobs:
           - { runner: windows-11-arm, rid: win-arm64 }
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 30
+    permissions:
+      contents: read
+      pull-requests: write
     defaults:
       run:
         shell: pwsh
@@ -150,6 +153,36 @@ jobs:
           compression-level: 0
           if-no-files-found: error
           retention-days: 14
+
+      # Fork addition: when a step fails on a pull request, re-run the checks with their
+      # output captured and post the tail as a PR comment, so failures can be read without
+      # opening the Actions log viewer.
+      - name: Post failure diagnostics to the pull request
+        if: failure() && github.event_name == 'pull_request' && matrix.rid == 'win-x64'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          $ErrorActionPreference = "Continue"
+          $body = [System.Text.StringBuilder]::new()
+          [void]$body.AppendLine("CI diagnostics for $env:GITHUB_SHA ($env:RID)")
+          function Capture([string]$name, [scriptblock]$block) {
+            $global:LASTEXITCODE = 0
+            $output = try { & $block 2>&1 | Out-String } catch { ($_ | Out-String) + "`n(threw)" }
+            $lines = $output -split "`r?`n"
+            $tail = ($lines | Select-Object -Last 120) -join "`n"
+            [void]$body.AppendLine("<details open><summary>$name (exit $LASTEXITCODE)</summary>`n`n``````text`n$tail`n```````n</details>")
+          }
+          Capture "release tooling" { ./tests/Test-ReleaseTooling.ps1 }
+          Capture "windows release checks" { ./tests/Test-WindowsRelease.ps1 }
+          Capture "build" { dotnet build DiscImageStudio.slnx --configuration Release 2>&1 | Select-String -Pattern "error|warn|Build succeeded" | Select-Object -First 60 }
+          Capture "architecture tests" { dotnet run --project tests/DiscImageStudio.ArchitectureTests --configuration Release --no-build }
+          Capture "app selftest" { dotnet run --project src/DiscImageStudio.App --configuration Release --no-build -- selftest }
+          $file = Join-Path $env:RUNNER_TEMP "ci-diagnostics.md"
+          $text = $body.ToString()
+          if ($text.Length -gt 60000) { $text = $text.Substring($text.Length - 60000) }
+          Set-Content -Path $file -Value $text -Encoding utf8
+          gh pr comment $env:PR_NUMBER --repo $env:GITHUB_REPOSITORY --body-file $file
 
       - uses: actions/upload-artifact@v4
         with:
