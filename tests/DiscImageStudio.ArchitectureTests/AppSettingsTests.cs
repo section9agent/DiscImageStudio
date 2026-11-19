@@ -191,8 +191,8 @@ internal static class AppSettingsTests
         string path = Path.Combine(directory, "corrupt.json");
         File.WriteAllText(path, "{ not json");
         AppSettings settings = new AppSettingsStore(path).Load();
-        Require(settings.Theme == AppTheme.System && settings.Language == "system",
-            "corrupt JSON falls back to system defaults");
+        Require(settings.Theme == AppTheme.System && settings.Language == "en",
+            "corrupt JSON falls back to defaults (system theme, English)");
         Require(settings.SchemaVersion == AppSettings.CurrentSchemaVersion, "defaults carry the current schema");
     }
 
@@ -217,8 +217,8 @@ internal static class AppSettingsTests
         string path = Path.Combine(directory, "newer.json");
         File.WriteAllText(path, """{ "schemaVersion": 99, "theme": "light" }""");
         AppSettings settings = new AppSettingsStore(path).Load();
-        Require(settings.Theme == AppTheme.System && settings.Language == "system",
-            "a newer schema falls back to system defaults");
+        Require(settings.Theme == AppTheme.System && settings.Language == "en",
+            "a newer schema falls back to defaults (system theme, English)");
 
         // Unknown members must not stop an otherwise valid file from loading.
         string tolerant = Path.Combine(directory, "unknown-member.json");
