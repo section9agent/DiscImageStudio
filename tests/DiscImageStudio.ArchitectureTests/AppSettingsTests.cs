@@ -39,7 +39,7 @@ internal static class AppSettingsTests
         string path = Path.Combine(Path.GetTempPath(), "missing-" + Guid.NewGuid().ToString("N") + ".json");
         AppSettings settings = new AppSettingsStore(path).Load();
         Require(settings.Theme == AppTheme.System, "missing file follows the system theme");
-        Require(settings.Language == "system", "missing file follows the system language");
+        Require(settings.Language == "en", "missing file defaults to English");
         Require(settings.DefaultProjectDirectory.Length == 0, "missing file has no project directory");
         Require(settings.CacheDirectory.Length == 0, "missing file has no cache directory");
     }
@@ -52,14 +52,14 @@ internal static class AppSettingsTests
         {
             File.WriteAllText(path, json);
             AppSettings settings = store.Load();
-            Require(settings.Theme == AppTheme.System && settings.Language == "system",
-                "empty and sparse preferences follow both system defaults");
+            Require(settings.Theme == AppTheme.System && settings.Language == "en",
+                "empty and sparse preferences use the system theme and English");
         }
 
         File.WriteAllText(path, """{ "schemaVersion": 1, "theme": "dark" }""");
         AppSettings themeOnly = store.Load();
-        Require(themeOnly.Theme == AppTheme.Dark && themeOnly.Language == "system",
-            "an explicit legacy dark theme is preserved while the missing language follows the system");
+        Require(themeOnly.Theme == AppTheme.Dark && themeOnly.Language == "en",
+            "an explicit legacy dark theme is preserved while the missing language defaults to English");
         File.WriteAllText(path, """{ "schemaVersion": 1, "language": "en" }""");
         AppSettings languageOnly = store.Load();
         Require(languageOnly.Theme == AppTheme.System && languageOnly.Language == "en",
@@ -75,11 +75,11 @@ internal static class AppSettingsTests
         AppSettingsStore store = new(Path.Combine(directory, "system-defaults.json"));
         store.Save(new AppSettings());
         AppSettings loaded = store.Load();
-        Require(loaded.Theme == AppTheme.System && loaded.Language == "system",
-            "new system defaults survive saving and reloading");
+        Require(loaded.Theme == AppTheme.System && loaded.Language == "en",
+            "new defaults survive saving and reloading");
         using JsonDocument document = JsonDocument.Parse(File.ReadAllText(store.FilePath));
         Require(document.RootElement.GetProperty("theme").GetString() == "system"
-                && document.RootElement.GetProperty("language").GetString() == "system",
+                && document.RootElement.GetProperty("language").GetString() == "en",
             "system defaults persist as preferences rather than their current resolved values");
     }
 
@@ -113,8 +113,8 @@ internal static class AppSettingsTests
         AppSettingsStore store = new(path);
         File.WriteAllText(path, """{ "schemaVersion": 1, "theme": "light" }""");
         AppSettings legacy = store.Load();
-        Require(legacy.Language == "system" && legacy.Theme == AppTheme.Light,
-            "preferences from before i18n follow the system language and preserve their theme");
+        Require(legacy.Language == "en" && legacy.Theme == AppTheme.Light,
+            "preferences from before i18n default to English and preserve their theme");
 
         (string Stored, string Canonical)[] cases =
         [

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Localization\Catalogs\*.json" />
+    <EmbeddedResource Include="Localization\LibraryText.en.json" LogicalName="DiscImageStudio.Localization.LibraryText.en.json" />
     <EmbeddedResource Include="..\..\LICENSE" LogicalName="DiscImageStudio.Licenses.GPL" />
     <EmbeddedResource Include="..\..\THIRD-PARTY-NOTICES.txt" LogicalName="DiscImageStudio.Licenses.ThirdParty" />
     <EmbeddedResource Include="Assets\Fonts\HarmonyOS-Sans-LICENSE.txt" LogicalName="DiscImageStudio.Licenses.HarmonyOS" />

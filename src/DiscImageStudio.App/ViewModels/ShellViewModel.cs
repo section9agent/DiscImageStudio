@@ -1020,6 +1020,7 @@ public partial class ShellViewModel : ObservableObject
 
     public void AppendLog(string text)
     {
+        text = LibraryText.Translate(text);
         _log.Append(text);
         HasLogContent = true;
         LogAppended?.Invoke(text);
@@ -1060,7 +1061,8 @@ public partial class ShellViewModel : ObservableObject
     public void ShowToast(string title, string message, ToastKind kind, TimeSpan timeout,
         string? actionLabel = null, Action? action = null)
     {
-        ToastItem toast = new(_dispatcher, title, message, kind, timeout, actionLabel, action);
+        ToastItem toast = new(_dispatcher, LibraryText.Translate(title), LibraryText.Translate(message), kind, timeout,
+            actionLabel, action);
         // The toast host plays the exit animation on Closed; the drop from the stack
         // waits just past that animation so the card leaves visibly instead of vanishing.
         toast.Closed += async (_, _) =>
@@ -1311,7 +1313,7 @@ public partial class ShellViewModel : ObservableObject
         string? diagnostic = _burnProgressDisplay.Apply(progress);
         if (!cancellationRequested && progress.Stage is ("device" or "media" or "buffer" or "write" or "finalize"
             or "write-complete" or "verify" or "flush" or "close-track" or "close-disc" or "release"))
-            JobStatusText = progress.Message;
+            JobStatusText = LibraryText.Translate(progress.Message);
         UpdateBurnTelemetry();
         if (!string.IsNullOrWhiteSpace(diagnostic)) AppendLog($"[{DateTime.Now:HH:mm:ss}] {diagnostic}\n");
     }

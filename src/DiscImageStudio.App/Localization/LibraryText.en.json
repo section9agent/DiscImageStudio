@@ -1,0 +1,5910 @@
+[
+ {
+  "zh": "直线、缓弯、折返都按实拍交界描点。连续清楚时，一段至少 6 点，覆盖半径范围 55% 以上。被遮挡则点「另描一段」：可选两段以上长段，每段至少 6 点、各跨 10% 以上；或至少 4 段短段，每段至少 3 点。整体覆盖 55% 以上，分布到内、中、外圈，只连接看得清的同一段。",
+  "en": "Mark the photographed boundary whether straight, gently curved or turning back. One continuous section needs at least 6 points spanning 55% of the recording width. Start another segment where it is hidden. Use either two or more long sections with at least 6 points and 10% width each, or at least 4 short sections with 3 points each. Together they must span 55% of the width. Include inner, middle and outer radii; join only visible points on the same section."
+ },
+ {
+  "zh": "威宝 DVD-R AZO 43533 已验证标定参数：23.9914606277–57.9648936579 mm，共 2,297,888 个扇区；采用三次轨距分布。MID 为 MCC 03RG20，圈码为 ZE5788-DVR-J47F4。",
+  "en": "Verified Verbatim DVD-R AZO 43533 calibration: 23.9914606277–57.9648936579 mm, 2,297,888 sectors; cubic track pitch distribution. MID is MCC 03RG20 and the ring code is ZE5788-DVR-J47F4."
+ },
+ {
+  "zh": "QueueCapacityBytes={0}；PrebufferThresholdBytes={1}；PrebufferReady={2}；ProducerState={3}；CancellationRequested={4}；",
+  "en": "QueueCapacityBytes={0}; PrebufferThresholdBytes={1}; PrebufferReady={2}; ProducerState={3}; CancellationRequested={4}; "
+ },
+ {
+  "zh": "威宝 DVD+RW 94520 / 95043 实测标定参数：23.980218–57.992243 mm，共 2,295,104 个扇区；采用三次轨距分布。MID 为 MKM A02，圈码为 CC5410-DVRW-Q47H。",
+  "en": "Measured Verbatim DVD+RW 94520 / 95043 calibration: 23.980218–57.992243 mm, 2,295,104 sectors, cubic track pitch distribution. MID: MKM A02. Ring code: CC5410-DVRW-Q47H."
+ },
+ {
+  "zh": "生成流缓存（各字段为瞬时近似值；不代表盘片写入量）：TotalBytes={0}；GeneratedBytes={1}；PublishedBytes={2}；ReadBytes={3}；BufferedBytes={4}；",
+  "en": "Generated stream buffer (values are momentary approximations; not the amount written to disc): TotalBytes={0}; GeneratedBytes={1}; PublishedBytes={2}; ReadBytes={3}; BufferedBytes={4}; "
+ },
+ {
+  "zh": "实测参数：内半径 24.837775 mm、外半径 58.020875 mm、359,848 扇区；扫描速度采用 1200 mm/s。MID 为 97m34s23f，圈码为 ZE6778-CDR-A80A AZO。",
+  "en": "Measured parameters: inner radius 24.837775 mm, outer radius 58.020875 mm, 359,848 sectors; scanning speed 1200 mm/s. MID: 97m34s23f. Ring code: ZE6778-CDR-A80A AZO."
+ },
+ {
+  "zh": "实测参数：内半径 24.911275 mm、外半径 57.931155 mm、359,845 扇区；扫描速度采用 1200 mm/s。MID 为 97m15s17f，圈码为 RSD80M-00009 80。",
+  "en": "Measured parameters: inner radius 24.911275 mm, outer radius 57.931155 mm, 359,845 sectors; scanning speed 1200 mm/s. MID: 97m15s17f. Ring code: RSD80M-00009 80."
+ },
+ {
+  "zh": "实测参数：内半径 23.987042 mm、外半径 57.987960 mm、12,219,392 扇区。MID 为 CMCMAG-BA5，圈码为 CMBR6DV5.3 S-0525 002。",
+  "en": "Measured parameters: inner radius 23.987042 mm, outer radius 57.987960 mm, 12,219,392 sectors. MID: CMCMAG-BA5. Ring code: CMBR6DV5.3 S-0525 002."
+ },
+ {
+  "zh": "威宝 DVD-R AZO 43523 实测标定参数：23.9914606277–57.9648936579 mm，共 2,297,888 个扇区；采用三次轨距分布；参数与 43533 一致。",
+  "en": "Measured Verbatim DVD-R AZO 43523 calibration: 23.9914606277–57.9648936579 mm, 2,297,888 sectors; cubic track pitch distribution; parameters match 43533."
+ },
+ {
+  "zh": "照片比例系数约 {0:0.00000}；内外两段匹配度 {1:0.00} / {2:0.00}。下次刻录的初始内半径 {3:0.####} mm，外半径 {4:0.####} mm。",
+  "en": "Photo scale factor ≈ {0:0.00000}. Inner and outer match scores {1:0.00} / {2:0.00}. Initial radii for the next burn: {3:0.####} mm inner, {4:0.####} mm outer."
+ },
+ {
+  "zh": "不支持 schemaVersion={0}；当前支持 {1}、{2} 与 {3}。请把顶层 schemaVersion 改为受支持的值，或删除该文件让程序重新生成分层配置模板。",
+  "en": "Unsupported schemaVersion={0}; supported versions are {1}, {2} and {3}. Change the top-level schemaVersion to a supported value, or delete the file so the program regenerates the layered configuration template."
+ },
+ {
+  "zh": "修正半径：内 {0:0.000} mm，外 {1:0.000} mm；已核对 {2} 处角度标记。宽带估值：{3:0.000} / {4:0.000} mm。应用时采用修正值。",
+  "en": "Corrected radii: inner {0:0.000} mm, outer {1:0.000} mm; {2} angle marks verified. Band estimate: {3:0.000} / {4:0.000} mm. Apply uses the corrected values."
+ },
+ {
+  "zh": "边界连续可见时，沿同一条边界至少描 6 点并覆盖 55% 半径范围；也可描两段各覆盖 10% 半径范围的长边界，每段至少 6 点。只有短片段时需至少 4 段，每段至少 3 点。",
+  "en": "For a continuously visible boundary, trace at least 6 points along the same boundary covering 55% of the radius range. Alternatively, trace two long segments, each with at least 6 points covering 10% of the radius range. If only short segments are visible, trace at least 4 segments with at least 3 points each."
+ },
+ {
+  "zh": "实测参数：内半径 23.988221 mm、外半径 58.023235 mm、12,219,392 扇区。MID 为 RITEK-BR2，圈码为 RBD4R015D 001。",
+  "en": "Measured parameters: inner radius 23.988221 mm, outer radius 58.023235 mm, 12,219,392 sectors. MID: RITEK-BR2. Ring code: RBD4R015D 001."
+ },
+ {
+  "zh": "ECMA-130／ISO/IEC 10149 标准速度 1200 mm/s；120 mm 盘、约 80 分钟，359,849 扇区（24.5–56.8 mm）。",
+  "en": "ECMA-130 / ISO/IEC 10149 standard scanning speed: 1200 mm/s; 120 mm disc, about 80 minutes, 359,849 sectors (24.5–56.8 mm)."
+ },
+ {
+  "zh": "ECMA-130／ISO/IEC 10149 标准速度 1200 mm/s；120 mm 盘、约 74 分钟，333,000 扇区（24.5–56.8 mm）。",
+  "en": "ECMA-130 / ISO/IEC 10149 standard scanning speed: 1200 mm/s; 120 mm disc, about 74 minutes, 333,000 sectors (24.5–56.8 mm)."
+ },
+ {
+  "zh": "用于设计合成图、预览渲染与缩略图；留空使用程序所在目录下的 DiscImageStudio-cache 文件夹，切换后新任务使用新位置，旧缓存不会自动迁移。",
+  "en": "Used for composites, previews and thumbnails. Leave blank to use the DiscImageStudio-cache folder next to the program. New jobs use the new location; existing cache files stay in place."
+ },
+ {
+  "zh": "初始内半径约 {0:0.000} mm，外半径约 {1:0.000} mm。弧角拟合残差 RMS {2:0.00}°。端点模糊时，残差小也可能有半径偏差。",
+  "en": "Initial radii ≈ {0:0.000} / {1:0.000} mm. Angular RMS residual {2:0.00}°. Faded tips can bias the radii even with a small residual."
+ },
+ {
+  "zh": "粗估内半径 {0:0.###} mm · 外半径 {1:0.###} mm\n环径偏差 RMS {2:0.###} mm · 最大 {3:0.###} mm",
+  "en": "Estimated inner radius {0:0.###} mm · outer radius {1:0.###} mm\nRing radius residuals: RMS {2:0.###} mm · maximum {3:0.###} mm"
+ },
+ {
+  "zh": "铼德 DVD+R E时代系列实测标定参数：24.0482013258–58.0264881612 mm，共 2,295,104 个扇区；采用三次轨距分布。",
+  "en": "Measured Ritek DVD+R E-Series calibration: 24.0482013258–58.0264881612 mm, 2,295,104 sectors; cubic track pitch distribution."
+ },
+ {
+  "zh": "铼德 DVD-R E时代系列实测标定参数：24.0631091841–58.2337337546 mm，共 2,298,496 个扇区；采用三次轨距分布。",
+  "en": "Measured Ritek DVD-R E-Series calibration: 24.0631091841–58.2337337546 mm, 2,298,496 sectors; cubic track pitch distribution."
+ },
+ {
+  "zh": "威宝 DVD+R AZO (43498) 实测标定参数：23.954070–57.981456 mm，共 2,295,104 个扇区；采用三次轨距分布。",
+  "en": "Measured Verbatim DVD+R AZO (43498) calibration: 23.954070–57.981456 mm, 2,295,104 sectors; cubic track pitch distribution."
+ },
+ {
+  "zh": "CD 音轨或镜像|*.wav;*.raw;*.iso|WAV 音轨|*.wav|RAW 音轨|*.raw|ISO 数据盘|*.iso|所有文件|*.*",
+  "en": "CD track or image|*.wav;*.raw;*.iso|WAV audio track|*.wav|RAW audio track|*.raw|ISO data disc|*.iso|All files|*.*"
+ },
+ {
+  "zh": "本项目以 GNU General Public License v3.0 or later 发布；重新分发须随附对应源代码并保留第三方声明。",
+  "en": "Released under the GNU General Public License v3.0 or later. Redistribution must include the corresponding source code and retain third-party notices."
+ },
+ {
+  "zh": "PHILIPS DVD+R 实测标定参数：24.157724–57.881039 mm，共 2,295,104 个扇区；采用三次轨距分布。",
+  "en": "Measured PHILIPS DVD+R calibration: 24.157724–57.881039 mm, 2,295,104 sectors; cubic track pitch distribution."
+ },
+ {
+  "zh": "未能在两段扇区中都找到清楚且唯一的匹配（匹配度 {0:0.00} / {1:0.00}）。可调整打光、换一张清晰照片，或保留量环粗估。",
+  "en": "Both sectors need a clear, unique match (scores {0:0.00} / {1:0.00}). Try different lighting, a sharper photo, or keep the ring estimate."
+ },
+ {
+  "zh": "采用 {0} 个局部读数，取样范围共 {1:0.#}°。内半径 {2:0.00000} mm，外半径 {3:0.00000} mm。",
+  "en": "{0} readings span {1:0.#}° in total. Inner radius {2:0.00000} mm, outer radius {3:0.00000} mm."
+ },
+ {
+  "zh": "实测参数：内半径 23.987042 mm、外半径 57.987960 mm、12,219,392 扇区；参数与 64099 一致。",
+  "en": "Measured parameters: inner radius 23.987042 mm, outer radius 57.987960 mm, 12,219,392 sectors; parameters match 64099."
+ },
+ {
+  "zh": "短弧径向厚度从内到外为 {0:0.00}、{1:0.00}、{2:0.00} mm，每段占 {3:0}°。请测量至少两段完整短弧。",
+  "en": "Radial thickness from inner to outer: {0:0.00}, {1:0.00}, {2:0.00} mm. Each arc spans {3:0}°. Measure at least two complete arcs."
+ },
+ {
+  "zh": "ISO/IEC 16448 标准单层 120 mm DVD（DVD-5）数据区：24–58 mm，共 2,295,104 个扇区。",
+  "en": "ISO/IEC 16448 standard single-layer 120 mm DVD (DVD-5) data area: 24–58 mm, 2,295,104 sectors."
+ },
+ {
+  "zh": "图片文件|*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff;*.gif;*.svg|所有文件|*.*",
+  "en": "Image files|*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff;*.gif;*.svg|All files|*.*"
+ },
+ {
+  "zh": "第 {0} 段：顺着交界点，两端都可延伸；悬停预览连线，贴近连线可补点。单击端点固定续点，Esc 解除。断处点「另描一段」。",
+  "en": "Segment {0}: trace from either end. Hover to preview the connection; click near a line to insert a point. Click an endpoint to keep extending it; Esc releases it. Start another segment at a gap."
+ },
+ {
+  "zh": "WriteStarted={0}；WriteReturned={1}；CancellationRequested={2}。",
+  "en": "WriteStarted={0}; WriteReturned={1}; CancellationRequested={2}."
+ },
+ {
+  "zh": "两条实体轮廓无法同时吻合：外缘误差 {0:0.##} px，内缘误差 {1:0.##} px。请检查内缘、外缘与盘片尺寸。",
+  "en": "The physical edges cannot be fitted together: outer edge error {0:0.##} px, center-hole edge error {1:0.##} px. Check the center-hole edge, outer edge, and disc dimensions."
+ },
+ {
+  "zh": "沿同一条粗线的中线从内向外描点，至少 6 点，尽量覆盖靠内和靠外的清楚部分。若线弯曲，沿实拍弯曲处补点，再核对预测曲线。",
+  "en": "Mark at least six points along the centre of the broad line, from the hub outwards. Include clear inner and outer sections and add points along bends before checking the predicted curve."
+ },
+ {
+  "zh": "“设计投影”按工程参数将源图投到盘面上，速度快；“成品读回”则读取已生成的镜像文件还原。生成几何参数请在工程设置中修改。",
+  "en": "Design projection quickly maps the source image using project parameters. Output readback reconstructs a generated image file. Edit generation geometry in Project settings."
+ },
+ {
+  "zh": "两段各自估得的照片比例为 {0:0.00000} 和 {1:0.00000}，差异过大。请核对内外两组圆环和盘面矫正。",
+  "en": "The two sectors gave inconsistent scales ({0:0.00000} and {1:0.00000}). Recheck both ring groups and photo rectification."
+ },
+ {
+  "zh": "DVD 写入结果：WriteStarted={0}；WriteReturned={1}；ElapsedMs={2}。",
+  "en": "DVD write result: WriteStarted={0}; WriteReturned={1}; ElapsedMs={2}."
+ },
+ {
+  "zh": "选中一段，沿墨迹量它在周向上展开的完整弧。中点决定量哪一侧，超过半圈也按实际路径标。至少需要两段，不完整的弧可跳过。",
+  "en": "Measure each mark’s full angular extent. The middle click picks the visible path, including arcs over half a turn. Measure at least two complete marks."
+ },
+ {
+  "zh": "第 {0} 段：从高亮端点继续描。单击另一端可换向，Esc 恢复两端延伸；拖点只调整位置，Delete 删除选中点。",
+  "en": "Segment {0}: continue from the highlighted endpoint. Click the other endpoint to switch, or press Esc for either-end extension. Drag to move a point; Delete removes the selected point."
+ },
+ {
+  "zh": "已量 {0} / {1} 个交界。1、3 号深带的两侧齐全即可粗估；加入 2 号两侧可核对两段浅带与相邻内缘间距。",
+  "en": "{0} of {1} boundaries measured. Both edges of bands 1 and 3 allow an estimate. Add band 2 to check both light gaps and inner-edge spacings."
+ },
+ {
+  "zh": "请提供蓝光数据映射；图片可使用 BluRayRunLengthMapping 的 3T / 6T 数量偏向策略。",
+  "en": "Provide a Blu-ray data mapping; images can use the BluRayRunLengthMapping 3T / 6T count-bias strategy."
+ },
+ {
+  "zh": "已联合校正外缘与内缘。轮廓误差：外缘 {0:0.##} px，内缘 {1:0.##} px。请继续核对两条轮廓。",
+  "en": "The outer and center-hole edges have been rectified together. Outline errors: outer edge {0:0.##} px, center-hole edge {1:0.##} px. Check both outlines before continuing."
+ },
+ {
+  "zh": "当前标靶 · {0} · {1:N0} 扇区 · 内半径 {2:G10} mm · 外半径 {3:G10} mm",
+  "en": "Current target · {0} · {1:N0} sectors · inner {2:G10} mm · outer {3:G10} mm"
+ },
+ {
+  "zh": "ISO/IEC 16448 标准单层 80 mm DVD 数据区：24–38 mm，共 714,544 个扇区。",
+  "en": "ISO/IEC 16448 standard single-layer 80 mm DVD data area: 24–38 mm, 714,544 sectors."
+ },
+ {
+  "zh": "；ContentBytes={0}；SectorBytes=2048；RequiredSectors={1}。",
+  "en": "; ContentBytes={0}; SectorBytes=2048; RequiredSectors={1}."
+ },
+ {
+  "zh": "BD-R 失败后清理：Release failed；HRESULT=0x{0}；ElapsedMs={1}。",
+  "en": "BD-R cleanup after failure: Release failed; HRESULT=0x{0}; ElapsedMs={1}."
+ },
+ {
+  "zh": "三条深带从内到外编号 1、2、3。每条的内缘朝盘心，外缘朝盘缘。选择清楚的一侧量取，深浅带相接的边只量一次。",
+  "en": "Count the dark bands 1, 2 and 3 from the centre. The inner edge faces the hub and the outer edge faces the rim. Measure each shared boundary once on a clear side."
+ },
+ {
+  "zh": "搜索半径范围应在 0–5 mm 内，控制点容差应在 0–10 mm 内，轨距系数搜索范围应在 0–10 内。",
+  "en": "The radius search range must be within 0–5 mm, the control-point tolerance within 0–10 mm, and the pitch-coefficient search range within 0–10."
+ },
+ {
+  "zh": "已允许覆写 DVD±RW：非空白盘会被整盘擦除，空白盘照常写入。开始后取消或断电仍可能使盘片报废。是否继续？",
+  "en": "DVD±RW overwrite is enabled: a non-blank disc will be erased completely and blank discs are written as usual. Canceling or losing power after writing starts may still ruin the disc. Continue?"
+ },
+ {
+  "zh": "ISO/IEC 30190 标准单层 BD-R 数据区：24–58 mm，共 12,219,392 个扇区。",
+  "en": "ISO/IEC 30190 standard single-layer BD-R data area: 24–58 mm, 12,219,392 sectors."
+ },
+ {
+  "zh": "MahApps.Metro.IconPacks.Lucide（Lucide Icons）— MIT 许可协议",
+  "en": "MahApps.Metro.IconPacks.Lucide (Lucide Icons) — MIT License"
+ },
+ {
+  "zh": "BD-R 报告 {0} 扇区，当前标定仅支持 25 GB 单层无备用区的 12,219,392 扇区布局。",
+  "en": "The BD-R reports {0} sectors; calibration currently supports only the 25 GB single-layer no-spare layout of 12,219,392 sectors."
+ },
+ {
+  "zh": "WriteStarted={0}；WriteReturned={1}；FlushReturned={2}；",
+  "en": "WriteStarted={0}; WriteReturned={1}; FlushReturned={2}; "
+ },
+ {
+  "zh": "实测参数：内半径 23.987950 mm、外半径 58.022360 mm、12,219,392 扇区。",
+  "en": "Measured parameters: inner radius 23.987950 mm, outer radius 58.022360 mm, 12,219,392 sectors."
+ },
+ {
+  "zh": "；ContentBytes={0}；SectorBytes=2048；TrackSectors={1}。",
+  "en": "; ContentBytes={0}; SectorBytes=2048; TrackSectors={1}."
+ },
+ {
+  "zh": "BD-R 失败后清理：Flush failed；HRESULT=0x{0}；ElapsedMs={1}。",
+  "en": "BD-R cleanup after failure: Flush failed; HRESULT=0x{0}; ElapsedMs={1}."
+ },
+ {
+  "zh": "outputs.dvdReadCompatibilityMode 必须是 DVD 支持的刻录兼容性模式。",
+  "en": "outputs.dvdReadCompatibilityMode must be a burn-compatibility mode that DVD supports."
+ },
+ {
+  "zh": "三次轨距拟合需要至少 12 个不同半径的点且覆盖至少 60% 绘图区；本次保持轨距系数，只拟合内外半径。",
+  "en": "Cubic track-pitch fitting needs at least 12 points at distinct radii covering at least 60% of the drawing region. This fit keeps the pitch coefficients and fits only the inner and outer radii."
+ },
+ {
+  "zh": "语言将在重启应用后生效。跟随系统时区分简体和繁体中文，日文系统使用日本語，其他语言使用 English。",
+  "en": "Language changes take effect after restarting. System follows Simplified or Traditional Chinese, or Japanese; other system languages use English."
+ },
+ {
+  "zh": "未通过 · 平均偏差 {0:0.###} mm · 最大 {1:0.###} mm，不能应用{2}{3}",
+  "en": "Failed · Mean error {0:0.###} mm · Maximum {1:0.###} mm; cannot apply{2}{3}"
+ },
+ {
+  "zh": "NextWritableAddressValid={0}；TrackStartAddress={1}；",
+  "en": "NextWritableAddressValid={0}; TrackStartAddress={1}; "
+ },
+ {
+  "zh": "两条实体轮廓无法同时吻合：外缘误差 {0} px，内缘误差 {1} px。请检查内缘、外缘与盘片尺寸。",
+  "en": "The two physical outlines cannot both be matched: outer-edge error {0} px, inner-edge error {1} px. Check the inner edge, outer edge and disc size."
+ },
+ {
+  "zh": "部分描点在候选模型下超出原图案环带，已按连续曲线保留；请复核照片尺度、盘心及端点是否沿同一条可见曲线。",
+  "en": "Some traced points fall outside the original pattern band in the candidate model and are retained as part of the continuous curve. Check the photo scale, disc center, and whether the endpoints follow the same visible curve."
+ },
+ {
+  "zh": "{0} · {1}，已填入几何总扇区 {2:N0}。当前盘片无可写容量；新标靶的可用扇区按缺省值估算。",
+  "en": "{0} · {1}. Entered {2:N0} geometry sectors. This disc has no writable capacity; usable sectors for a new target use the default estimate."
+ },
+ {
+  "zh": "仅对已格式化或写入过的 DVD+RW／DVD-RW 生效；DVD-R 与 DVD+R 仍必须是空白盘。",
+  "en": "Applies to formatted or previously written DVD+RW/DVD-RW only; DVD-R and DVD+R must still be blank."
+ },
+ {
+  "zh": "StartOfLeadout={0}；LastPossibleStartOfLeadout={1}；",
+  "en": "StartOfLeadout={0}; LastPossibleStartOfLeadout={1}; "
+ },
+ {
+  "zh": "已量 {0} / {1} 个交界。此图案可用 1、3 号内缘粗估；使用外缘时，请量齐这两条带的两侧。",
+  "en": "{0} of {1} boundaries measured. This pattern supports estimates from inner edges 1 and 3. To include outer edges, measure both sides of both bands."
+ },
+ {
+  "zh": "已拟合三次轨距；三个形状系数与内外半径可能互相补偿，低残差不表示参数唯一，应用前请核对整条预测曲线。",
+  "en": "Cubic track pitch was fitted. Its three coefficients and the two radii can compensate for each other, so a low residual does not establish unique parameters. Check the full predicted curve before applying."
+ },
+ {
+  "zh": "用于设计合成图、预览渲染与缩略图；留空使用系统临时目录，切换后新任务使用新位置，旧缓存不会自动迁移。",
+  "en": "Used for composites, previews and thumbnails. Leave blank to use the system temporary folder. New jobs use the new location; existing cache files stay in place."
+ },
+ {
+  "zh": "候选 · 平均偏差 {0:0.###} mm · 最大 {1:0.###} mm，待核对{2}{3}",
+  "en": "Candidate · Mean error {0:0.###} mm · Maximum {1:0.###} mm; verify before applying{2}{3}"
+ },
+ {
+  "zh": "把编号圆弧拖到对应刻录环的内缘（靠盘心的一侧）。已对准可点一下确认，模糊的环可跳过。实线表示已量取。",
+  "en": "Drag each numbered arc onto the inner edge of its recorded ring, facing the disc centre. Click to confirm an arc already in place. Skip unclear rings. Measured arcs become solid."
+ },
+ {
+  "zh": "将外圈数据区的末尾内移到介质标准容量的约 95%，避开刻录质量较差的最外缘。仅在外圈放置文件时生效。",
+  "en": "Moves the end of the outer-ring data area inward to about 95% of the medium's standard capacity, avoiding the poorer-quality outermost edge. Applies only when files are placed in the outer ring."
+ },
+ {
+  "zh": "CD DAO 失败后清理：ReleaseMedia returned；ElapsedMs={0}。",
+  "en": "CD DAO cleanup after failure: ReleaseMedia returned; ElapsedMs={0}."
+ },
+ {
+  "zh": "默认搜索范围为初始半径 ±0.01 mm，不会自动扩大。候选有歧义时，请补充其他半径处的清楚交界。",
+  "en": "The search stays within ±0.01 mm of the initial radii by default. If candidates remain ambiguous, add clear boundary points at other radii."
+ },
+ {
+  "zh": "已将粗估内半径 {0:0.###} mm、外半径 {1:0.###} mm 用作下一张标靶的参数。",
+  "en": "Set the estimated inner radius to {0:0.###} mm and outer radius to {1:0.###} mm for the next target."
+ },
+ {
+  "zh": "CD 粗标的可用扇区数不足以包含最外侧固定地址边界及其后的留白。请增加可用扇区数，或使用边界标定。",
+  "en": "The usable CD capacity does not cover the outermost fixed-address calibration edge and the light area after it. Increase usable sectors or use boundary calibration."
+ },
+ {
+  "zh": "TrackSize={0}；MaximumBlocks={1}；TrackNumber={2}。",
+  "en": "TrackSize={0}; MaximumBlocks={1}; TrackNumber={2}."
+ },
+ {
+  "zh": "当前蓝光制作与标定仅支持起始角 0°；此 JSON 的非零起始角不能导入，也不会自动改为 0°。",
+  "en": "Blu-ray generation and calibration currently require a 0° start angle. The nonzero angle in this JSON cannot be imported or automatically reset to 0°."
+ },
+ {
+  "zh": "已用全部 {0} 点生成参数候选{1}。请核对橙色预测是否沿青色实拍点连续贴合，再决定是否应用。",
+  "en": "Generated parameter candidates using all {0} points{1}. Check that the orange prediction follows the cyan photographed points continuously before applying."
+ },
+ {
+  "zh": "从内向外，沿同一方向逐个点击深带的内缘和外缘。首个点确定参考线，之后会自动选中下一个未测交界。",
+  "en": "Click the inner and outer edges along one radial line, working outwards. The first click sets the guide; selection advances to the next unmeasured edge."
+ },
+ {
+  "zh": "当前点位无法稳定区分三个轨距系数与内外半径，本次保留原轨距系数；请扩大径向覆盖并提高点位精度。",
+  "en": "These points cannot reliably distinguish the three pitch coefficients from the inner and outer radii. The original coefficients were retained; extend the radial coverage and improve point accuracy."
+ },
+ {
+  "zh": "精细标定使用量环初值：内半径 {0:0.####} mm，外半径 {1:0.####} mm。",
+  "en": "Fine calibration starts from the ring estimate: inner radius {0:0.####} mm and outer radius {1:0.####} mm."
+ },
+ {
+  "zh": "已联合校正外缘与内缘。轮廓误差：外缘 {0} px，内缘 {1} px。请继续核对两条轮廓。",
+  "en": "Outer and inner edges corrected together. Outline error: outer {0} px, inner {1} px. Keep checking both outlines."
+ },
+ {
+  "zh": "在深色扇区里，细十字臂呈浅色。沿同一条细臂的中线描点；两段弯曲的宽标记供粗标定核对照片尺度。",
+  "en": "The narrow cross arm appears light inside the dark sector. Trace the centre of one arm. The two curved, wide marks are scale references for coarse calibration."
+ },
+ {
+  "zh": "当前曲线对两个半径的约束较相似，暂不能仅凭低残差判断参数唯一；请扩大径向覆盖并检查点位精度。",
+  "en": "This curve constrains the two radii similarly, so a low residual does not establish a unique fit. Extend the radial coverage and check point accuracy."
+ },
+ {
+  "zh": "至少确认 4 个用于拟合的角点，并选择分布在不同半径的控制块；验证组与未确认角点不参与拟合。",
+  "en": "Confirm at least 4 fitting corners from control blocks at different radii. Validation groups and unconfirmed corners are excluded from fitting."
+ },
+ {
+  "zh": "已更新下一张标靶的参数。内半径 {0} mm，外半径 {1} mm。可保存为预设供绘图使用。",
+  "en": "Updated the next target's parameters. Inner radius {0} mm, outer radius {1} mm. Save as a preset to use these settings in a drawing."
+ },
+ {
+  "zh": "所选光驱不支持 CD DAO 所需的 Raw P-W 或 Cooked R-W 子通道格式",
+  "en": "The selected drive does not support the Raw P-W or Cooked R-W subchannel format that CD DAO needs "
+ },
+ {
+  "zh": "蓝光预设 JSON 必须包含 schemaVersion: 1 和 presets 列表。",
+  "en": "Blu-ray preset JSON must contain schemaVersion: 1 and a presets list."
+ },
+ {
+  "zh": "BD-R 介质：Profile=0x{0} ({1})；DiscIsBlank={2}；",
+  "en": "BD-R media: Profile=0x{0} ({1}); DiscIsBlank={2}; "
+ },
+ {
+  "zh": "无备用区绘图需要顺序记录 BD-R（SRM）；不支持 BD-RE 或随机记录 BD-R。",
+  "en": "No-spare drawing needs a sequential-recording BD-R (SRM); BD-RE and random-recording BD-R are not supported."
+ },
+ {
+  "zh": "CD DAO 空白状态：MediaPhysicallyBlank={0}（写入前检查）。",
+  "en": "CD DAO blank state: MediaPhysicallyBlank={0} (checked before writing)."
+ },
+ {
+  "zh": "discFamily '{0}' 无效；仅支持 '{1}'、'{2}' 与 '{3}'。",
+  "en": "discFamily '{0}' is invalid; only '{1}', '{2}' and '{3}' are supported."
+ },
+ {
+  "zh": "usableSectors 必须大于 0、不超过 sectors，且是 {0} 的倍数。",
+  "en": "usableSectors must be greater than 0, no more than sectors, and a multiple of {0}."
+ },
+ {
+  "zh": "沿同一方向，从内到外点三条宽带各自的内缘、外缘。请点宽带与空白间隔的交界，避开带内条纹。",
+  "en": "Along one direction, mark the inner and outer edges of all three bands, working outwards. Click the boundary with the blank gap, avoiding stripes inside the bands."
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 标定 {1}: {2} 内半径={3}, 外半径={4}\n",
+  "en": "[{0:HH:mm:ss}] Calibration {1}: {2} Inner radius={3}, outer radius={4}"
+ },
+ {
+  "zh": "照片或扫描图|*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff",
+  "en": "Photos or scans|*.png;*.jpg;*.jpeg;*.bmp;*.tif;*.tiff"
+ },
+ {
+  "zh": "Windows Image Mastering API 2 (IMAPI2) 不可用。",
+  "en": "Windows Image Mastering API 2 (IMAPI2) is not available."
+ },
+ {
+  "zh": "蓝光盘容量不足：需要 {0} 扇区，原始轨道可写 {1} 扇区。不会自动缩小绘图容量。",
+  "en": "Not enough Blu-ray capacity: {0} sectors needed, the raw track can write {1}. The drawing capacity is not reduced automatically."
+ },
+ {
+  "zh": "{0} 预设 id '__manual__' 由界面的未保存状态保留，请换一个 id。",
+  "en": "{0} preset id '__manual__' is reserved for the UI's unsaved state; choose another id."
+ },
+ {
+  "zh": "量环只能估半径。此标靶的两段扇区可用于核对照片的共同尺度，需有清楚且可辨别的角向纹理。",
+  "en": "Two swept sectors can check the photo scale after a ring fit. Both need distinguishable angular markings."
+ },
+ {
+  "zh": "蓝光标定需要完整的 32 扇区簇、74.5 nm 位长和不超过 60 mm 的外半径。",
+  "en": "Blu-ray calibration requires complete 32-sector clusters, a 74.5 nm channel bit length, and an outer radius no greater than 60 mm."
+ },
+ {
+  "zh": "两条边缘用于求两个半径。可再量 2 号检查读数；照片尺度取决于实体外缘和中心孔的矫正。",
+  "en": "Two edges determine the two radii. Measure band 2 to check the readings. Photo scale depends on alignment of the physical rim and centre hole."
+ },
+ {
+  "zh": "BD ISO 长度与总扇区数不符：需要 {0:N0} 字节，实际 {1:N0} 字节。",
+  "en": "BD ISO size does not match the sector count: expected {0:N0} bytes, found {1:N0}."
+ },
+ {
+  "zh": "WAV 音轨（推荐）|*.wav|RAW 音轨（旧格式）|*.raw|所有文件|*.*",
+  "en": "WAV audio track (recommended)|*.wav|RAW audio track (legacy)|*.raw|All files|*.*"
+ },
+ {
+  "zh": "用户预设 JSON 无法加载，已继续使用程序内置参数。\n\n{0}\n\n文件位置：\n{1}",
+  "en": "The user preset JSON could not be loaded. Built-in parameters are being used.\n\n{0}\n\nFile location:\n{1}"
+ },
+ {
+  "zh": "BD-R 失败后清理：Release returned；ElapsedMs={0}。",
+  "en": "BD-R cleanup after failure: Release returned; ElapsedMs={0}."
+ },
+ {
+  "zh": "BD-R 已格式化或格式状态未知；无法保证无备用区的物理位置，请使用未格式化的新盘。",
+  "en": "This BD-R is formatted or its format state is unknown; the no-spare physical layout cannot be guaranteed. Use a new unformatted disc."
+ },
+ {
+  "zh": "自动判定未通过，已保留全部 {0} 点及参数候选。核对实拍后可人工确认应用。\n{1}",
+  "en": "Automatic validation did not pass. All {0} points and parameter candidates are preserved. Candidates can be applied after confirming the photographed match.\n{1}"
+ },
+ {
+  "zh": "同一方向三段短弧，径向厚 0.20 mm，周向长 16 mm。需看清至少两段的两端。",
+  "en": "Three arcs in one direction, 0.20 mm thick and 16 mm long. Both tips of at least two arcs must be visible."
+ },
+ {
+  "zh": "边界上存在接近半圈的点间空隙，请在看得清的同一段交界上补点，看不清连接时请新建片段。",
+  "en": "Adjacent boundary points are nearly half a turn apart. Add points along the same visible section, or start a new segment if the connection is not visible."
+ },
+ {
+  "zh": "搜索范围内没有能覆盖全部观测点的有效正半径曲线延拓，请检查照片尺度、盘心或参数范围。",
+  "en": "No valid positive-radius curve in the search range covers all observed points. Check the photo scale, disc center, and parameter range."
+ },
+ {
+  "zh": "存在拟合程度接近的绕圈候选，暂不能唯一确定参数；请在预测差异明显的另一半径补选角点。",
+  "en": "Several winding candidates fit similarly, leaving the parameters ambiguous. Add corners at another radius where their predictions differ clearly."
+ },
+ {
+  "zh": "搜索范围包含过多绕圈组合，已进行有限多起点搜索；请缩小范围或增加分散的控制点后复核。",
+  "en": "The range contains too many winding combinations and was searched from a limited number of starting points. Narrow the range or add well-separated control points and check again."
+ },
+ {
+  "zh": "语言将在重启应用后生效。跟随系统时区分简体和繁体中文，其他语言使用 English。",
+  "en": "Language changes take effect after restarting. System follows Simplified or Traditional Chinese; other system languages use English."
+ },
+ {
+  "zh": "候选与实拍点偏差较大，暂不能应用；全部 {0} 点已保留。请修正标红点或补充曲线点。",
+  "en": "The candidate differs too much from the photographed points and cannot be applied yet. All {0} points were retained. Correct the red points or add curve points."
+ },
+ {
+  "zh": "请选择 DVD/BD 的 .iso 或 CD 的 .wav / .raw 输出文件。",
+  "en": "Choose an .iso output file for DVD/BD or a .wav / .raw file for CD."
+ },
+ {
+  "zh": "滚轮缩放，右键平移。拖动已有点修正位置；描线时点击添加点，Delete 删除选中点。",
+  "en": "Scroll to zoom; right-drag to pan. Drag points to adjust them. Click to add trace points; press Delete to remove the selected point."
+ },
+ {
+  "zh": "蓝光流未提供完整写入块：已读取 {0} / {1} 字节，本次返回 {2} 字节。",
+  "en": "The Blu-ray stream did not supply a complete write block: read {0} / {1} bytes, this call returned {2} bytes."
+ },
+ {
+  "zh": "带内条纹不足或各处读数不一致。本次仅采用宽带估值；可在同一张盘上换个光照方向重拍。",
+  "en": "The stripes were too weak or the readings disagreed. Only the band-edge estimate is available. Try photographing the same disc with different lighting."
+ },
+ {
+  "zh": "同一侧约 45° 内从内到外的短纹清楚，即可尝试粗标定。其他清楚区域也会参与估算。",
+  "en": "A clear 45° arc spanning the recording band may be enough for coarse calibration. Other readable areas also contribute."
+ },
+ {
+  "zh": "当前搜索范围有过多可行绕圈区间，尚未排除歧义，请缩小半径范围或补充较长的边界片段。",
+  "en": "Too many feasible winding intervals remain in this search range. Narrow the radius range or trace longer boundary segments to resolve the ambiguity."
+ },
+ {
+  "zh": "角度展开以相邻点之间没有遗漏整圈为前提；请对照完整曲线，在弯曲或绕行处补点后确认。",
+  "en": "Angle unwrapping assumes no full turn is skipped between adjacent points. Check the full curve and add points around bends and turns before confirming."
+ },
+ {
+  "zh": "精细标定使用记录初值：内半径 {0:G10} mm，外半径 {1:G10} mm。",
+  "en": "Fine calibration starts from the recorded radii: {0:G10} mm inner and {1:G10} mm outer."
+ },
+ {
+  "zh": "时钟尺粗标靶需要 70–85 分钟、1200 mm/s 的标准 12 cm CD。",
+  "en": "The coarse clock-ruler target requires a standard 12 cm CD with 70–85 minutes of capacity and a linear speed of 1200 mm/s."
+ },
+ {
+  "zh": "宽带粗标定靶需要 70–85 分钟、1200 mm/s 的标准 12 cm CD。",
+  "en": "The broad-band target requires a standard 12 cm, 70–85 minute CD at 1200 mm/s."
+ },
+ {
+  "zh": "HarmonyOS Sans SC — HarmonyOS Sans 字体许可协议",
+  "en": "HarmonyOS Sans SC — HarmonyOS Sans Font License"
+ },
+ {
+  "zh": "拍清外缘、内缘和至少一条径向曲线。合理打光，无需涂黑；控制点定位于实体外缘与内缘。",
+  "en": "Photograph both physical edges and at least one radial curve clearly. Use suitable lighting; no black coating is needed. Place control points on the physical edges."
+ },
+ {
+  "zh": "BD-R 失败后清理：Flush returned；ElapsedMs={0}。",
+  "en": "BD-R cleanup after failure: Flush returned; ElapsedMs={0}."
+ },
+ {
+  "zh": "当前盘型、容量或绘图区不支持角度粗标定。请核对盘片预设和扇区数，或改用边界标定。",
+  "en": "This disc type, capacity or drawing range does not support coarse angle calibration. Check the preset and sector count, or use boundary calibration."
+ },
+ {
+  "zh": "候选 · 平均偏差 {0:0.###} mm · 最大 {1:0.###} mm",
+  "en": "Candidate · mean error {0:0.###} mm · maximum {1:0.###} mm"
+ },
+ {
+  "zh": "已量交界的最大拟合偏差 {0:0.00} mm。照片尺度误差会同时影响所有读数。",
+  "en": "Maximum residual across measured boundaries: {0:0.00} mm. Photo scale affects all readings."
+ },
+ {
+  "zh": "片段集中在少数相近半径，请选至少 4 个不同半径位置的边界，避免重复描同一小段。",
+  "en": "The segments are clustered at similar radii. Trace boundaries at four or more distinct radial positions instead of tracing the same short section repeatedly."
+ },
+ {
+  "zh": "边界片段与同一个盘面模型不一致，请检查误点、照片矫正和片段是否跨过了另一条边界。",
+  "en": "The boundary segments do not match a single disc model. Check for misplaced points, photo rectification errors, or segments crossing another boundary."
+ },
+ {
+  "zh": "该观测半径在当前参数下没有有效的正半径曲线延拓，请检查照片尺度、盘心或参数范围。",
+  "en": "The current parameters do not yield a valid positive-radius curve at this observed radius. Check the photo scale, disc center, and parameter range."
+ },
+ {
+  "zh": "圆弧粗标靶需要 70–85 分钟、1200 mm/s 的标准 12 cm CD。",
+  "en": "The coarse arc target requires a standard 12 cm CD with 70–85 minutes of capacity and a linear speed of 1200 mm/s."
+ },
+ {
+  "zh": "将删除本应用写入缓存目录的缩略图、合成图与预览图片。工程文件与导出文件不受影响。",
+  "en": "Delete thumbnails, composites and preview images created by this app in the cache directory. Project and export files are kept."
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 已载入 {1} 的 CD 数据盘几何与文件位置。\n",
+  "en": "[{0:HH:mm:ss}] Loaded CD data disc geometry and file placement for {1}."
+ },
+ {
+  "zh": "已实时更新 · 成品读回 · 3T/6T 类别图（非反射亮度） · {0} px",
+  "en": "Updated · Artifact readback · 3T/6T class map (not reflectance) · {0} px"
+ },
+ {
+  "zh": "已实时更新 · 读回模拟 · CW · {0} px · 每扇区 {1} 个采样",
+  "en": "Updated · Readback simulation · CW · {0} px · {1} samples per sector"
+ },
+ {
+  "zh": "流式刻录仅支持空白介质。刻录开始后，中断、断电或生成速度不足都可能导致盘片报废。",
+  "en": "Streaming requires blank media. Interruptions, power loss, or insufficient generation speed may make the disc unusable."
+ },
+ {
+  "zh": "通过盘片照片逐步校准参数。可从粗标定开始，也可按已有参数选择边界标定或精细标定。",
+  "en": "Calibrate disc parameters from photos. Start with coarse calibration, or choose boundary or fine calibration when you already have suitable parameters."
+ },
+ {
+  "zh": "NextWritableAddress={0}；FreeBlocks={1}；",
+  "en": "NextWritableAddress={0}; FreeBlocks={1}; "
+ },
+ {
+  "zh": "轨道 {0}、可写 {1} 扇区；需要完整的 12,219,392 扇区布局。",
+  "en": "track {0}, writable {1} sectors; the full 12,219,392-sector layout is required."
+ },
+ {
+  "zh": "{0} 不是可覆写的已格式化盘片（只有 DVD±RW 支持覆写），已取消刻录。",
+  "en": "The {0} is not a rewritable formatted disc (only DVD±RW can be overwritten); burn cancelled."
+ },
+ {
+  "zh": "内、中、外三处每圈转角偏差：{0}。正值表示相同扇区数在实盘上转过的角度更大。",
+  "en": "Angle offsets per nominal turn at the inner, middle and outer marks: {0}. Positive values mean the same sectors span a larger angle on the disc."
+ },
+ {
+  "zh": "角跨度 {0:0.0}°，按照片半径折算的周向弧长约 {1:0.00} mm。",
+  "en": "Angular extent {0:0.0}°, approximately {1:0.00} mm along the photographed circumference."
+ },
+ {
+  "zh": "请沿同一条辅助线取点，各点方位角之差应在 {0}° 内；换方向可先清除单线点。",
+  "en": "Click along the same guide. Keep the bearings within {0}° of each other, or clear the single-ray points to change direction."
+ },
+ {
+  "zh": "候选绕行过多，完整轮廓采样超出上限；请缩小搜索范围或提高采样上限后再确认形状。",
+  "en": "The candidate has too many turns to sample the full outline within the limit. Narrow the search range or raise the sampling limit before checking its shape."
+ },
+ {
+  "zh": "请选择蓝光预设库或之前导出的蓝光参数 JSON（缺少 parameters）。",
+  "en": "Select a Blu-ray preset library or an exported Blu-ray parameter JSON file (parameters is missing)."
+ },
+ {
+  "zh": "schemaVersion 1 只包含 CD/DVD 工程，不能声明蓝光字段。",
+  "en": "schemaVersion 1 supports only CD/DVD projects and cannot include Blu-ray fields."
+ },
+ {
+  "zh": "PNG 与标定记录已导出。刻录请使用本页的生成或流式刻录按钮，以保持坐标比例。",
+  "en": "PNG and calibration record exported. Use this page’s generation or streaming burn buttons to preserve the coordinate scale."
+ },
+ {
+  "zh": "CommunityToolkit.Mvvm — Apache 许可协议 2.0",
+  "en": "CommunityToolkit.Mvvm — Apache License 2.0"
+ },
+ {
+  "zh": "CD DAO 失败：Operation={0}；ElapsedMs={1}；",
+  "en": "CD DAO failure: Operation={0}; ElapsedMs={1}; "
+ },
+ {
+  "zh": "点位偏差较大。请修正标红点后重算；若已确认预测与照片吻合，也可应用所选候选。",
+  "en": "Point errors are high. Correct highlighted points and solve again, or confirm the match to the photo to apply this candidate."
+ },
+ {
+  "zh": "边界片段需覆盖至少 55% 的绘图半径范围，请在更靠内、靠外的位置各补一段。",
+  "en": "Boundary segments must cover at least 55% of the drawing radius range. Add segments closer to the inner and outer edges."
+ },
+ {
+  "zh": "仍有不同绕圈数的候选能解释这些片段，请在不同半径补一段更长的清楚边界后再算。",
+  "en": "Candidates with different winding counts still fit these segments. Trace a longer, clear boundary at another radius and calculate again."
+ },
+ {
+  "zh": "相邻曲线点转角接近半圈，无法判断是否漏掉整圈；请在这两点之间沿实际曲线补点。",
+  "en": "Adjacent curve points are nearly half a turn apart, so skipped full turns cannot be determined. Add points along the actual curve between them."
+ },
+ {
+  "zh": "标定固定盘片类型、扇区数和线速度／位长，可拟合内外半径、三次轨距与整体旋转。",
+  "en": "Calibration keeps the disc type, sector count, and linear speed or channel bit length fixed. It can fit the inner and outer radii, cubic track pitch, and overall rotation."
+ },
+ {
+  "zh": "中间带的位置与内外两带相差超过 0.40 mm，请核对圈号、内缘和照片矫正。",
+  "en": "The middle edge differs by over 0.40 mm from its position predicted by the other two. Check the band numbers, the inner edges and photo rectification."
+ },
+ {
+  "zh": "切换为“{0}”会用该预设的几何参数覆盖当前参数，确认后无法撤销。是否继续？",
+  "en": "Switching to “{0}” will replace the current geometry with this preset. This cannot be undone. Continue?"
+ },
+ {
+  "zh": "schemaVersion 4 必须包含 bluRayPresets 列表。",
+  "en": "schemaVersion 4 must include a bluRayPresets list."
+ },
+ {
+  "zh": "放入可写盘片后读取其支持的速度；默认自动使用最低可用速度，以降低写入错误率。",
+  "en": "Insert a writable disc to read its supported speeds. Automatic mode uses the lowest available speed to reduce write errors."
+ },
+ {
+  "zh": "先选圈号，在同一圈靠盘心一侧的边缘上沿弧分开点 3 下。只需一段清楚的圆弧。",
+  "en": "Choose a ring. Click three spaced points along a clear arc on its inner edge, the edge facing the disc centre."
+ },
+ {
+  "zh": "Disc Image Studio是帮助您在光盘表面印刷图案的一站式工作台。",
+  "en": "Disc Image Studio is an all-in-one workspace for creating visible artwork on optical discs."
+ },
+ {
+  "zh": "不支持 schemaVersion={0}；当前支持 {1} 与 {2}。",
+  "en": "Unsupported schemaVersion={0}; supported versions are {1} and {2}."
+ },
+ {
+  "zh": "分段中标的半径搜索范围不能超过 ±0.05 mm，请先完成 v13 粗标。",
+  "en": "Segmented boundary fitting supports a radius search range of at most ±0.05 mm. Complete v13 coarse calibration first."
+ },
+ {
+  "zh": "最佳候选落在搜索边界，尚不能确认绕圈数，请复核粗标结果或适当调整搜索范围。",
+  "en": "The best candidate lies on a search bound, leaving the winding count unresolved. Check the coarse calibration result or adjust the search range."
+ },
+ {
+  "zh": "控制点与预测图形偏差较大，请检查分组与弧片身份、控制点对应关系和显示尺度。",
+  "en": "The control points differ substantially from the predicted pattern. Check group and arc identities, point correspondences, and display scale."
+ },
+ {
+  "zh": "当前记录属于另一个阶段。用上方参数新建本阶段标靶，或打开与盘片配套的记录。",
+  "en": "This record belongs to a different stage. Create a target for the selected stage with the parameters above, or open the record for your disc."
+ },
+ {
+  "zh": "内缘轮廓与外缘位置不符，请确认选中的是贯通的实体内缘，而非盘面的印刷圆环。",
+  "en": "The inner outline does not align with the outer rim. Mark the edge of the center hole, not a printed ring on the disc."
+ },
+ {
+  "zh": "蓝光预设必须包含独立 ID、名称和参数，不能使用内置或未保存预设的 ID。",
+  "en": "A Blu-ray preset needs a unique ID, a name and parameters. IDs of built-in or unsaved presets cannot be used."
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 已按 {1} 的 sidecar 载入几何：",
+  "en": "[{0:HH:mm:ss}] Loaded geometry from the sidecar for {1}:"
+ },
+ {
+  "zh": "可直接粘贴或浏览已生成的 ISO；同名 sidecar 会带回几何与影调。",
+  "en": "Paste a path or browse for a generated ISO; its sidecar restores geometry and tone settings."
+ },
+ {
+  "zh": "蓝光 WRITE(10) 0x2A 失败：LBA={0}，扇区={1}，",
+  "en": "Blu-ray WRITE(10) 0x2A failed: LBA={0}, sectors={1}, "
+ },
+ {
+  "zh": "DVD 刻录设置：BufferUnderrunFreeDisabled=",
+  "en": "DVD burn settings: BufferUnderrunFreeDisabled="
+ },
+ {
+  "zh": "BD-R 失败：Operation={0}；ElapsedMs={1}；",
+  "en": "BD-R failure: Operation={0}; ElapsedMs={1}; "
+ },
+ {
+  "zh": "交界位置与其余边缘推算的位置相差超过 0.40 mm，请核对带号和读边。",
+  "en": "A boundary differs by over 0.40 mm from the position predicted by the others. Check band IDs and edge readings."
+ },
+ {
+  "zh": "多段边界覆盖的是相同的半径范围，请在至少 4 处互不重叠的半径位置选段。",
+  "en": "The boundary segments cover the same radius range. Choose segments at four or more non-overlapping radial positions."
+ },
+ {
+  "zh": "三次轨距没有带来稳定改善，保留原轨距系数；可增加内、中、外圈点位后重试。",
+  "en": "Cubic track-pitch fitting did not produce a stable improvement, so the original coefficients were retained. Add inner, middle, and outer points and try again."
+ },
+ {
+  "zh": "{0} · {1}，已填入总扇区 {2:N0}、可用扇区 {3:N0}。",
+  "en": "{0} · {1}. Entered {2:N0} total sectors and {3:N0} usable sectors."
+ },
+ {
+  "zh": "量环结果可能受照片尺度影响。请核对盘片预设和照片尺度，必要时用扇区校验。",
+  "en": "Ring measurements can be affected by photo scale. Check the disc preset and photo scale, and verify with the sectors if needed."
+ },
+ {
+  "zh": "盘片与内缘的实体尺寸无效。常规盘为直径 120 mm、孔径 15 mm。",
+  "en": "The physical disc or center-hole dimensions are invalid. A standard disc is 120 mm in diameter with a 15 mm center hole."
+ },
+ {
+  "zh": "初始内半径约 {0:0.00} mm，外半径约 {1:0.00} mm。",
+  "en": "Estimated initial radii: {0:0.00} mm inner, {1:0.00} mm outer."
+ },
+ {
+  "zh": "请使用完整的 DVD 扇区块或蓝光簇，并留出足以分辨六个交界的绘图范围。",
+  "en": "Use complete DVD sector blocks or Blu-ray clusters, with enough drawing space to distinguish six boundaries."
+ },
+ {
+  "zh": "蓝光 parameters 缺少 {0}，不能使用默认值替代导入的参数。",
+  "en": "Blu-ray parameters is missing {0}. Imported parameters cannot be replaced with defaults."
+ },
+ {
+  "zh": "r0={0} mm, r1={1} mm, {2} 扇区，交织={3}，",
+  "en": "r0={0} mm, r1={1} mm, {2} sectors, interleaved={3},"
+ },
+ {
+  "zh": "当前盘片未提供可选速度，将自动选择。若需擦除盘片，擦除后会重新读取速度。",
+  "en": "Selectable speeds are unavailable. Speed will be selected automatically. If the disc needs erasing, speeds will be queried again afterward."
+ },
+ {
+  "zh": "标定文件与同名标定记录已生成。刻录后打开记录、导入照片，即可矫正和描线。",
+  "en": "Generated the calibration file and matching record. After burning, open the record and import a photo to rectify it and trace the curves."
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 任务失败：退出码 {1}，未生成 {2}\n",
+  "en": "[{0:HH:mm:ss}] Job failed: exit code {1}; {2} was not generated"
+ },
+ {
+  "zh": "单层 BD-R：扇区数须为 32 的倍数，使用恒定轨距与 0° 起始角。",
+  "en": "Single-layer BD-R: sectors must be a multiple of 32. Uses constant track pitch and a 0° start angle."
+ },
+ {
+  "zh": "设备接受速度={0}；源流读取（含阻塞/拷贝）={1} 秒（{2}），",
+  "en": "device accept rate={0}; source reads (incl. blocking/copies)={1} s ({2}), "
+ },
+ {
+  "zh": "蓝光绘图总扇区数必须是 32 的倍数，且不超过 12,219,392。",
+  "en": "The Blu-ray drawing sector count must be a multiple of 32 and no more than 12,219,392."
+ },
+ {
+  "zh": "无备用区绘图需要从 LBA 0 开始的全新空白 BD-R，已取消刻录。",
+  "en": "No-spare drawing needs a brand-new blank BD-R starting at LBA 0; burn cancelled."
+ },
+ {
+  "zh": "CD DAO 阶段：Operation={0}；Result={1}；",
+  "en": "CD DAO stage: Operation={0}; Result={1}; "
+ },
+ {
+  "zh": "DVD 失败：Operation={0}；ElapsedMs={1}；",
+  "en": "DVD failure: Operation={0}; ElapsedMs={1}; "
+ },
+ {
+  "zh": "CD DAO 子通道格式：Cooked R-W（IMAPI 类型 2）",
+  "en": "CD DAO subchannel format: Cooked R-W (IMAPI type 2)"
+ },
+ {
+  "zh": "已保留原记录的测量。要读取角度标记，请将六个交界沿同一条半径重新选点。",
+  "en": "The saved measurements are retained. To read the angle marks, mark all six boundaries along one radius."
+ },
+ {
+  "zh": "当前范围的角度变化过大，无法可靠穷举绕圈候选，请缩小中标半径搜索范围。",
+  "en": "The angular variation is too large to enumerate winding candidates reliably. Narrow the radius search range for boundary calibration."
+ },
+ {
+  "zh": "请沿同一条曲线从内到外至少标出 6 个点，覆盖靠内、中间和靠外的位置。",
+  "en": "Mark at least 6 points along the same curve from inside to outside, covering inner, middle, and outer positions."
+ },
+ {
+  "zh": "控制点集中在相近半径，无法稳定区分内外半径；请补选靠内圈或外圈的角点。",
+  "en": "The control points are clustered at similar radii and cannot reliably distinguish the inner and outer radii. Add corners closer to the inner or outer edge."
+ },
+ {
+  "zh": "已量 {0} / {1} 圈的内缘。请至少量三圈，包含靠内和靠外的环。",
+  "en": "Measured the inner edges of {0} of {1} rings. Measure at least three, including inner and outer rings."
+ },
+ {
+  "zh": "外缘和内缘各需要至少 5 个分散的点，且每条轮廓不超过 256 个点。",
+  "en": "Mark at least five well-spaced points on each edge, with no more than 256 points per outline."
+ },
+ {
+  "zh": "边界描点只能用于对应的边界中标记录，不能与十字线或单线的中线描点混用。",
+  "en": "Boundary points require the matching boundary-calibration record and cannot be combined with centerline points from cross or single-line targets."
+ },
+ {
+  "zh": "宽带测量需要 12 cm 盘片的矫正照片，用于估算下一张盘的初始半径。",
+  "en": "Broad-band measurements require a rectified photo of a 12 cm disc and provide initial radii for the next target."
+ },
+ {
+  "zh": "这张标定盘适用于标准 12 cm CD。请返回照片矫正，核对实体尺寸。",
+  "en": "This target is for a standard 12 cm CD. Return to photo rectification to check the physical size."
+ },
+ {
+  "zh": "如您在盘片制作时勾选了“启用 CD-DA 延迟交织”，则应勾选该选项。",
+  "en": "Select this option if CD-DA delay interleaving was enabled when generating the disc."
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] {1} 没有可用的蓝光 sidecar，",
+  "en": "[{0:HH:mm:ss}] No usable Blu-ray sidecar was found for {1};"
+ },
+ {
+  "zh": "FormatStatus={0}；TrackIsBlank={1}；",
+  "en": "FormatStatus={0}; TrackIsBlank={1}; "
+ },
+ {
+  "zh": "；ContentBytes={0}；SectorBytes={1}。",
+  "en": "; ContentBytes={0}; SectorBytes={1}."
+ },
+ {
+  "zh": "Overwrite={0}；RequiredSectors={1}；",
+  "en": "Overwrite={0}; RequiredSectors={1}; "
+ },
+ {
+  "zh": "宽带与角度标记。标记六个交界后读取带内条纹，按固定轨距修正初始半径。",
+  "en": "Broad bands with angle marks. Mark all six boundaries to read the stripes and refine the initial radii assuming constant track pitch."
+ },
+ {
+  "zh": "这张时标靶适用于 12 cm CD。请在照片矫正中核对实体盘片规格。",
+  "en": "This clock target uses a 12 cm CD. Check the disc size in photo rectification."
+ },
+ {
+  "zh": "曲线覆盖范围太窄，无法稳定分离内外半径；请继续标出更靠内、外的曲线。",
+  "en": "The curve covers too narrow a range to distinguish the inner and outer radii reliably. Extend the trace farther inward and outward."
+ },
+ {
+  "zh": "完整曲线采样超出点数上限；请缩小预测范围或提高采样上限后再确认形状。",
+  "en": "Full-curve sampling exceeds the point limit. Narrow the prediction range or raise the sampling limit before confirming the shape."
+ },
+ {
+  "zh": "此候选不是自动推荐结果。请核对预测与照片可见部分，确认吻合后再应用。",
+  "en": "This candidate is not the recommended result. Compare its prediction with the visible photo and confirm the match before applying."
+ },
+ {
+  "zh": "蓝光 luminanceMapping.invert 必须是布尔值。",
+  "en": "Blu-ray luminanceMapping.invert must be a boolean."
+ },
+ {
+  "zh": "可尝试改善部分光驱与盘片组合的刻录稳定性。盘面纹理和对比度可能变化。",
+  "en": "May improve recording on some drive and media combinations. Texture and contrast may change."
+ },
+ {
+  "zh": "限制输出长度，不改变总扇区数对应的盘面几何。留空时使用盘型默认预留。",
+  "en": "Limits output length without changing the geometry represented by the total sector count. Leave empty to use the media family's default reserve."
+ },
+ {
+  "zh": "标定的可用扇区数必须为正数、不超过总扇区数，并符合介质写入对齐要求。",
+  "en": "Calibration usable sectors must be positive, not exceed total sectors, and satisfy the media write alignment."
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 已按 {1} 的生成参数载入标定几何：",
+  "en": "[{0:HH:mm:ss}] Loaded calibration geometry from the generation parameters for {1}:"
+ },
+ {
+  "zh": "r0={0} mm, r1={1} mm, {2} 总扇区；{3}\n",
+  "en": "r0={0} mm, r1={1} mm, {2} total sectors; {3}"
+ },
+ {
+  "zh": "擦除已有数据前会另行确认。开始后取消或断电可能使盘片报废。是否继续？",
+  "en": "You will be asked again before existing data is erased. Canceling or losing power after recording starts may render the disc unusable. Continue?"
+ },
+ {
+  "zh": "照片已导入。请把两组控制点拖到光盘实体外缘和实体内缘，然后计算矫正。",
+  "en": "Photo imported. Drag the two sets of control points to the disc’s physical outer and inner edges, then calculate rectification."
+ },
+ {
+  "zh": "生成参数已在界面中手动调整；如需长期保存，请写入用户预设 JSON。",
+  "en": "Generation parameters have been adjusted manually. Save them as a user preset to keep them."
+ },
+ {
+  "zh": "SectorBytes={0}；TrackSectors={1}。",
+  "en": "SectorBytes={0}; TrackSectors={1}."
+ },
+ {
+  "zh": "BD-R 阶段：Operation={0}；Result={1}；",
+  "en": "BD-R stage: Operation={0}; Result={1}; "
+ },
+ {
+  "zh": "盘片原始容量或轨道布局不符合单层无备用区 BD-R：最大 {0}、",
+  "en": "The disc's raw capacity or track layout does not match a single-layer no-spare BD-R: maximum {0}, "
+ },
+ {
+  "zh": "条纹不足以确定半径。可优先指定清楚的方向，或给同一张盘换光照重拍。",
+  "en": "Insufficient clock marks. Try pointing to a clear area or photograph the same disc under different lighting."
+ },
+ {
+  "zh": "不同位置的读数不一致。请复查盘缘、孔缘的照片矫正，再读取同一张盘。",
+  "en": "The areas disagree. Check the rim and hole alignment before reading this disc again."
+ },
+ {
+  "zh": "以本盘记录的半径开始边界标定：内 {0} mm，外 {1} mm。",
+  "en": "Boundary calibration starts from this disc’s recorded radii: inner {0} mm, outer {1} mm."
+ },
+ {
+  "zh": "已用三点测得内缘半径 {0:0.###} mm。可继续选择另一圈。",
+  "en": "Inner-edge radius from three points: {0:0.###} mm. Select another ring to continue."
+ },
+ {
+  "zh": "outerRadiusMm 必须大于 innerRadiusMm。",
+  "en": "outerRadiusMm must be greater than innerRadiusMm."
+ },
+ {
+  "zh": "内半径 {0} mm · 外半径 {1} mm · 三次项 {2}",
+  "en": "Inner radius {0} mm · Outer radius {1} mm · Cubic coefficient {2}"
+ },
+ {
+  "zh": "外缘偏差 {0:0.0} 像素 · 内缘偏差 {1:0.0} 像素",
+  "en": "Outer edge error {0:0.0} px · Inner edge error {1:0.0} px"
+ },
+ {
+  "zh": "轨距模型无效：请检查半径、扇区数及系数，整个刻录区的轨距必须为正。",
+  "en": "Invalid track pitch model: check the radii, sector count and coefficients. Track pitch must be positive throughout the recording area."
+ },
+ {
+  "zh": "CD DAO 介质设置：unavailable (0x{0})。",
+  "en": "CD DAO media settings: unavailable (0x{0})."
+ },
+ {
+  "zh": "DVD 阶段：Operation={0}；Result={1}；",
+  "en": "DVD stage: Operation={0}; Result={1}; "
+ },
+ {
+  "zh": "CD DAO 子通道格式：Raw P-W（IMAPI 类型 3）",
+  "en": "CD DAO subchannel format: Raw P-W (IMAPI type 3)"
+ },
+ {
+  "zh": "调整圆弧方向，再拖动标有带号与内外缘的圆弧，贴住对应交界后松手。",
+  "en": "Turn the guides toward a clear area. Drag the arc labelled with the band and edge, then release it on the matching boundary."
+ },
+ {
+  "zh": "边界中标请使用边界描点，不能把不相连的交界拼成十字线的连续曲线。",
+  "en": "Use boundary segments for boundary calibration. Disconnected edges cannot be combined into a continuous cross-arm trace."
+ },
+ {
+  "zh": "曲线覆盖的内外范围偏窄，参数可能互相补偿；请补充更靠内、外的点。",
+  "en": "The curve covers a narrow radial range, allowing parameters to compensate for each other. Add points farther inward and outward."
+ },
+ {
+  "zh": "候选 {0} · 偏差 {1:0.###} mm · 需人工核对",
+  "en": "Candidate {0} · error {1:0.###} mm · manual review needed"
+ },
+ {
+  "zh": "生成暂存目录与输出目录不能相同，输出目录也不能位于暂存目录内部。",
+  "en": "The output directory must differ from the staging directory and cannot be inside it."
+ },
+ {
+  "zh": "thumbnailPngBase64 不是有效的 Base64。",
+  "en": "thumbnailPngBase64 is not valid Base64."
+ },
+ {
+  "zh": "绘图区 {0:0.######}–{1:0.######} mm",
+  "en": "Drawing region {0:0.######}–{1:0.######} mm"
+ },
+ {
+  "zh": "沿同一段刻录环内缘点 3 下；Backspace 可撤销上一点。",
+  "en": "Click three points along the same inner edge. Backspace undoes the last point."
+ },
+ {
+  "zh": "导入与本记录配套的实盘照片，拍清实体外缘、中心孔和本阶段的图案。",
+  "en": "Import a photo of the disc for this record. Include the rim, centre hole and the recorded pattern for this stage."
+ },
+ {
+  "zh": "即时刻录将数据直接流式写入空白盘片，不必单独生成镜像文件再刻录。",
+  "en": "Stream data directly to a blank disc without first generating an image file."
+ },
+ {
+  "zh": "导出设计页的合成图为可刻录的镜像。相关参数请在“工程设置”中修改",
+  "en": "Export the design composite as a burnable image. Adjust its parameters in Project settings."
+ },
+ {
+  "zh": "生成音轨时按 CD-DA 标准做延迟交织。不清楚请默认勾选此项。",
+  "en": "Apply CD-DA delay interleaving when generating audio tracks. Leave this enabled if unsure."
+ },
+ {
+  "zh": "最近 {0} 次成功 WRITE（最多 8 次，按时间顺序）：",
+  "en": "Last {0} successful WRITEs (up to 8, oldest first):"
+ },
+ {
+  "zh": "累计接受={0} 字节。源流读取耗时不是纯 CPU 生成耗时。",
+  "en": "total accepted={0} bytes. Source read time is not pure CPU generation time."
+ },
+ {
+  "zh": "MediaKind={0}；ContentBytes={1}；",
+  "en": "MediaKind={0}; ContentBytes={1}; "
+ },
+ {
+  "zh": "CD DAO lead-out 超出盘片边界 {0} 个扇区；",
+  "en": "CD DAO lead-out would exceed the disc boundary by {0} sectors; "
+ },
+ {
+  "zh": "CD 失败后关闭会话失败（HRESULT 0x{0}）：{1}",
+  "en": "Closing the CD session after failure failed (HRESULT 0x{0}): {1}"
+ },
+ {
+  "zh": "图层 '{0}' 的 scale 必须是大于 0 的有限数值。",
+  "en": "Layer '{0}' scale must be a finite number greater than 0."
+ },
+ {
+  "zh": "自动检查未通过。请核对下方原因；确认候选与照片吻合后仍可应用。",
+  "en": "Automatic checks did not pass. Review the reasons below; you can still apply a candidate after confirming its match to the photo."
+ },
+ {
+  "zh": "有相邻曲线点的转角接近半圈，绕圈判断可能不可靠；请补点后复核。",
+  "en": "Adjacent curve points are nearly half a turn apart. Add points and check the winding count again."
+ },
+ {
+  "zh": "宽范围只进行了有限多起点搜索，候选列表不代表穷尽所有可能参数。",
+  "en": "The wide range was searched from a limited number of starting points; the candidate list is not exhaustive."
+ },
+ {
+  "zh": "标定参数无效：请检查盘片类型、内外半径、扇区数和线速度／位长。",
+  "en": "Invalid calibration parameters. Check the disc type, inner and outer radii, sector count, and linear speed or channel bit length."
+ },
+ {
+  "zh": "三条宽环。可沿用已量内缘，或在本盘照片上补量外缘，核对带间距。",
+  "en": "Three broad rings. Reuse measured inner edges or add outer edges on this disc’s photo to check the spacing."
+ },
+ {
+  "zh": "已保存示意图和标定记录。请生成音轨或光盘镜像，或选择流式刻录。",
+  "en": "Schematic and calibration record saved. Generate an audio track or disc image, or choose streaming burn."
+ },
+ {
+  "zh": "容量按 2048 字节/扇区计数；可用扇区是应用可写入的上限。",
+  "en": "Counts are 2048-byte sectors; usable sectors is the application's writable limit."
+ },
+ {
+  "zh": "可用扇区数必须大于 0、不超过总扇区数，且是 {0} 的倍数。",
+  "en": "Usable sectors must be positive, not exceed total sectors, and be a multiple of {0}."
+ },
+ {
+  "zh": "请先选择生成的 CD 音轨或 ISO（导出页生成后自动填入）。",
+  "en": "Select a generated CD audio track or ISO first (filled in automatically after generation on the Export page)."
+ },
+ {
+  "zh": "Disc Image Studio 工程|*.discproj",
+  "en": "Disc Image Studio project|*.discproj"
+ },
+ {
+  "zh": "至少 12 个不同半径的点，覆盖刻录环带宽度的 60% 以上。",
+  "en": "Use at least 12 points at different radii, spanning at least 60% of the recorded band width."
+ },
+ {
+  "zh": "CD DAO 介质设置：PhysicalMediaType=",
+  "en": "CD DAO media settings: PhysicalMediaType="
+ },
+ {
+  "zh": "Windows 刻录接口未接受关闭 DVD 刻后校验的设置。",
+  "en": "The Windows burning interface did not accept the setting that disables DVD post-burn verification."
+ },
+ {
+  "zh": "蓝光失败后释放设备失败（HRESULT 0x{0}）：{1}",
+  "en": "Releasing the Blu-ray device after failure failed (HRESULT 0x{0}): {1}"
+ },
+ {
+  "zh": "介质类型=0x{0}；IMAPI 配置档=[{1}]{2}。",
+  "en": "media type=0x{0}; IMAPI profiles=[{1}]{2}."
+ },
+ {
+  "zh": "{0} 剩余容量不足：需要 {1} 扇区（{2} MiB），",
+  "en": "Not enough free space on the {0}: {1} sectors needed ({2} MiB), "
+ },
+ {
+  "zh": "该点的半径和已量交界的顺序不符。请核对选中的交界并重新点击。",
+  "en": "This radius would cross a previously marked edge. Check the selected edge and click again."
+ },
+ {
+  "zh": "当前盘用于粗标定。要描十字线，请用初始半径新建精细标定图案。",
+  "en": "This disc is for coarse calibration. Create a fine cross target using the initial radii to trace its arms."
+ },
+ {
+  "zh": "已导出时标示意图和标定记录。刻录请使用本页的音轨或流式刻录。",
+  "en": "Clock schematic and session saved. Use the audio track or streaming burn on this page to record the disc."
+ },
+ {
+  "zh": "每段至少需要 3 个不同位置的点，请沿同一小段边界分散点选。",
+  "en": "Each segment needs at least 3 distinct points. Spread the points along the same short boundary section."
+ },
+ {
+  "zh": "有片段太短，无法判断边界的局部走向，请把这一段的点拉开一些。",
+  "en": "A segment is too short to determine its local boundary direction. Spread its points farther apart."
+ },
+ {
+  "zh": "曲线偏差较大，请检查照片矫正、点位和是否始终沿同一条线标点。",
+  "en": "The curve deviation is large. Check photo rectification, point positions, and whether all points follow the same line."
+ },
+ {
+  "zh": "搜索范围内没有有效模型，请检查控制点对应关系或扩大搜索范围。",
+  "en": "No valid model was found in the search range. Check the control-point correspondences or expand the range."
+ },
+ {
+  "zh": "未检测到刻录机。连接刻录机后可重新读取，也可手动填写扇区数。",
+  "en": "No recorder found. Connect a recorder and retry, or enter the sector count manually."
+ },
+ {
+  "zh": "估计超出盘面或偏差过大。请核对盘片尺寸、圆环编号和圆弧位置。",
+  "en": "The estimate falls outside the disc or the residual is too large. Check the disc size, ring numbers, and arc alignment."
+ },
+ {
+  "zh": "拍摄角度或轮廓对应关系导致投影退化，请换角度拍摄或重新布点。",
+  "en": "The camera angle or outline correspondence produces a degenerate projection. Retake the photo from another angle or adjust the points."
+ },
+ {
+  "zh": "这张盘用于量宽环。描十字线时，请用粗标定半径新建精细标定靶。",
+  "en": "This disc is for measuring broad bands. Create a fine calibration target with the coarse radii to trace a cross."
+ },
+ {
+  "zh": "已选曲线上的点 {0} · 直接拖动修正，Delete 删除",
+  "en": "Curve point {0} selected · Drag to adjust, Delete to remove"
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] DVD 实时预览失败：{1}\n",
+  "en": "[{0:HH:mm:ss}] DVD live preview failed: {1}"
+ },
+ {
+  "zh": "已应用到 {0} 参数。原标定盘记录仍保留，可继续补点核对。",
+  "en": "Applied to {0} parameters. The original calibration disc record was retained; you can add more points to verify it."
+ },
+ {
+  "zh": "标定记录|*.calibration.json;*.json",
+  "en": "Calibration records|*.calibration.json;*.json"
+ },
+ {
+  "zh": "{0:N0} 扇区 · {1:0.#}–{2:0.#} mm",
+  "en": "{0:N0} sectors · {1:0.#}–{2:0.#} mm"
+ },
+ {
+  "zh": "拖动圆弧调整半径，点击确认原位，Delete 取消所选测量。",
+  "en": "Drag to set the radius, click to confirm the current radius, or press Delete to clear the measurement."
+ },
+ {
+  "zh": "GET CONFIGURATION 返回了无效的长度字段。",
+  "en": "GET CONFIGURATION returned an invalid length field."
+ },
+ {
+  "zh": "Runtime={0}；Architecture={1}；",
+  "en": "Runtime={0}; Architecture={1}; "
+ },
+ {
+  "zh": "DVD 介质设置：unavailable (0x{0})。",
+  "en": "DVD media settings: unavailable (0x{0})."
+ },
+ {
+  "zh": "{0} 格式有误（第 {1} 行，第 {2} 列）：{3}",
+  "en": "{0} is malformed (line {1}, column {2}): {3}"
+ },
+ {
+  "zh": "这张盘用于量短弧。描十字线时，请用初始半径新建精细标定靶。",
+  "en": "This disc is for measuring short arcs. Create a fine calibration target with the initial radii to trace a cross."
+ },
+ {
+  "zh": "当前半径范围没有有效的盘面模型，请检查生成记录和照片轮廓。",
+  "en": "No valid disc model exists within this radius range. Check the generation record and photographed outline."
+ },
+ {
+  "zh": "曲线点较多，拟合使用均匀抽取的点；完整顺序仍用于角度展开。",
+  "en": "The fit uses an evenly spaced subset of the many curve points. Angle unwrapping still uses the complete sequence."
+ },
+ {
+  "zh": "轨距系数接近搜索边界，请复核点位，必要时扩大系数搜索范围。",
+  "en": "The pitch coefficients are near a search bound. Check the points and expand the coefficient search range if needed."
+ },
+ {
+  "zh": "时钟尺预览是示意图。请从标定页生成 CD 音轨或直接刻录。",
+  "en": "The clock-scale preview is schematic. Generate a CD audio track or burn it directly from the calibration page."
+ },
+ {
+  "zh": "读取到 {0:N0} 扇区，超出 {1} 标定支持的范围。",
+  "en": "Read {0:N0} sectors, outside the supported range for {1} calibration."
+ },
+ {
+  "zh": "这张标定盘的绘图区不足三条完整圆环，请使用十字线精细标定。",
+  "en": "This target contains fewer than three complete rings in its drawing area. Use cross tracing instead."
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 流式刻录完成：{1} 字节，",
+  "en": "[{0:HH:mm:ss}] Streaming burn completed: {1} bytes,"
+ },
+ {
+  "zh": "r0={0} mm, r1={1} mm, {2} 扇区，",
+  "en": "r0={0} mm, r1={1} mm, {2} sectors,"
+ },
+ {
+  "zh": "已实时更新 · 标定预览 · CW · 抖动 {0:0}%",
+  "en": "Updated · Calibration preview · CW · Dither {0:0}%"
+ },
+ {
+  "zh": "{0}\n最近打开：{1:yyyy-MM-dd HH:mm}",
+  "en": "{0}\nLast opened: {1:yyyy-MM-dd HH:mm}"
+ },
+ {
+  "zh": "可选择 WAV / RAW 音轨或 CD 数据盘 ISO。",
+  "en": "Select a WAV / RAW audio track or a CD data disc ISO."
+ },
+ {
+  "zh": "威宝 DVD+RW (94520 / 95043)（实测）",
+  "en": "Verbatim DVD+RW (94520 / 95043) (measured)"
+ },
+ {
+  "zh": "选择其他预设会用它的几何参数覆盖当前参数，切换前会先确认。",
+  "en": "Selecting another preset replaces the current geometry parameters after confirmation."
+ },
+ {
+  "zh": "光驱命令 0x{0} 失败（HRESULT 0x{1}，",
+  "en": "Drive command 0x{0} failed (HRESULT 0x{1}, "
+ },
+ {
+  "zh": "写入诊断：设备已接受 {0} 字节 / {1} 次命令；",
+  "en": "Write diagnostics: device accepted {0} bytes / {1} commands; "
+ },
+ {
+  "zh": "；BufferUnderrunFreeDisabled=",
+  "en": "; BufferUnderrunFreeDisabled="
+ },
+ {
+  "zh": "拟合结果显示短弧内部可能折返，无法从总角度可靠确定半径。",
+  "en": "The fitted arc may reverse direction, so its total angle cannot reliably determine the radii."
+ },
+ {
+  "zh": "沿同一条可见短弧依次点首端、弧上中点、末端。可滚轮放大。",
+  "en": "Click one tip, a point along the visible arc, then its other tip. Scroll to zoom."
+ },
+ {
+  "zh": "当前范围包含过多绕圈候选，请缩小中标半径搜索范围后再算。",
+  "en": "This range contains too many winding candidates. Narrow the radius search range for boundary calibration and calculate again."
+ },
+ {
+  "zh": "这些边界片段没有得到有效参数，请检查点是否位于黑白交界。",
+  "en": "These boundary segments did not produce valid parameters. Check that the points lie on the black-white boundary."
+ },
+ {
+  "zh": "最佳结果靠近搜索边界，建议扩大搜索范围并补充曲线点复核。",
+  "en": "The best result is near a search bound. Expand the search range and add curve points to check the fit."
+ },
+ {
+  "zh": "控制点覆盖的径向范围偏窄，建议补选更靠内、外的角点复核。",
+  "en": "The control points cover a narrow radial range. Add corners farther inward and outward to check the fit."
+ },
+ {
+  "zh": "最佳结果靠近搜索边界，建议扩大搜索范围并补充控制点复核。",
+  "en": "The best result is near a search bound. Expand the search range and add control points to check the fit."
+ },
+ {
+  "zh": "明暗各半的边界标定图案。分段描清楚的交界，无需追踪整圈。",
+  "en": "Half-light, half-dark target for boundary calibration. Trace clear boundary sections; full turns are not required."
+ },
+ {
+  "zh": "读取盘片的几何总扇区数和当前可用扇区数，填入新标靶参数。",
+  "en": "Read the disc’s geometry sector count and current writable capacity for the new target."
+ },
+ {
+  "zh": "校验后的半径超出盘片可用范围，请核对标定记录和照片尺寸。",
+  "en": "Corrected radii are outside the usable disc area. Check the calibration record and photo dimensions."
+ },
+ {
+  "zh": "宽带反推的半径超出盘片的可测范围，请核对照片尺度和交界。",
+  "en": "The estimated radii fall outside the disc. Check the photo scale and the marked boundaries."
+ },
+ {
+  "zh": "使用标靶记录中的设置和保护规则；如需更改，请创建新标靶。",
+  "en": "Uses the settings and protection rule saved with this target. Create a new target to change them."
+ },
+ {
+  "zh": "thumbnailPngBase64 长度超出允许范围。",
+  "en": "thumbnailPngBase64 length is outside the allowed range."
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 蓝光实时预览失败：{1}\n",
+  "en": "[{0:HH:mm:ss}] Blu-ray live preview failed: {1}"
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 蓝光成品读回失败：{1}\n",
+  "en": "[{0:HH:mm:ss}] Blu-ray artifact readback failed: {1}"
+ },
+ {
+  "zh": "仅允许空白盘。开始后取消或断电可能使盘片报废。是否继续？",
+  "en": "Only blank discs are allowed. Canceling or losing power after writing starts may render the disc unusable. Continue?"
+ },
+ {
+  "zh": "当前盘片报告 {0} 种写入配置；自动模式将使用最低值 ",
+  "en": "The disc reports {0} write configurations. Automatic mode uses the lowest value:"
+ },
+ {
+  "zh": "矫正预览已生成。检查盘面恢复正视效果后，确认并开始描线。",
+  "en": "Rectification preview generated. Check that the disc appears face-on, then confirm and start tracing."
+ },
+ {
+  "zh": "请先选择生成的 DVD ISO（导出页生成后自动填入）。",
+  "en": "Select a generated DVD ISO first (filled in automatically after generation on the Export page)."
+ },
+ {
+  "zh": "WRITE（含传输/设备等待）={0} 秒（{1}）；",
+  "en": "WRITE (incl. transfer/device waits)={0} s ({1}); "
+ },
+ {
+  "zh": "GET CONFIGURATION 返回的数据被截断。",
+  "en": "GET CONFIGURATION returned truncated data."
+ },
+ {
+  "zh": "BD-R 已分配备用区，逻辑容量不能用于无备用区标定。",
+  "en": "This BD-R has spare areas allocated; its logical capacity cannot be used for no-spare calibration."
+ },
+ {
+  "zh": "DVD 擦除前状态：MediaState=0x{0}。",
+  "en": "DVD state before erase: MediaState=0x{0}."
+ },
+ {
+  "zh": "当前盘片未报告可选速度，将使用刻录接口的保守回退设置…",
+  "en": "The current disc reported no selectable speeds; using the burning interface's conservative fallback…"
+ },
+ {
+  "zh": "CD DAO 容量：TrackSectors={0}；",
+  "en": "CD DAO capacity: TrackSectors={0}; "
+ },
+ {
+  "zh": "所选刻录模式需要可写的 {0} 盘片；当前盘片不兼容。",
+  "en": "The selected burn mode needs a writable {0}; the current disc is not compatible."
+ },
+ {
+  "zh": "请完成描点后计算参数。打开记录或修改点位后需重新计算。",
+  "en": "Finish tracing, then solve the parameters. Recalculate after opening a record or changing points."
+ },
+ {
+  "zh": "请确认每一段从内向外的弯曲方向。仅凭弧长可能有多个解。",
+  "en": "Confirm each arc's direction from inner to outer. Its length alone can have multiple solutions."
+ },
+ {
+  "zh": "请确认至少两段相距较远的完整短弧，保留中间的弯曲方向。",
+  "en": "Confirm at least two widely separated complete arcs, including their bend directions."
+ },
+ {
+  "zh": "请把中点放在两端之间的可见弧上，三点应有不同的方位角。",
+  "en": "Use three distinct bearings with the middle click on the visible path between the tips."
+ },
+ {
+  "zh": "曲线出现明显向内回退，请按内到外的顺序沿同一条线标点。",
+  "en": "The curve doubles back inward. Mark points along the same line in order from inside to outside."
+ },
+ {
+  "zh": "轮廓点重复或接近一条直线，请沿外缘和内缘分别分散布点。",
+  "en": "The outline points overlap or are nearly collinear. Spread them around both the outer rim and center-hole edge."
+ },
+ {
+  "zh": "分段描边记录需要已确认的矫正照片，所有点须位于盘面上。",
+  "en": "Segmented boundary traces require confirmed photo rectification, with every point on the disc."
+ },
+ {
+  "zh": "时钟尺按 CD 逻辑字节生成，不能用平面图像采样编码。",
+  "en": "The clock ruler is generated from CD logical bytes and cannot be encoded by sampling a flat image."
+ },
+ {
+  "zh": "仅作为新建工程对话框的默认位置；留空使用系统文档目录。",
+  "en": "Default location for new projects. Leave blank to use the system Documents folder."
+ },
+ {
+  "zh": "蓝光 sectors 不能超过单层容量 {0:N0}。",
+  "en": "Blu-ray sectors cannot exceed the single-layer capacity of {0:N0}."
+ },
+ {
+  "zh": "\n[{0:HH:mm:ss}] 开始流式刻录：{1}；",
+  "en": "[{0:HH:mm:ss}] Starting streaming burn: {1};"
+ },
+ {
+  "zh": "当前盘片未报告可选速度，将使用刻录接口的保守回退设置。",
+  "en": "The disc did not report available speeds. The burn interface will use its conservative fallback."
+ },
+ {
+  "zh": "未检测到可用的光盘刻录机。请连接刻录机后点按「刷新」。",
+  "en": "No optical recorder was found. Connect a recorder, then press Refresh."
+ },
+ {
+  "zh": "已写入 {0:0.00} / {1:0.00} GiB",
+  "en": "Written {0:0.00} / {1:0.00} GiB"
+ },
+ {
+  "zh": "Windows 刻录接口报告写入完成，正在等待返回…",
+  "en": "Windows burning interface reports the write is complete; waiting for it to return…"
+ },
+ {
+  "zh": "请放入与所选 CD/DVD/蓝光模式兼容的可写盘片。",
+  "en": "Insert a writable disc compatible with the selected CD/DVD/Blu-ray mode."
+ },
+ {
+  "zh": "蓝光失败后刷新缓存失败（HRESULT 0x{0}，",
+  "en": "Flushing the Blu-ray cache after failure failed (HRESULT 0x{0}, "
+ },
+ {
+  "zh": "CancellationRequested={0}。",
+  "en": "CancellationRequested={0}."
+ },
+ {
+  "zh": "写入 DVD 数据（包含 Windows 内部收尾）",
+  "en": "Write DVD data (including Windows' internal finishing)"
+ },
+ {
+  "zh": "Windows 刻录接口无法擦除当前 DVD±RW。",
+  "en": "The Windows burning interface cannot erase the current DVD±RW."
+ },
+ {
+  "zh": "用户预设，可直接修改或复制后添加更多 DVD 参数。",
+  "en": "User preset; edit it directly or copy it to add more DVD parameters."
+ },
+ {
+  "zh": "图层 '{0}' 的 imagePath 不能为空。",
+  "en": "Layer '{0}' imagePath must not be empty."
+ },
+ {
+  "zh": "创建标靶或打开记录后，将显示精细标定使用的初始半径。",
+  "en": "Create a target or open a record to see the initial radii for fine calibration."
+ },
+ {
+  "zh": "作为精细标定初值的量环记录需要至少三条已对准的圆环。",
+  "en": "At least three aligned rings are required to use their measurements as the starting point for fine calibration."
+ },
+ {
+  "zh": "将移除全部最近工程记录，工程文件不受影响。是否继续？",
+  "en": "This removes every recent-project entry. The project files themselves are not affected. Continue?"
+ },
+ {
+  "zh": "滚轮缩放，右键平移；点击添加点，拖动已有点修正位置。",
+  "en": "Scroll to zoom, right-drag to pan; click to add points, drag to adjust."
+ },
+ {
+  "zh": "照片变换在当前画布内退化，请重新矫正轮廓或缩小画布。",
+  "en": "The photo transform is degenerate within this canvas. Adjust the contours or reduce the canvas."
+ },
+ {
+  "zh": "发现新版本 {0}。是否下载并安装？应用将重新启动。",
+  "en": "Version {0} is available. Download and install it now? The application will restart."
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 实时预览失败：{1}\n",
+  "en": "[{0:HH:mm:ss}] Live preview failed: {1}"
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 流式刻录失败：{1}\n",
+  "en": "[{0:HH:mm:ss}] Streaming burn failed: {1}"
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 预览加载失败：{1}\n",
+  "en": "[{0:HH:mm:ss}] Preview loading failed: {1}"
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 预览导出失败：{1}\n",
+  "en": "[{0:HH:mm:ss}] Preview export failed: {1}"
+ },
+ {
+  "zh": "内半径 {0} mm · 外半径 {1} mm · ",
+  "en": "Inner radius {0} mm · Outer radius {1} mm ·"
+ },
+ {
+  "zh": "已恢复标定图案、照片和曲线点，可继续编辑或重新反推。",
+  "en": "Restored the calibration pattern, photo, and curve points. You can continue editing or fit the parameters again."
+ },
+ {
+  "zh": "未能读取当前盘片速度，将使用刻录接口的保守回退设置：",
+  "en": "Could not read the disc’s speeds. The burn interface will use its conservative fallback:"
+ },
+ {
+  "zh": "请先选择生成的蓝光 ISO（导出页生成后自动填入）。",
+  "en": "Select a generated Blu-ray ISO first (filled in automatically after generation on the Export page)."
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 设计合成失败：{1}\n",
+  "en": "[{0:HH:mm:ss}] Design composition failed: {1}"
+ },
+ {
+  "zh": "把最近生成的文件作为输入镜像，在预览工作区模拟读回。",
+  "en": "Simulate reading back the most recently generated file in the Preview workspace."
+ },
+ {
+  "zh": "Ctrl/Alt + 滚轮同样可以缩放；中键拖动平移",
+  "en": "Ctrl/Alt + scroll to zoom; middle-drag to pan"
+ },
+ {
+  "zh": "本次写入调用={0} 秒（耗时累计包含失败尝试）。",
+  "en": "this write call={0} s (totals include failed attempts)."
+ },
+ {
+  "zh": "盘片物理信息：PhysicalMediaType=",
+  "en": "Disc physical info: PhysicalMediaType="
+ },
+ {
+  "zh": "；MediaHeuristicallyBlank=",
+  "en": "; MediaHeuristicallyBlank="
+ },
+ {
+  "zh": "LastUpdateAgeSeconds={0}；",
+  "en": "LastUpdateAgeSeconds={0}; "
+ },
+ {
+  "zh": "\n设备释放期间还出现以下问题（已尝试后续清理）：\n",
+  "en": "\nThe following problems also occurred while releasing the device (further cleanup was attempted):\n"
+ },
+ {
+  "zh": "CD DAO 请求：RequestedSpeed=",
+  "en": "CD DAO request: RequestedSpeed="
+ },
+ {
+  "zh": "LeadoutMarginSectors={0}。",
+  "en": "LeadoutMarginSectors={0}."
+ },
+ {
+  "zh": "用户预设，可直接修改或复制后添加更多 CD 参数。",
+  "en": "User preset; edit it directly or copy it to add more CD parameters."
+ },
+ {
+  "zh": "必须大于 0、不超过总扇区数，且是 {0} 的倍数",
+  "en": "must be greater than 0, no more than the total sector count, and a multiple of {0}"
+ },
+ {
+  "zh": "这个候选不属于当前计算结果，请重新计算后选择候选。",
+  "en": "This candidate is not part of the current result. Solve again and select a candidate."
+ },
+ {
+  "zh": "测得的短弧短于图案本身，请检查是否标到了完整两端。",
+  "en": "The measured arc is shorter than the original mark. Check that both endpoints are included."
+ },
+ {
+  "zh": "在矫正照片上从内向外量六个宽带交界，估算初始半径。",
+  "en": "Mark the six band boundaries from inner to outer on the rectified photo to estimate initial radii."
+ },
+ {
+  "zh": "搜索边界超出有效盘面模型，请缩小中标半径搜索范围。",
+  "en": "The search bounds exceed the valid disc model. Narrow the radius search range for boundary calibration."
+ },
+ {
+  "zh": "已描 {0} 段 · {1} 点 · 各段独立连接",
+  "en": "{0} segments · {1} points · sections stay separate"
+ },
+ {
+  "zh": "三个采样点的半径相差过大，请重新对准同一圈的内缘。",
+  "en": "The three radii differ too much. Reposition the points on the inner edge of the same ring."
+ },
+ {
+  "zh": "实测圆环的内外顺序不符，请检查编号或重新拖动圆弧。",
+  "en": "The measured rings are out of order. Check their numbers or reposition the arcs."
+ },
+ {
+  "zh": "轮廓点集中在局部，请在两条完整圆周的不同方向补点。",
+  "en": "The outline points are clustered in one area. Add points around the full circumference of both edges."
+ },
+ {
+  "zh": "标定记录中的兼容图案选项无效，请重新创建标定图案。",
+  "en": "The compatibility pattern option in this calibration record is invalid. Create a new calibration pattern."
+ },
+ {
+  "zh": "完整数据区半径（创建图案时）：{0}–{1} mm",
+  "en": "Full data area radii (at pattern creation): {0}–{1} mm"
+ },
+ {
+  "zh": "DVD 的 sectors 必须是 16 的倍数。",
+  "en": "DVD sectors must be a multiple of 16."
+ },
+ {
+  "zh": "CD 音轨|*.wav|CD 原始音轨|*.raw",
+  "en": "CD audio tracks|*.wav|CD raw audio tracks|*.raw"
+ },
+ {
+  "zh": "DVD · {0} 扇区 · {1:F1} MiB",
+  "en": "DVD · {0} sectors · {1:F1} MiB"
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 预览已导出：{1}\n",
+  "en": "[{0:HH:mm:ss}] Preview exported: {1}"
+ },
+ {
+  "zh": "已写入 {0:0.0} / {1:0.0} MiB",
+  "en": "Written {0:0.0} / {1:0.0} MiB"
+ },
+ {
+  "zh": "GNU GPL v3.0 或更新版本（项目许可证）",
+  "en": "GNU GPL v3.0 or later (project license)"
+ },
+ {
+  "zh": "沿清楚的曲线由内向外均匀打点，建议 16 点以上。",
+  "en": "Place points evenly along a clear curve from inside to outside; at least 16 points are recommended."
+ },
+ {
+  "zh": "刻录适配器的页对齐单次传输上限为 {0} 字节，",
+  "en": "The burner adapter's page-aligned single-transfer limit is {0} bytes, "
+ },
+ {
+  "zh": "读取当前盘片的刻录速度失败（0x{0}）：{1}",
+  "en": "Failed to read the current disc's write speeds (0x{0}): {1}"
+ },
+ {
+  "zh": "正在向刻录接口传输 {0} / {1} MiB…",
+  "en": "Sending {0} / {1} MiB to the burning interface…"
+ },
+ {
+  "zh": "Windows 刻录接口在“{0}”时返回错误 ",
+  "en": "The Windows burning interface returned an error during “{0}” "
+ },
+ {
+  "zh": "{0}失败（HRESULT 0x{1}）：{2}",
+  "en": "{0} failed (HRESULT 0x{1}): {2}"
+ },
+ {
+  "zh": "蓝光 sectors 不能超过单层容量 {0}。",
+  "en": "Blu-ray sectors cannot exceed the single-layer capacity of {0}."
+ },
+ {
+  "zh": "没有有效候选。请按计算提示补充或修正点位后重算。",
+  "en": "No valid candidate. Add or correct points as indicated, then solve again."
+ },
+ {
+  "zh": "已确认 {0}/3 段。优先量靠内与靠外的短弧。",
+  "en": "{0}/3 arcs confirmed. Prefer marks near both ends of the recording band."
+ },
+ {
+  "zh": "已选 {0} · 半径 {1:0.###} mm",
+  "en": "{0} selected · radius {1:0.###} mm"
+ },
+ {
+  "zh": "按 1、3 号外缘预测的内缘间距（mm）　{0}",
+  "en": "Inner-edge spacings predicted from outer edges 1 and 3 (mm)　{0}"
+ },
+ {
+  "zh": "边界点坐标无效，请使用矫正后以盘心为原点的坐标。",
+  "en": "Invalid boundary point coordinates. Use rectified coordinates with the disc center as the origin."
+ },
+ {
+  "zh": "曲线点坐标无效，请使用矫正后以盘心为原点的坐标。",
+  "en": "Invalid curve point coordinates. Use rectified coordinates with the disc center as the origin."
+ },
+ {
+  "zh": "存在形状接近的参数候选，请对照整条曲线后再应用。",
+  "en": "Several parameter candidates produce similar shapes. Compare the full curve before applying a candidate."
+ },
+ {
+  "zh": "宽明暗区域与波浪形交界。沿照片中清楚的交界描点。",
+  "en": "Broad light and dark regions with a wavy boundary. Trace the clear boundary in the photo."
+ },
+ {
+  "zh": "量环记录需要已矫正的照片，圆弧半径须位于盘面上。",
+  "en": "Ring measurements require a rectified photo and the arcs must lie on the disc."
+ },
+ {
+  "zh": "外缘轮廓无法形成稳定椭圆，请核对实体外缘上的点。",
+  "en": "The outer outline does not form a stable ellipse. Check the points on the physical outer rim."
+ },
+ {
+  "zh": "标定文件发布失败，部分文件未能恢复。备份保留在 ",
+  "en": "Calibration publishing failed and some files could not be restored. Backups remain at"
+ },
+ {
+  "zh": "照片文件过大，请使用小于 256 MB 的图片。",
+  "en": "The photo is too large. Use an image smaller than 256 MB."
+ },
+ {
+  "zh": "outputs.outputPath 不能为空。",
+  "en": "outputs.outputPath cannot be empty."
+ },
+ {
+  "zh": "卷标最长 {0} 个字符（Joliet 标准）。",
+  "en": "Volume labels are limited to {0} characters (Joliet)."
+ },
+ {
+  "zh": "\n\n如果写入已经开始，当前盘片可能无法继续使用。",
+  "en": "If writing has started, the disc may no longer be usable."
+ },
+ {
+  "zh": "\n已自动扩大搜索至 ±{0:0.###} mm。",
+  "en": "Search automatically expanded to ±{0:0.###} mm."
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 已取消流式刻录。\n",
+  "en": "[{0:HH:mm:ss}] Streaming burn canceled."
+ },
+ {
+  "zh": "继续刻录将先擦除盘片，原有数据将丢失。是否继续？",
+  "en": "The disc will be erased before recording. Existing data will be lost. Continue?"
+ },
+ {
+  "zh": "候选 {0} · 偏差 {1:0.###} mm",
+  "en": "Candidate {0} · Error {1:0.###} mm"
+ },
+ {
+  "zh": "已实时更新 · 设计投影 · 3T/6T 类别图",
+  "en": "Updated · Design projection · 3T/6T class map"
+ },
+ {
+  "zh": "线速度 {0:0.######} mm/s · ",
+  "en": "Linear velocity {0:0.######} mm/s ·"
+ },
+ {
+  "zh": "，搜索范围自动扩大至 ±{0:0.###} mm",
+  "en": ", with the search range automatically expanded to ±{0:0.###} mm"
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 任务异常：{1}\n",
+  "en": "[{0:HH:mm:ss}] Job error: {1}"
+ },
+ {
+  "zh": "威宝 DVD-R AZO (43533)（实测）",
+  "en": "Verbatim DVD-R AZO (43533) (measured)"
+ },
+ {
+  "zh": "威宝 DVD-R AZO (43523)（实测）",
+  "en": "Verbatim DVD-R AZO (43523) (measured)"
+ },
+ {
+  "zh": "威宝 DVD+R AZO (43498)（实测）",
+  "en": "Verbatim DVD+R AZO (43498) (measured)"
+ },
+ {
+  "zh": "在画布上点击一个图层以编辑它的位置、旋转与缩放。",
+  "en": "Select a layer on the canvas to edit its position, rotation, and scale."
+ },
+ {
+  "zh": "当前盘片与所选 CD/DVD/蓝光模式不兼容。",
+  "en": "The current disc is not compatible with the selected CD/DVD/Blu-ray mode."
+ },
+ {
+  "zh": "当前 DVD±RW 盘片或刻录机已启用写保护。",
+  "en": "The current DVD±RW disc or recorder is write-protected."
+ },
+ {
+  "zh": "正在擦除 DVD-RW，擦除完成后将继续刻录…",
+  "en": "Erasing the DVD-RW; burning will continue when the erase finishes…"
+ },
+ {
+  "zh": "BD-R 请求：RequestedSpeed=",
+  "en": "BD-R request: RequestedSpeed="
+ },
+ {
+  "zh": "OperationElapsedMs={0}；",
+  "en": "OperationElapsedMs={0}; "
+ },
+ {
+  "zh": "{0} 未报告可用的数据容量（{1} 扇区）。",
+  "en": "The {0} reported no usable data capacity ({1} sectors)."
+ },
+ {
+  "zh": "用户预设，可直接修改或复制后添加更多蓝光参数。",
+  "en": "User preset; edit it directly or copy it to add more Blu-ray parameters."
+ },
+ {
+  "zh": "图层 '{0}' 的 translateXMm",
+  "en": "Layer '{0}' translateXMm"
+ },
+ {
+  "zh": "图层 '{0}' 的 translateYMm",
+  "en": "Layer '{0}' translateYMm"
+ },
+ {
+  "zh": "当前为宽带估值。补齐六个交界后可读取角度标记。",
+  "en": "Estimate from band edges only. Mark all six boundaries to read the angle marks."
+ },
+ {
+  "zh": "核对预测与照片，吻合后勾选「{0}」即可应用。",
+  "en": "Compare the prediction with the photo. If they match, check “{0}” to apply."
+ },
+ {
+  "zh": "各段短弧不一致，请重新核对完整轮廓和弯曲方向。",
+  "en": "The arcs disagree. Recheck the complete outlines and bend directions."
+ },
+ {
+  "zh": "{0}已有读数。请先重标当前交界，再重新选点。",
+  "en": "The {0} already has a reading. Remeasure the selected edge to replace it."
+ },
+ {
+  "zh": "已自动扩大搜索至 ±{0:0.###} mm。",
+  "en": "Search range automatically expanded to ±{0:0.###} mm."
+ },
+ {
+  "zh": "预测曲线需要有限、递增且大于零的观测半径区间。",
+  "en": "Curve prediction requires a finite, increasing observed radius range above zero."
+ },
+ {
+  "zh": "记录中的圆环测量无法恢复用于精细标定的粗估值。",
+  "en": "The saved ring measurements cannot reproduce a valid starting point for fine calibration."
+ },
+ {
+  "zh": "圆环无法拟合出有效的内外半径，请检查所选圆弧。",
+  "en": "The rings did not yield valid inner and outer radii. Check the selected arcs."
+ },
+ {
+  "zh": "一条 6 mm 宽的半径线，贯穿记录区内外缘。",
+  "en": "One 6 mm wide radial line spans the recording area."
+ },
+ {
+  "zh": "同心圆与十字线。沿一条细臂描点，进行精细标定。",
+  "en": "Concentric rings and a cross. Trace one thin arm for fine calibration."
+ },
+ {
+  "zh": "蓝光的 sectors 必须是 32 的倍数。",
+  "en": "Blu-ray sectors must be a multiple of 32."
+ },
+ {
+  "zh": " · {0} px · 每扇区 {1} 个采样",
+  "en": "· {0} px · {1} samples per sector"
+ },
+ {
+  "zh": "全部有效点都会参与计算，结果需与实拍曲线核对。",
+  "en": "All valid points are used in the calculation. Verify the result against the photographed curve."
+ },
+ {
+  "zh": "内半径 {0} mm · 外半径 {1} mm",
+  "en": "Inner radius {0} mm · Outer radius {1} mm"
+ },
+ {
+  "zh": "已实时更新 · 标定预览 · 灰度 {0} 级",
+  "en": "Updated · Calibration preview · {0} grayscale levels"
+ },
+ {
+  "zh": "标定记录|*.calibration.json",
+  "en": "Calibration records|*.calibration.json"
+ },
+ {
+  "zh": "威宝 CD-R AZO (43438)（实测）",
+  "en": "Verbatim CD-R AZO (43438) (measured)"
+ },
+ {
+  "zh": "暂无日志。任务开始后，进度与结果会显示在这里。",
+  "en": "No log yet. Progress and results will appear here once a task starts."
+ },
+ {
+  "zh": "几何参数（半径、扇区、轨距）在工程设置中修改。",
+  "en": "Edit geometry (radii, sectors, and track pitch) in Project settings."
+ },
+ {
+  "zh": "蓝光盘返回了不同的轨道编号，已停止刻录操作。",
+  "en": "The Blu-ray disc returned a different track number; burning stopped."
+ },
+ {
+  "zh": "超时设置={0} 秒，命令耗时={1} 秒；",
+  "en": "timeout={0} s, command time={1} s;"
+ },
+ {
+  "zh": "累计源流读取（含阻塞及块拷贝）={0} 秒，",
+  "en": "total source-stream reads (incl. blocking and block copies)={0} s, "
+ },
+ {
+  "zh": "刻录环境：Build={0}；OS={1}；",
+  "en": "Burn environment: Build={0}; OS={1}; "
+ },
+ {
+  "zh": "；MediaPhysicallyBlank=",
+  "en": "; MediaPhysicallyBlank="
+ },
+ {
+  "zh": "；ForceMediaToBeClosed=",
+  "en": "; ForceMediaToBeClosed="
+ },
+ {
+  "zh": "无法创建 Windows 刻录组件 {0}。",
+  "en": "Could not create the Windows burning component {0}."
+ },
+ {
+  "zh": "TotalSystemBuffer={0}；",
+  "en": "TotalSystemBuffer={0}; "
+ },
+ {
+  "zh": "CD DAO 写入速度：Requested=",
+  "en": "CD DAO write speed: Requested="
+ },
+ {
+  "zh": "DVD 请求：RequestedSpeed=",
+  "en": "DVD request: RequestedSpeed="
+ },
+ {
+  "zh": "图层 '{0}' 的 rotationDeg",
+  "en": "Layer '{0}' rotationDeg"
+ },
+ {
+  "zh": "请等待预测轮廓生成；若预览失败，请重新计算。",
+  "en": "Wait for the predicted outline. If the preview fails, solve again."
+ },
+ {
+  "zh": "短弧结果超出实体盘片范围，请检查方向和两端。",
+  "en": "The estimated radii are outside the physical disc. Check the direction and endpoints."
+ },
+ {
+  "zh": "短弧位置与照片不一致，请检查圈号或照片矫正。",
+  "en": "The arc position disagrees with the photo. Check the band number and photo correction."
+ },
+ {
+  "zh": "先选一个交界，在同一段清楚的弧上分开点三下。",
+  "en": "Select a boundary and click three spaced points along its visible arc."
+ },
+ {
+  "zh": "实测宽度（深／浅／深／浅／深，mm）　{0}",
+  "en": "Measured widths (dark / light / dark / light / dark, mm)　{0}"
+ },
+ {
+  "zh": "可直接读取，也可先在照片上点一下清楚的方向。",
+  "en": "Read now, or click a clear area in the photo first."
+ },
+ {
+  "zh": "此记录不是半黑半白中标图，不能加入边界片段。",
+  "en": "This record is not a half-disc boundary calibration target and cannot contain boundary segments."
+ },
+ {
+  "zh": "请选择装有盘片的刻录机，再点「从光盘读取」。",
+  "en": "Choose the recorder containing your disc, then select Read from disc."
+ },
+ {
+  "zh": "三个采样点靠得太近，请沿同一条圆弧分散选点。",
+  "en": "The three points are too close together. Space them farther apart along this arc."
+ },
+ {
+  "zh": "请选择盘片参数创建标靶，或打开已有标定记录。",
+  "en": "Choose disc parameters to create a target, or open a saved calibration record."
+ },
+ {
+  "zh": "请至少对准三条圆环，并包含靠内与靠外的圆环。",
+  "en": "Align at least three rings, including inner and outer rings."
+ },
+ {
+  "zh": "两条轮廓不能得到有效的联合投影，请检查布点。",
+  "en": "The two outlines do not produce a valid joint projection. Check the marked points."
+ },
+ {
+  "zh": "点击照片上同一条可见曲线，由内向外连续描点。",
+  "en": "Trace the same visible curve in the photo, placing points from inside out."
+ },
+ {
+  "zh": "生成暂存目录应只包含本次作业的顶层输出文件。",
+  "en": "The staging directory must contain only top-level output files from this job."
+ },
+ {
+  "zh": "轨距 p(x) = {0} + ({1})x",
+  "en": "Pitch p(x) = {0} + ({1})x"
+ },
+ {
+  "zh": "预览尺寸必须在 64–8192 px 之间。",
+  "en": "Preview size must be between 64 and 8192 px."
+ },
+ {
+  "zh": "\n最优靠近搜索边界，请补充曲线点或检查点位。",
+  "en": "The best result is near the search boundary. Add curve points or check their positions."
+ },
+ {
+  "zh": " · {0} 扇区 · {1:F1} MiB",
+  "en": "· {0} sectors · {1:F1} MiB"
+ },
+ {
+  "zh": "DVD 混合盘 · {0} 个文件（{1}）",
+  "en": "DVD hybrid disc · {0} files ({1})"
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 标定：{1}\n",
+  "en": "[{0:HH:mm:ss}] Calibration: {1}"
+ },
+ {
+  "zh": "计算未通过，已保留全部 {0} 点。\n{1}",
+  "en": "Calculation failed. All {0} points were retained.\n{1}"
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 完成：{1}\n",
+  "en": "[{0:HH:mm:ss}] Completed: {1}"
+ },
+ {
+  "zh": "包含随盘文件，导出为 CD 数据盘 ISO。",
+  "en": "Files are included; export as a CD data disc ISO."
+ },
+ {
+  "zh": "若音轨生成时启用了延迟交织，则应勾选该选项。",
+  "en": "Enable this if the audio track was generated with delay interleaving."
+ },
+ {
+  "zh": "不附文件时使用音轨；附文件时自动使用数据盘。",
+  "en": "Uses an audio track without files; switches to a data disc when files are included."
+ },
+ {
+  "zh": "{0} 返回的数据被截断（{1} 字节）。",
+  "en": "{0} returned truncated data ({1} bytes)."
+ },
+ {
+  "zh": "刻录适配器报告了无法支持的缓冲区对齐要求。",
+  "en": "The burner adapter reported an unsupported buffer alignment requirement."
+ },
+ {
+  "zh": "；RequestedSectorType=",
+  "en": "; RequestedSectorType="
+ },
+ {
+  "zh": "UpdateEventCount={0}；",
+  "en": "UpdateEventCount={0}; "
+ },
+ {
+  "zh": "UsedSystemBuffer={0}；",
+  "en": "UsedSystemBuffer={0}; "
+ },
+ {
+  "zh": "FreeSystemBuffer={0}。",
+  "en": "FreeSystemBuffer={0}."
+ },
+ {
+  "zh": "光驱返回的 CD 预刻槽引出区信息不完整。",
+  "en": "The drive returned incomplete CD pregroove lead-out information."
+ },
+ {
+  "zh": "实际可写 {0} 扇区（{1} MiB），",
+  "en": "{0} sectors actually writable ({1} MiB), "
+ },
+ {
+  "zh": "图层 '{0}' 的 name 不能为空。",
+  "en": "Layer '{0}' name must not be empty."
+ },
+ {
+  "zh": "沿同一条半径，从内到外依次点六个宽带交界。",
+  "en": "Mark the six band boundaries along one radius, from the centre outwards."
+ },
+ {
+  "zh": "请核对生成参数中的半径、扇区数和盘片设置。",
+  "en": "Check the radii, sector count and disc settings."
+ },
+ {
+  "zh": "短弧位置过于集中。请测量靠内和靠外的短弧。",
+  "en": "The arcs are too close together. Measure arcs nearer the inner and outer edges."
+ },
+ {
+  "zh": "已看清两端和整段弧，未满一圈，途中没有折返",
+  "en": "Both tips and the whole arc are visible, with no reversal or full turn"
+ },
+ {
+  "zh": "请量取第 1、3 条深带各自的内缘和外缘。",
+  "en": "Measure both edges of dark bands 1 and 3."
+ },
+ {
+  "zh": "沿照片中清楚的交界描点，包括弯曲和折返处。",
+  "en": "Trace the clear boundary in the photo, including bends and turns."
+ },
+ {
+  "zh": "所选圆环过于集中，请补选靠内或靠外的圆环。",
+  "en": "The selected rings are too close together. Include a ring nearer the inner or outer edge."
+ },
+ {
+  "zh": "必须是 32 的倍数且不超过 {0:N0}",
+  "en": "must be a multiple of 32 and no greater than {0:N0}"
+ },
+ {
+  "zh": "最多 16 个字符（Joliet 标准）。",
+  "en": "Up to 16 characters (Joliet)."
+ },
+ {
+  "zh": " · 抖动 {0:0}% · {1} px",
+  "en": "· Dither {0:0}% · {1} px"
+ },
+ {
+  "zh": "CD 数据盘（DAO） · 文件位于{0}",
+  "en": "CD data disc (DAO) · Files at the {0}"
+ },
+ {
+  "zh": "位长 {0:0.######} nm · ",
+  "en": "Bit length {0:0.######} nm ·"
+ },
+ {
+  "zh": "已保存图案、生成参数、照片、边界和曲线点。",
+  "en": "Saved the pattern, generation parameters, photo, boundaries, and curve points."
+ },
+ {
+  "zh": "已请求取消；光驱可能仍需一段时间才能停止。",
+  "en": "Cancellation requested. The drive may need some time to stop."
+ },
+ {
+  "zh": "标定图案已变化，请重新保存记录并确认刻录。",
+  "en": "The calibration pattern changed. Save the record and confirm the burn again."
+ },
+ {
+  "zh": "正在刷新 {0} px DVD 实时预览…",
+  "en": "Refreshing {0} px DVD live preview…"
+ },
+ {
+  "zh": "正在刷新 {0} px DVD 标定预览…",
+  "en": "Refreshing {0} px DVD calibration preview…"
+ },
+ {
+  "zh": "请先在标定工作区创建图案，再回到这里刻录。",
+  "en": "Create a pattern in the calibration workspace, then return here to burn it."
+ },
+ {
+  "zh": "ISO 镜像|*.iso|所有文件|*.*",
+  "en": "ISO image|*.iso|All files|*.*"
+ },
+ {
+  "zh": "[{0:HH:mm:ss}] 任务已取消\n",
+  "en": "[{0:HH:mm:ss}] Job cancelled"
+ },
+ {
+  "zh": "无随盘文件时生成音轨，推荐 WAV 格式。",
+  "en": "Without included files, an audio track is generated. WAV format is recommended."
+ },
+ {
+  "zh": "蓝光扇区数不能超过单层容量 {0:N0}。",
+  "en": "The Blu-ray sector count cannot exceed the single-layer capacity of {0:N0}."
+ },
+ {
+  "zh": "允许覆写已写入的 DVD±RW（整盘擦除）",
+  "en": "Allow overwriting a used DVD±RW (erases the whole disc)"
+ },
+ {
+  "zh": "4 级即四种颜色，可呈现出更好的图案细节。",
+  "en": "Four levels use four tones to reveal finer details."
+ },
+ {
+  "zh": "交换暗部与亮部。实盘明暗仍以标定结果为准。",
+  "en": "Swap dark and light regions. Actual disc contrast depends on calibration."
+ },
+ {
+  "zh": "IMAPI 返回了超过接收缓冲区的长度。",
+  "en": "IMAPI returned a length larger than the receive buffer."
+ },
+ {
+  "zh": "无法提交 {0} 字节的完整蓝光写入块。",
+  "en": "so a complete {0}-byte Blu-ray write block cannot be submitted."
+ },
+ {
+  "zh": "BD-R 写入速度：Requested=",
+  "en": "BD-R write speed: Requested="
+ },
+ {
+  "zh": "无备用区顺序写入 BD-R：{0} 扇区",
+  "en": "Sequential no-spare BD-R write: {0} sectors"
+ },
+ {
+  "zh": "未格式化的单层顺序 BD-R（无备用区）",
+  "en": "unformatted single-layer sequential BD-R (no spare area)"
+ },
+ {
+  "zh": "（设备返回的设置值；实时吞吐另行测量）。",
+  "en": " (the value the device returned; live throughput is measured separately)."
+ },
+ {
+  "zh": "预设 '{0}' 的轨距系数无效：{1}",
+  "en": "Preset '{0}' has invalid track-pitch coefficients: {1}"
+ },
+ {
+  "zh": "当前盘型、容量或绘图区不支持角度粗标定。",
+  "en": "This disc type, capacity or drawing range does not support coarse angle calibration."
+ },
+ {
+  "zh": "请进入当前标定图案的描点页面后计算参数。",
+  "en": "Open the tracing step for the current target, then solve its parameters."
+ },
+ {
+  "zh": "请先完成并确认照片矫正，再描点计算参数。",
+  "en": "Complete and confirm photo rectification before tracing and solving."
+ },
+ {
+  "zh": "内缘间距（1→2／2→3，mm）　{0}",
+  "en": "Measured inner-edge spacings (1→2 / 2→3, mm)　{0}"
+ },
+ {
+  "zh": "交界的径向顺序不符，请核对带号和内外缘。",
+  "en": "The radial order is inconsistent. Check the band numbers and sides."
+ },
+ {
+  "zh": "读取后，盘缘上的色带标出参与计算的区域。",
+  "en": "After reading, arcs along the rim show which areas contributed."
+ },
+ {
+  "zh": "此标靶没有十字臂，请使用精标盘照片描线。",
+  "en": "This target has no cross arms. Trace curves on a fine calibration disc photo."
+ },
+ {
+  "zh": "圆弧采样点必须位于中心孔与盘片外缘之间。",
+  "en": "Place each arc point between the centre hole and the outer disc edge."
+ },
+ {
+  "zh": "标定图案 PNG 与固定参考文件不一致。",
+  "en": "The calibration pattern PNG does not match the fixed reference file."
+ },
+ {
+  "zh": "请选择 12 cm 或 8 cm 光盘。",
+  "en": "Choose a 12 cm or 8 cm disc."
+ },
+ {
+  "zh": "滚轮缩放，右键平移；拖动控制点贴合边缘。",
+  "en": "Scroll to zoom, right-drag to pan; drag control points to fit the edge."
+ },
+ {
+  "zh": "刻录图案预览 · 关闭预览后继续照片标定",
+  "en": "Burn pattern preview · Close the preview to continue photo calibration"
+ },
+ {
+  "zh": "生成文件名存在大小写重名，无法安全发布。",
+  "en": "Output names differ only by case and cannot be published safely."
+ },
+ {
+  "zh": "请先按照片尺寸上限载入图片，再进行矫正。",
+  "en": "Load the image within the photo dimension limit before rectifying it."
+ },
+ {
+  "zh": "无法写入应用所在目录，请手动下载新版本。",
+  "en": "The application folder is not writable. Download the new version manually."
+ },
+ {
+  "zh": "刻录来源或选项已变化，请重新确认后开始。",
+  "en": "The burn source or options changed. Confirm them again before starting."
+ },
+ {
+  "zh": "影调={0} 级/{1:0}% 抖动。\n",
+  "en": "Tone={0} levels/{1:0}% dither."
+ },
+ {
+  "zh": "请先在设计页导入图片，合成图会自动填入。",
+  "en": "Import an image on the Design page first. The composite will be filled in automatically."
+ },
+ {
+  "zh": "可直接粘贴或浏览已生成的 ISO 镜像。",
+  "en": "Paste a path or browse for a generated ISO image."
+ },
+ {
+  "zh": "环 {0} · 半径 {1:F3} mm",
+  "en": "Ring {0} · radius {1:F3} mm"
+ },
+ {
+  "zh": "蓝光轨道已标记为损坏，已停止刻录操作。",
+  "en": "The Blu-ray track is marked damaged; burning stopped."
+ },
+ {
+  "zh": "蓝光封盘后未返回有效的已完成盘片状态。",
+  "en": "The Blu-ray disc did not report a valid finalized state after closing."
+ },
+ {
+  "zh": "蓝光闭轨后未返回有效的已写入盘片状态。",
+  "en": "The Blu-ray disc did not report a valid written state after closing the track."
+ },
+ {
+  "zh": "蓝光写入必须从源数据流的起始位置开始。",
+  "en": "Blu-ray writing must start at the beginning of the source stream."
+ },
+ {
+  "zh": "正在完成 DVD 写入并关闭刻录会话…",
+  "en": "Finishing the DVD write and closing the burn session…"
+ },
+ {
+  "zh": "光驱未报告当前 BD-R 的有效容量。",
+  "en": "The drive did not report a valid capacity for this BD-R."
+ },
+ {
+  "zh": "DVD 写入速度：Requested=",
+  "en": "DVD write speed: Requested="
+ },
+ {
+  "zh": "超出 {0} 扇区（{1} MiB）。",
+  "en": "short by {0} sectors ({1} MiB)."
+ },
+ {
+  "zh": "{0} 当前状态不可写入，已取消刻录。",
+  "en": "The {0} is not currently writable; burn cancelled."
+ },
+ {
+  "zh": "{0} 预设 id '{1}' 重复。",
+  "en": "{0} preset id '{1}' is duplicated."
+ },
+ {
+  "zh": "预设 '{0}' 的 {1} {2}。",
+  "en": "Preset '{0}' {1} {2}."
+ },
+ {
+  "zh": "新建标靶或打开标定记录后可查看实际图案",
+  "en": "Create a target or open a calibration record to see its pattern"
+ },
+ {
+  "zh": "点照片上的{0}，确定本次读数的方向。",
+  "en": "Click the {0} on the photo to set the reading direction."
+ },
+ {
+  "zh": "矫正预览已生成，请核对盘片边界并确认。",
+  "en": "Rectified preview is ready. Check the disc boundaries and confirm."
+ },
+ {
+  "zh": "请量取最内和最外两条宽带靠盘心的边缘。",
+  "en": "Measure the edge facing the disc centre on both the innermost and outermost bands."
+ },
+ {
+  "zh": "蓝光 parameters 不能为空。",
+  "en": "Blu-ray parameters cannot be null."
+ },
+ {
+  "zh": "照片尺寸上限应为 64–{0} 像素。",
+  "en": "The photo dimension limit must be 64–{0} pixels."
+ },
+ {
+  "zh": "矫正图片尺寸应为 32–{0} 像素。",
+  "en": "Rectified image dimensions must be 32–{0} pixels."
+ },
+ {
+  "zh": "合成图会自动生成本页输入。 · {0}",
+  "en": "The composite will automatically provide this page’s input. · {0}"
+ },
+ {
+  "zh": "已保留 {0} 点 · 偏离点自动标红",
+  "en": "{0} points retained · Outliers are highlighted in red"
+ },
+ {
+  "zh": "当前任务生成文件，不包含可视图片预览。",
+  "en": "This task generates a file without an image preview."
+ },
+ {
+  "zh": "标定记录中的照片尺寸无效，请重新导入。",
+  "en": "The photo dimensions in the calibration record are invalid. Import the photo again."
+ },
+ {
+  "zh": "正在刷新 {0} px 蓝光成品读回…",
+  "en": "Refreshing {0} px Blu-ray artifact readback…"
+ },
+ {
+  "zh": "正在刷新 {0} px 蓝光设计投影…",
+  "en": "Refreshing {0} px Blu-ray design projection…"
+ },
+ {
+  "zh": "正在用全部 {0} 个曲线点计算参数…",
+  "en": "Calculating parameters using all {0} curve points…"
+ },
+ {
+  "zh": "请先选择生成的 CD 音轨或 ISO。",
+  "en": "Select a generated CD audio track or ISO first."
+ },
+ {
+  "zh": "DVD 的扇区数必须是 16 的倍数。",
+  "en": "The DVD sector count must be a multiple of 16."
+ },
+ {
+  "zh": "{0}之前要保存对「{1}」的更改吗？",
+  "en": "Save changes to “{1}” before continuing ({0})?"
+ },
+ {
+  "zh": "威宝 BD-R (64099)（实测）",
+  "en": "Verbatim BD-R (64099) (measured)"
+ },
+ {
+  "zh": "威宝 BD-R (64293)（实测）",
+  "en": "Verbatim BD-R (64293) (measured)"
+ },
+ {
+  "zh": "HarmonyOS Sans 字体协议",
+  "en": "HarmonyOS Sans Font License"
+ },
+ {
+  "zh": "全能的光盘盘面可见图像生成与刻录工作台",
+  "en": "Create and burn visible artwork on optical discs"
+ },
+ {
+  "zh": "累计 WRITE 命令={0} 秒，",
+  "en": "total WRITE commands={0} s, "
+ },
+ {
+  "zh": "蓝光流长度与计划写入的扇区数不一致。",
+  "en": "The Blu-ray stream length does not match the planned sector count."
+ },
+ {
+  "zh": "光驱返回的 CD 预刻槽信息不完整。",
+  "en": "The drive returned incomplete CD pregroove (ATIP) information."
+ },
+ {
+  "zh": "双层 DVD 不适用于单层盘片标定。",
+  "en": "Dual-layer DVDs cannot be used for single-layer disc calibration."
+ },
+ {
+  "zh": "光驱未报告有效的 DVD 总扇区数。",
+  "en": "The drive did not report a valid total DVD sector count."
+ },
+ {
+  "zh": "刻录流程已完成，但设备未能正常释放。",
+  "en": "The burn finished, but the device was not released cleanly."
+ },
+ {
+  "zh": "顺序 BD-R 通道只接受蓝光数据。",
+  "en": "The sequential BD-R path only accepts Blu-ray data."
+ },
+ {
+  "zh": "DVD 刻后校验：已关闭（NONE）",
+  "en": "DVD post-burn verification: off (NONE)"
+ },
+ {
+  "zh": "必须是 32 的倍数且不超过 {0}",
+  "en": "must be a multiple of 32 and no more than {0}"
+ },
+ {
+  "zh": "图层 id '{0}' 为空或重复。",
+  "en": "Layer id '{0}' is empty or duplicated."
+ },
+ {
+  "zh": "{0} 必须是大于 0 的有限数值。",
+  "en": "{0} must be a finite number greater than 0."
+ },
+ {
+  "zh": "已确认预测与照片吻合，可以应用参数。",
+  "en": "The prediction matches the photo. You can apply the parameters."
+ },
+ {
+  "zh": "单线取点记录中的交界或照片状态无效。",
+  "en": "The selected edge or photo state in the single-ray record is invalid."
+ },
+ {
+  "zh": "已核对两条预测交界与实拍可见部分吻合",
+  "en": "I checked both predicted boundaries against the visible photographed sections"
+ },
+ {
+  "zh": "该位置接近照片投影地平线，无法矫正。",
+  "en": "This point is too close to the photo's projective horizon to rectify."
+ },
+ {
+  "zh": "标定图案与生成参数或图案规则不一致。",
+  "en": "The calibration pattern does not match its generation parameters or pattern rules."
+ },
+ {
+  "zh": "宽带测量用于估算下一张盘的初始半径。",
+  "en": "Use the band measurements to estimate initial radii for the next disc."
+ },
+ {
+  "zh": "拖到盘片实体外缘；不要沿刻录区边界。",
+  "en": "Drag to the physical outer edge of the disc, not the recorded area."
+ },
+ {
+  "zh": "已删除此点；点击照片继续描当前曲线。",
+  "en": "Point deleted. Click the photo to continue tracing this curve."
+ },
+ {
+  "zh": "蓝光预设缺少 parameters。",
+  "en": "The Blu-ray preset is missing parameters."
+ },
+ {
+  "zh": "；请保留该目录并检查文件占用后恢复。",
+  "en": ". Keep this directory, check for locked files, and restore the backups."
+ },
+ {
+  "zh": "标定照片为空或过大，请重新导入照片。",
+  "en": "The calibration photo is empty or too large. Import the photo again."
+ },
+ {
+  "zh": "每扇区采样必须在 1–{0} 之间。",
+  "en": "Samples per sector must be between 1 and {0}."
+ },
+ {
+  "zh": "必须大于 innerRadiusMm",
+  "en": "must be greater than innerRadiusMm"
+ },
+ {
+  "zh": "位长 {0:0.######} nm",
+  "en": "Bit length {0:0.######} nm"
+ },
+ {
+  "zh": "已实时更新 · 读回模拟 · {0}",
+  "en": "Updated · Readback simulation · {0}"
+ },
+ {
+  "zh": "总扇区数超出 DVD 引擎支持范围。",
+  "en": "The total sector count exceeds the DVD engine’s supported range."
+ },
+ {
+  "zh": "输出音轨 (.wav / .raw)",
+  "en": "Audio track output (.wav / .raw)"
+ },
+ {
+  "zh": "铼德 DVD+R E时代系列（实测）",
+  "en": "Ritek DVD+R E-Series (measured)"
+ },
+ {
+  "zh": "铼德 DVD-R E时代系列（实测）",
+  "en": "Ritek DVD-R E-Series (measured)"
+ },
+ {
+  "zh": "前往刻录工作区，选择设备并确认写入。",
+  "en": "Open Burn to select a recorder and confirm writing."
+ },
+ {
+  "zh": "生成镜像或音轨，用外部刻录软件写入。",
+  "en": "Generate an image or audio track for external burning software."
+ },
+ {
+  "zh": "未返回有效的设备 Sense 数据",
+  "en": "No valid device sense data returned"
+ },
+ {
+  "zh": "蓝光会话仍有未释放的刻录机访问权。",
+  "en": "The Blu-ray session still holds unreleased recorder access."
+ },
+ {
+  "zh": "光驱返回的 CD 预刻槽地址无效。",
+  "en": "The drive returned an invalid CD pregroove (ATIP) address."
+ },
+ {
+  "zh": "光驱返回的 CD 引出区地址无效。",
+  "en": "The drive returned an invalid CD lead-out address."
+ },
+ {
+  "zh": "刷新 BD-R 缓存（请等待完成）",
+  "en": "Flush BD-R cache (please wait)"
+ },
+ {
+  "zh": "关闭 BD-R 轨道（请等待完成）",
+  "en": "Close BD-R track (please wait)"
+ },
+ {
+  "zh": "封闭 BD-R 盘片（请等待完成）",
+  "en": "Finalize BD-R disc (please wait)"
+ },
+ {
+  "zh": "检查未格式化 BD-R 的原始容量",
+  "en": "Check the raw capacity of the unformatted BD-R"
+ },
+ {
+  "zh": "设置 DVD 刻后校验为 NONE",
+  "en": "Set DVD post-burn verification to NONE"
+ },
+ {
+  "zh": "边界片段的点数不能超过 4000。",
+  "en": "Boundary segments support at most 4,000 points in total."
+ },
+ {
+  "zh": "正在读取盘片总扇区数和可用扇区数…",
+  "en": "Reading total and writable sectors from the disc…"
+ },
+ {
+  "zh": "光驱报告的 DVD 可写容量无效。",
+  "en": "The drive reported an invalid writable DVD capacity."
+ },
+ {
+  "zh": "照片变换必须包含 9 个有限数值。",
+  "en": "The photo transform must contain 9 finite numbers."
+ },
+ {
+  "zh": "保存的圆弧采样点与实测半径不一致。",
+  "en": "The saved arc points do not match the measured radius."
+ },
+ {
+  "zh": "请分别输入实体外缘和实体内缘轮廓。",
+  "en": "Mark the physical outer rim and center-hole edge separately."
+ },
+ {
+  "zh": "标定图案像素与固定参考文件不一致。",
+  "en": "The calibration pattern pixels do not match the fixed reference file."
+ },
+ {
+  "zh": "尚未确认照片矫正，不能保存描线点。",
+  "en": "Confirm photo rectification before saving trace points."
+ },
+ {
+  "zh": "轮廓在当前轨距参数下没有有效映射。",
+  "en": "The outline has no valid mapping with the current track-pitch parameters."
+ },
+ {
+  "zh": "发布路径不能是符号链接或目录联接：",
+  "en": "A publishing path cannot be a symbolic link or junction:"
+ },
+ {
+  "zh": "每条初始轮廓应有 5–64 个点。",
+  "en": "Each initial contour must have 5–64 points."
+ },
+ {
+  "zh": "bluRay 设置只用于蓝光工程。",
+  "en": "bluRay settings are only valid for Blu-ray projects."
+ },
+ {
+  "zh": "预设 JSON 路径必须包含目录。",
+  "en": "The preset JSON path must include a directory."
+ },
+ {
+  "zh": "更新已下载。请修正设置后再次安装。",
+  "en": "The update has been downloaded. Fix the settings, then install it again."
+ },
+ {
+  "zh": "\n已标记 {0} 个偏离较大的点。",
+  "en": "Flagged {0} outlier points."
+ },
+ {
+  "zh": " · 绘图 LBA {0}–{1}",
+  "en": "· Drawing LBA {0}–{1}"
+ },
+ {
+  "zh": "CD 音轨或 ISO 文件不存在。",
+  "en": "The CD audio track or ISO file does not exist."
+ },
+ {
+  "zh": "DVD 标定预览引擎未能完成渲染。",
+  "en": "The DVD calibration preview engine could not complete rendering."
+ },
+ {
+  "zh": "DVD 读回模拟引擎未能完成渲染。",
+  "en": "The DVD readback simulation engine could not complete rendering."
+ },
+ {
+  "zh": "正在刷新 {0} px 实时预览…",
+  "en": "Refreshing {0} px live preview…"
+ },
+ {
+  "zh": "正在刷新 {0} px 标定预览…",
+  "en": "Refreshing {0} px calibration preview…"
+ },
+ {
+  "zh": "正在请求停止刻录，请不要取出盘片…",
+  "en": "Requesting the burn to stop. Do not remove the disc…"
+ },
+ {
+  "zh": "设备={0}；请求速度={1}。\n",
+  "en": "Device={0}; requested speed={1}."
+ },
+ {
+  "zh": "实时 {0:0.00} MiB/s",
+  "en": "Current {0:0.00} MiB/s"
+ },
+ {
+  "zh": "蓝光的扇区数必须是 32 的倍数。",
+  "en": "The Blu-ray sector count must be a multiple of 32."
+ },
+ {
+  "zh": "请选择 DVD ISO 输出位置。",
+  "en": "Choose an output location for the DVD ISO."
+ },
+ {
+  "zh": "PHILIPS DVD+R（实测）",
+  "en": "PHILIPS DVD+R (measured)"
+ },
+ {
+  "zh": "导出当前预览图到输入来源所在文件夹",
+  "en": "Export the current preview to the input source folder"
+ },
+ {
+  "zh": "回到打开的工程，从设计工作区继续。",
+  "en": "Return to the open project and continue in Design."
+ },
+ {
+  "zh": "，Windows 报告设备未连接",
+  "en": ", Windows reports the device is not connected"
+ },
+ {
+  "zh": "蓝光盘未报告有效的可写轨道编号。",
+  "en": "The Blu-ray disc did not report a valid writable track number."
+ },
+ {
+  "zh": "；ForceOverwrite=",
+  "en": "; ForceOverwrite="
+ },
+ {
+  "zh": "LastReadLba={0}；",
+  "en": "LastReadLba={0}; "
+ },
+ {
+  "zh": "初始化 Windows 刻录接口",
+  "en": "Initialize the Windows burning interface"
+ },
+ {
+  "zh": "使用 CD DAO 保守回退速度",
+  "en": "Use the conservative CD DAO fallback speed"
+ },
+ {
+  "zh": "设置 DVD 缓冲保护和封盘选项",
+  "en": "Set DVD buffer protection and finalize options"
+ },
+ {
+  "zh": "；MMC 当前配置档=0x{0}",
+  "en": "; MMC current profile=0x{0}"
+ },
+ {
+  "zh": "{0} 不是空白盘，已取消刻录。",
+  "en": "The {0} is not blank; burn cancelled."
+ },
+ {
+  "zh": "无法识别的工程字段 '{0}'。",
+  "en": "Unrecognized project field '{0}'."
+ },
+ {
+  "zh": "请先选择一个候选并查看预测轮廓。",
+  "en": "Select a candidate and inspect its predicted outline."
+ },
+ {
+  "zh": "短弧转角无法对应有效的盘片半径。",
+  "en": "The arc angle does not correspond to a valid disc radius."
+ },
+ {
+  "zh": "时标分布示意 · 刻录请生成音轨",
+  "en": "Clock mark schematic · Generate the audio track to burn"
+ },
+ {
+  "zh": "半盘边界片段不能超过 64 段。",
+  "en": "A half-disc target supports at most 64 boundary segments."
+ },
+ {
+  "zh": "边界拟合需要对应的中标图案记录。",
+  "en": "Boundary fitting requires the matching boundary calibration target record."
+ },
+ {
+  "zh": "同一角点或共享角点不能重复录入。",
+  "en": "The same corner or a shared corner cannot be entered more than once."
+ },
+ {
+  "zh": "已标记 {0} 个偏离较大的点。",
+  "en": "Marked {0} points with large deviations."
+ },
+ {
+  "zh": "时钟标尺需要矫正后的正方形照片。",
+  "en": "The clock scale requires a rectified square photo."
+ },
+ {
+  "zh": "扇区校验需要矫正后的正方形照片。",
+  "en": "Sector verification requires a rectified square photo."
+ },
+ {
+  "zh": "盘型或刻录机已切换，请重新读取。",
+  "en": "The disc type or recorder changed. Read the disc again."
+ },
+ {
+  "zh": "请沿同一条圆环的内缘标出三个点。",
+  "en": "Place three points along the inner edge of the same ring."
+ },
+ {
+  "zh": "正在用已对准的圆环估算内外半径…",
+  "en": "Estimating inner and outer radii from the aligned rings…"
+ },
+ {
+  "zh": "照片变换退化，无法恢复盘面坐标。",
+  "en": "The photo transform is degenerate and cannot recover disc coordinates."
+ },
+ {
+  "zh": "照片中的盘片过小，无法稳定矫正。",
+  "en": "The disc is too small in the photo for reliable rectification."
+ },
+ {
+  "zh": "源控制点不在生成时的绘图环带内。",
+  "en": "A source control point is outside the drawing annulus used to generate the pattern."
+ },
+ {
+  "zh": "拖到实体内缘；不要沿透明塑料环。",
+  "en": "Drag to the physical inner edge, not the transparent plastic ring."
+ },
+ {
+  "zh": "标靶预览 · 导入照片后开始矫正",
+  "en": "Target preview · Import a photo to start rectification"
+ },
+ {
+  "zh": "DVD 兼容性（实验性）：{0}",
+  "en": "DVD compatibility (experimental): {0}"
+ },
+ {
+  "zh": "dvdPresets 不能为空。",
+  "en": "dvdPresets cannot be null."
+ },
+ {
+  "zh": "应用内更新仅支持便携版 EXE。",
+  "en": "In-app updates are only supported for the portable EXE."
+ },
+ {
+  "zh": "请关闭当前对话框后重新检查更新。",
+  "en": "Close the current dialog, then check for updates again."
+ },
+ {
+  "zh": "请先关闭其他应用窗口再安装更新。",
+  "en": "Close the other application windows before installing the update."
+ },
+ {
+  "zh": " · {0} 扇区 · {1}\n",
+  "en": "· {0} sectors · {1}"
+ },
+ {
+  "zh": "CD 数据盘 · 文件位于{0}",
+  "en": "CD data disc · Files at the {0}"
+ },
+ {
+  "zh": "{0}，最终以刻录机采用值为准。",
+  "en": "{0}; the actual speed is determined by the recorder."
+ },
+ {
+  "zh": "图片已生成，但无法在界面中加载。",
+  "en": "The image was generated but could not be loaded in the interface."
+ },
+ {
+  "zh": "按标定图案记录的盘型与参数写入。",
+  "en": "Writes using the disc type and parameters stored in the calibration pattern."
+ },
+ {
+  "zh": "标定图案 · {0} · {1}",
+  "en": "Calibration pattern · {0} · {1}"
+ },
+ {
+  "zh": "正在流式刻录，进度见底部任务栏。",
+  "en": "Streaming burn in progress. See the task bar below."
+ },
+ {
+  "zh": "正在读取当前盘片支持的刻录速度…",
+  "en": "Reading the disc’s supported write speeds…"
+ },
+ {
+  "zh": "流式刻录已经完成，可以取出光盘。",
+  "en": "The streaming burn is complete. You can remove the disc."
+ },
+ {
+  "zh": "确保磁盘预留适量空间 · {0}",
+  "en": "Make sure sufficient disk space is available · {0}"
+ },
+ {
+  "zh": "等待生成的 CD 音轨或 ISO",
+  "en": "Waiting for a generated CD audio track or ISO"
+ },
+ {
+  "zh": "未完成的输出文件可能留在磁盘上。",
+  "en": "Incomplete output files may remain on disk."
+ },
+ {
+  "zh": "正在生成 CD 数据盘 ISO…",
+  "en": "Generating CD data disc ISO…"
+ },
+ {
+  "zh": "蓝光外半径不能超过 60 mm。",
+  "en": "The Blu-ray outer radius cannot exceed 60 mm."
+ },
+ {
+  "zh": "请选择 CD ISO 输出位置。",
+  "en": "Choose an output location for the CD ISO."
+ },
+ {
+  "zh": "选择要放入 CD 数据盘的文件夹",
+  "en": "Select a folder to include on the CD data disc"
+ },
+ {
+  "zh": "矫正预览 · 确认后可量环或描线",
+  "en": "Rectified preview · confirm to measure rings or trace a curve"
+ },
+ {
+  "zh": "{0} 返回了无效的长度字段。",
+  "en": "{0} returned an invalid length field."
+ },
+ {
+  "zh": "蓝光会话已经取得刻录机访问权。",
+  "en": "The Blu-ray session already has recorder access."
+ },
+ {
+  "zh": "失败块：源流读取={0} 秒，",
+  "en": "Failed block: source read={0} s, "
+ },
+ {
+  "zh": "LBA={0}，扇区={1}，",
+  "en": "LBA={0}, sectors={1}, "
+ },
+ {
+  "zh": "光驱返回的介质标识信息不完整。",
+  "en": "The drive returned incomplete media identification data."
+ },
+ {
+  "zh": "自动选择最低写入速度：{0}×",
+  "en": "Automatically selected the lowest write speed: {0}×"
+ },
+ {
+  "zh": "BD-R 刻后读回校验：未启用",
+  "en": "BD-R post-burn read-back verification: disabled"
+ },
+ {
+  "zh": "CD 不是空白盘，已取消刻录。",
+  "en": "The CD is not blank; burn cancelled."
+ },
+ {
+  "zh": "不支持的标定会话版本 {0}。",
+  "en": "Unsupported calibration session version {0}."
+ },
+ {
+  "zh": "当前标靶没有用于测量的短圆弧。",
+  "en": "This target has no short arcs to measure."
+ },
+ {
+  "zh": "六个交界已量完，可以估算半径。",
+  "en": "All six edges have been measured. You can now estimate the radii."
+ },
+ {
+  "zh": "可点选条纹清楚的位置优先读取。",
+  "en": "Click a clear area to read it first."
+ },
+ {
+  "zh": "第 {0} 段 · {1} 点",
+  "en": "Segment {0} · {1} points"
+ },
+ {
+  "zh": "光驱未报告有效的 CD 容量。",
+  "en": "The drive did not report a valid CD capacity."
+ },
+ {
+  "zh": "此圈已标 {0} / 3 点。",
+  "en": "{0} of 3 points placed on this ring."
+ },
+ {
+  "zh": "标定图案的可绘制扇区范围无效。",
+  "en": "The calibration pattern's drawable sector range is invalid."
+ },
+ {
+  "zh": "标定图案类型与记录版本不匹配。",
+  "en": "The calibration pattern type does not match the record version."
+ },
+ {
+  "zh": "蓝光预设 JSON 不能为空。",
+  "en": "Blu-ray preset JSON cannot be null."
+ },
+ {
+  "zh": "蓝光预设 JSON 格式无效。",
+  "en": "Invalid Blu-ray preset JSON."
+ },
+ {
+  "zh": "新建工程与临时缓存的默认位置。",
+  "en": "Default locations for new projects and temporary files."
+ },
+ {
+  "zh": "sectors 必须大于 0。",
+  "en": "sectors must be greater than 0."
+ },
+ {
+  "zh": "cdPresets 不能为空。",
+  "en": "cdPresets cannot be null."
+ },
+ {
+  "zh": "DVD 预设不能是 null。",
+  "en": "A DVD preset cannot be null."
+ },
+ {
+  "zh": "当前系统架构不支持应用内更新。",
+  "en": "This system architecture does not support in-app updates."
+ },
+ {
+  "zh": "更新文件与当前系统架构不匹配。",
+  "en": "The update file does not match this system architecture."
+ },
+ {
+  "zh": "另一个实例正在下载或安装更新。",
+  "en": "Another instance is downloading or installing an update."
+ },
+ {
+  "zh": "光驱：{0}\n盘片：{1}\n\n",
+  "en": "Drive: {0}\nDisc: {1}"
+ },
+ {
+  "zh": "总扇区数超出蓝光引擎支持范围。",
+  "en": "The total sector count exceeds the Blu-ray engine’s supported range."
+ },
+ {
+  "zh": "进入此页面后会检测本机刻录机。",
+  "en": "Recorders on this computer will be detected when you open this page."
+ },
+ {
+  "zh": "；文件位于内圈，图案位于其外侧",
+  "en": "; files on the inner ring, drawing outside them"
+ },
+ {
+  "zh": "；文件位于外圈，图案位于其内侧",
+  "en": "; files on the outer ring, drawing inside them"
+ },
+ {
+  "zh": "工程文件已移动或删除：\n{0}",
+  "en": "The project file has been moved or deleted:\n{0}"
+ },
+ {
+  "zh": "设计页合成图源（{0} px）",
+  "en": "Design composite ({0} px)"
+ },
+ {
+  "zh": "请选择蓝光 ISO 输出位置。",
+  "en": "Choose an output location for the Blu-ray ISO."
+ },
+ {
+  "zh": "选择生成的 CD 音轨或数据盘",
+  "en": "Select a generated CD track or data disc"
+ },
+ {
+  "zh": "铼德 BD-R 10x（实测）",
+  "en": "Ritek BD-R 10x (measured)"
+ },
+ {
+  "zh": "铼德 BD-R 12x（实测）",
+  "en": "Ritek BD-R 12x (measured)"
+ },
+ {
+  "zh": "沿一条十字臂描点，拟合盘片参数",
+  "en": "Fit disc parameters from one traced cross arm"
+ },
+ {
+  "zh": "停止正在运行且支持取消的任务。",
+  "en": "Stop the current task if it supports cancellation."
+ },
+ {
+  "zh": "选择候选并查看照片上的预测曲线",
+  "en": "Select a candidate to see its predicted curves on the photo"
+ },
+ {
+  "zh": "已对照整条曲线，形状与绕圈一致",
+  "en": "I checked the full curve; its shape and turns match"
+ },
+ {
+  "zh": "适应窗口（双击空白处同样生效）",
+  "en": "Fit to window (or double-click empty space)"
+ },
+ {
+  "zh": "蓝光格式容量描述符长度无效。",
+  "en": "Blu-ray format capacity descriptor length is invalid."
+ },
+ {
+  "zh": "等待蓝光盘确认封盘完成超时。",
+  "en": "Timed out waiting for the Blu-ray disc to confirm it was finalized."
+ },
+ {
+  "zh": "等待蓝光盘确认闭轨完成超时。",
+  "en": "Timed out waiting for the Blu-ray disc to confirm the track was closed."
+ },
+ {
+  "zh": "等待蓝光盘完成写入收尾超时。",
+  "en": "Timed out waiting for the Blu-ray disc to finish writing."
+ },
+ {
+  "zh": "必须先设置蓝光顺序写入参数。",
+  "en": "Blu-ray sequential write parameters must be set first."
+ },
+ {
+  "zh": " 无返回 Sense 数据。",
+  "en": " No sense data returned."
+ },
+ {
+  "zh": " 原始 Sense={0}。",
+  "en": " Raw sense={0}."
+ },
+ {
+  "zh": "光驱返回的介质标识长度无效。",
+  "en": "The drive returned an invalid media identification length."
+ },
+ {
+  "zh": "所选光驱不支持这种刻录方式。",
+  "en": "The selected drive does not support this burn mode."
+ },
+ {
+  "zh": "盘片已更换，请重新开始刻录。",
+  "en": "The disc was changed; please start the burn again."
+ },
+ {
+  "zh": "当前 DVD 盘片不可写入。",
+  "en": "The current DVD cannot be written."
+ },
+ {
+  "zh": "BD-R 数据传输调用已返回",
+  "en": "BD-R data transfer call returned"
+ },
+ {
+  "zh": "释放 BD-R 刻录机访问权",
+  "en": "Release BD-R recorder access"
+ },
+ {
+  "zh": "ElapsedMs={0}。",
+  "en": "ElapsedMs={0}."
+ },
+ {
+  "zh": "设置 CD DAO 扇区格式",
+  "en": "Set the CD DAO sector format"
+ },
+ {
+  "zh": "检查 DVD 介质状态和容量",
+  "en": "Check DVD media state and capacity"
+ },
+ {
+  "zh": "短弧无法对应有效的盘片半径。",
+  "en": "The arcs do not correspond to valid disc radii."
+ },
+ {
+  "zh": "该进度没有有效的正半径轨迹。",
+  "en": "There is no valid positive-radius path at this progress value."
+ },
+ {
+  "zh": "此标靶未刻录宽角度参考标记。",
+  "en": "This target has no wide-angle reference marks."
+ },
+ {
+  "zh": "标定图案含重复控制块 ID。",
+  "en": "The calibration pattern contains duplicate control block IDs."
+ },
+ {
+  "zh": "设置更改尚未保存。要保存吗？",
+  "en": "Settings changes have not been saved. Save them?"
+ },
+ {
+  "zh": "矫正预览 · 确认后开始描线",
+  "en": "Rectification preview · Confirm to start tracing"
+ },
+ {
+  "zh": "点击左侧「导入图片」开始设计",
+  "en": "Click Import images on the left to start designing"
+ },
+ {
+  "zh": "该文件没有可导入的蓝光预设。",
+  "en": "This file has no Blu-ray presets to import."
+ },
+ {
+  "zh": "蓝光预设 ID 重复：{0}",
+  "en": "Duplicate Blu-ray preset ID: {0}"
+ },
+ {
+  "zh": "输出文件路径与暂存路径冲突。",
+  "en": "An output path conflicts with a staging path."
+ },
+ {
+  "zh": "正在刷新缓存并关闭刻录会话…",
+  "en": "Flushing the cache and closing the burn session…"
+ },
+ {
+  "zh": "已删除 {0} 个缓存文件。",
+  "en": "Deleted cache files: {0}."
+ },
+ {
+  "zh": "缓存目录中没有可清理的文件。",
+  "en": "There are no files to clear in the cache directory."
+ },
+ {
+  "zh": "geometry 不能为空。",
+  "en": "geometry cannot be null."
+ },
+ {
+  "zh": "CD 预设不能是 null。",
+  "en": "A CD preset cannot be null."
+ },
+ {
+  "zh": "未保存的更改仍保留在应用中。",
+  "en": "Your unsaved changes are still open in the application."
+ },
+ {
+  "zh": "磁盘空间不足，无法下载更新。",
+  "en": "There is not enough disk space to download the update."
+ },
+ {
+  "zh": " · 每扇区 {0} 个采样",
+  "en": "· {0} samples per sector"
+ },
+ {
+  "zh": "CD 音轨 · 启用延迟交织",
+  "en": "CD audio track · Delayed interleaving enabled"
+ },
+ {
+  "zh": "DVD ISO 文件不存在。",
+  "en": "The DVD ISO file does not exist."
+ },
+ {
+  "zh": "{0} 标定图案 · {1}",
+  "en": "{0} calibration pattern · {1}"
+ },
+ {
+  "zh": "刻录未完成，请查看错误信息。",
+  "en": "The burn did not complete. See the error details."
+ },
+ {
+  "zh": "生成的 CD 音轨或 ISO",
+  "en": "generated CD audio track or ISO"
+ },
+ {
+  "zh": "预览继续使用当前工程几何。\n",
+  "en": "the preview will continue using the current project geometry."
+ },
+ {
+  "zh": "{0}\n\n文件位置：\n{1}",
+  "en": "{0}\n\nFile location:\n{1}"
+ },
+ {
+  "zh": "{0} 级 · {1} 抖动",
+  "en": "{0} levels · {1} dithering"
+ },
+ {
+  "zh": "请选择 CD 音轨输出位置。",
+  "en": "Choose an output location for the CD audio track."
+ },
+ {
+  "zh": "选择要放入 DVD 的文件夹",
+  "en": "Select a folder to include on the DVD"
+ },
+ {
+  "zh": "标准 12cm 单层 DVD",
+  "en": "Standard 12 cm single-layer DVD"
+ },
+ {
+  "zh": "把两侧圆弧转到照片清楚的位置",
+  "en": "Rotate the two arcs to a clear part of the photo"
+ },
+ {
+  "zh": "尺寸越大投影越细，刷新越慢。",
+  "en": "Larger sizes show more detail but take longer to refresh."
+ },
+ {
+  "zh": "sRGB 线性化（伽马校准）",
+  "en": "sRGB linearization (gamma)"
+ },
+ {
+  "zh": "BD-R 单层 25 GB",
+  "en": "BD-R single layer 25 GB"
+ },
+ {
+  "zh": "尚未独占并锁定蓝光刻录机。",
+  "en": "The Blu-ray recorder has not been exclusively acquired and locked yet."
+ },
+ {
+  "zh": "正在结束 CD 原始写入…",
+  "en": "Finishing raw CD write…"
+ },
+ {
+  "zh": "正在写入，等待刻录机进度…",
+  "en": "Writing; waiting for recorder progress…"
+ },
+ {
+  "zh": "正在检查刻录机和空白介质…",
+  "en": "Checking the recorder and blank media…"
+ },
+ {
+  "zh": "刻录完成，盘片会话已关闭。",
+  "en": "Burn complete; the disc session is closed."
+ },
+ {
+  "zh": "释放刻录格式 COM 对象",
+  "en": "Release the burn format COM object"
+ },
+ {
+  "zh": "蓝光失败后刷新缓存（清理）",
+  "en": "Flush Blu-ray cache after failure (cleanup)"
+ },
+ {
+  "zh": "耗时 {0} 秒）：{1}",
+  "en": "took {0} s): {1}"
+ },
+ {
+  "zh": "构造 CD DAO {0}",
+  "en": "Build CD DAO {0}"
+ },
+ {
+  "zh": "CD 刻后读回校验：未启用",
+  "en": "CD post-burn read-back verification: disabled"
+ },
+ {
+  "zh": "写入 CD DAO {0}",
+  "en": "Write CD DAO {0}"
+ },
+ {
+  "zh": "CD DAO Sense：",
+  "en": "CD DAO sense: "
+ },
+ {
+  "zh": "读取 DVD 实际刻录速度",
+  "en": "Read the actual DVD write speed"
+ },
+ {
+  "zh": "订阅 DVD 刻录进度事件",
+  "en": "Subscribe to DVD burn progress events"
+ },
+ {
+  "zh": "请等待计算和预测预览完成。",
+  "en": "Wait for the calculation and predicted preview to finish."
+ },
+ {
+  "zh": "短弧无法稳定确定两个半径。",
+  "en": "The arcs cannot determine both radii reliably."
+ },
+ {
+  "zh": "不等距圆环与精细标定十字线",
+  "en": "Unevenly spaced rings and a cross for fine calibration"
+ },
+ {
+  "zh": "新建精细标定图案（十字线）",
+  "en": "Create fine calibration target (cross)"
+ },
+ {
+  "zh": "正在查找定位环与时标短纹…",
+  "en": "Reading address rings and clock marks…"
+ },
+ {
+  "zh": "未完成的三点量环记录无效。",
+  "en": "The unfinished three-point ring measurement is invalid."
+ },
+ {
+  "zh": "缺少内置标定参考图案资源。",
+  "en": "The built-in calibration reference pattern is missing."
+ },
+ {
+  "zh": "启用 CD-DA 延迟交织",
+  "en": "Enable CD-DA delay interleaving"
+ },
+ {
+  "zh": "没有可发布的标定输出文件。",
+  "en": "No calibration output files are available to publish."
+ },
+ {
+  "zh": "保存后立即应用到所有窗口。",
+  "en": "Applied to all windows after saving."
+ },
+ {
+  "zh": "点击或按 Enter 复制",
+  "en": "Click or press Enter to copy"
+ },
+ {
+  "zh": "outputs 不能为空。",
+  "en": "outputs cannot be null."
+ },
+ {
+  "zh": "程序缺少内置盘片预设资源。",
+  "en": "The built-in disc preset resource is missing from the application."
+ },
+ {
+  "zh": "蓝光预设不能是 null。",
+  "en": "A Blu-ray preset cannot be null."
+ },
+ {
+  "zh": "必须是大于 0 的有限数值",
+  "en": "must be a finite number greater than 0"
+ },
+ {
+  "zh": "更新已下载，正在重启应用。",
+  "en": "The update has been downloaded. The application will restart."
+ },
+ {
+  "zh": "更新文件与应用版本不匹配。",
+  "en": "The update file does not match the application version."
+ },
+ {
+  "zh": "BD-R · {0} 扇区",
+  "en": "BD-R · {0} sectors"
+ },
+ {
+  "zh": "即将写入：{0}\n{1}\n",
+  "en": "About to write to: {0}\n{1}"
+ },
+ {
+  "zh": "合成图会自动生成本页输入。",
+  "en": "The composite will automatically provide this page’s input."
+ },
+ {
+  "zh": "正在根据实体边缘矫正照片…",
+  "en": "Rectifying the photo using the physical edges…"
+ },
+ {
+  "zh": "蓝光 ISO 文件不存在。",
+  "en": "The Blu-ray ISO file does not exist."
+ },
+ {
+  "zh": "计算未通过，全部点已保留。",
+  "en": "Calculation failed. All points were retained."
+ },
+ {
+  "zh": "请先在标定工作区创建图案。",
+  "en": "Create a pattern in the calibration workspace first."
+ },
+ {
+  "zh": "正在生成 DVD ISO…",
+  "en": "Generating DVD ISO…"
+ },
+ {
+  "zh": "详情见窗口底部的任务日志。",
+  "en": "See the job log at the bottom of the window for details."
+ },
+ {
+  "zh": "选择生成的 DVD ISO",
+  "en": "Select a generated DVD ISO"
+ },
+ {
+  "zh": "标准 8cm 单层 DVD",
+  "en": "Standard 8 cm single-layer DVD"
+ },
+ {
+  "zh": "标准 25GB 单层 BD",
+  "en": "Standard 25 GB single-layer BD"
+ },
+ {
+  "zh": "实测参数与预览精度（高级）",
+  "en": "Advanced preview settings"
+ },
+ {
+  "zh": "蓝色：文件区（含文件系统）",
+  "en": "Blue: file area (including filesystem)"
+ },
+ {
+  "zh": "文件夹（留空则整盘只绘图）",
+  "en": "Folder (optional)"
+ },
+ {
+  "zh": "可能使盘面上的图案更明显。",
+  "en": "May improve the visibility of the disc artwork."
+ },
+ {
+  "zh": "反转 3T / 6T 映射",
+  "en": "Invert 3T / 6T mapping"
+ },
+ {
+  "zh": "打开设置 (Ctrl+,)",
+  "en": "Open settings (Ctrl+,)"
+ },
+ {
+  "zh": " 未自动重试此写入命令。",
+  "en": " This write command was not retried automatically."
+ },
+ {
+  "zh": "WRITE={0} 秒。",
+  "en": "WRITE={0} s."
+ },
+ {
+  "zh": "刻录设备：Vendor=",
+  "en": "Burn device: Vendor="
+ },
+ {
+  "zh": "正在准备盘片和写入设备…",
+  "en": "Preparing the disc and recorder…"
+ },
+ {
+  "zh": "正在写入 CD 导入区…",
+  "en": "Writing the CD lead-in…"
+ },
+ {
+  "zh": "CD 原始写入调用已返回",
+  "en": "Raw CD write call returned"
+ },
+ {
+  "zh": "释放刻录机 COM 对象",
+  "en": "Release the recorder COM object"
+ },
+ {
+  "zh": "设置 BD-R 写入速度",
+  "en": "Set BD-R write speed"
+ },
+ {
+  "zh": "检查 CD 是否为空白盘",
+  "en": "Check that the CD is blank"
+ },
+ {
+  "zh": "已取消刻录，不允许超刻。",
+  "en": "burn cancelled (overburning is not allowed)."
+ },
+ {
+  "zh": "CD-R 或 CD-RW",
+  "en": "CD-R or CD-RW"
+ },
+ {
+  "zh": "；光驱报告支持：{0}。",
+  "en": "; drive reports support for: {0}."
+ },
+ {
+  "zh": "{0} 必须是有限数值。",
+  "en": "{0} must be a finite number."
+ },
+ {
+  "zh": "沿一条半径依次点六个交界",
+  "en": "Six clicks along one radius"
+ },
+ {
+  "zh": "六条定位环与环形时标短纹",
+  "en": "Six address rings and repeating clock marks"
+ },
+ {
+  "zh": "边界片段编号无效或重复。",
+  "en": "A boundary segment ID is invalid or duplicated."
+ },
+ {
+  "zh": "圆环编号或实测半径无效。",
+  "en": "The ring number or measured radius is invalid."
+ },
+ {
+  "zh": "照片坐标必须为有限数值。",
+  "en": "Photo coordinates must be finite numbers."
+ },
+ {
+  "zh": "照片变换产生了无效坐标。",
+  "en": "The photo transform produced invalid coordinates."
+ },
+ {
+  "zh": "时标读数的优先方向无效。",
+  "en": "The preferred direction for reading the clock ruler is invalid."
+ },
+ {
+  "zh": "控制块或控制点编号无效。",
+  "en": "The control block or control point index is invalid."
+ },
+ {
+  "zh": "标定图案控制块数量无效。",
+  "en": "The number of control blocks in the calibration pattern is invalid."
+ },
+ {
+  "zh": "角点坐标必须是有限数值。",
+  "en": "Corner coordinates must be finite numbers."
+ },
+ {
+  "zh": "照片太小，无法输入轮廓。",
+  "en": "The photo is too small to enter contours."
+ },
+ {
+  "zh": "无法打开 GitHub：",
+  "en": "Could not open GitHub:"
+ },
+ {
+  "zh": "DVD 兼容性（实验性）",
+  "en": "DVD compatibility (experimental)"
+ },
+ {
+  "zh": "layers 不能为空。",
+  "en": "layers cannot be null."
+ },
+ {
+  "zh": "PNG 图案|*.png",
+  "en": "PNG patterns|*.png"
+ },
+ {
+  "zh": "使用工程当前合成图与参数",
+  "en": "Use the current project composite and parameters"
+ },
+ {
+  "zh": "刻录完成，可以取出光盘。",
+  "en": "Burn complete. You can remove the disc."
+ },
+ {
+  "zh": "标准光盘 · 12 cm",
+  "en": "Standard disc · 12 cm"
+ },
+ {
+  "zh": "检测到 {0} 台刻录机",
+  "en": "Found {0} recorders"
+ },
+ {
+  "zh": "正在恢复标定照片与记录…",
+  "en": "Restoring calibration photo and record…"
+ },
+ {
+  "zh": "绘图 {0}..{1}，",
+  "en": "Drawing {0}..{1},"
+ },
+ {
+  "zh": "DVD ISO 输出位置",
+  "en": "DVD ISO output location"
+ },
+ {
+  "zh": "导入图片后自动生成预览。",
+  "en": "Import an image to generate a preview automatically."
+ },
+ {
+  "zh": "请先打开或新建一个工程。",
+  "en": "Open or create a project first."
+ },
+ {
+  "zh": "输出数据盘 (.iso)",
+  "en": "Data disc output (.iso)"
+ },
+ {
+  "zh": "选择要放入蓝光盘的文件夹",
+  "en": "Select a folder to include on the Blu-ray disc"
+ },
+ {
+  "zh": "将核对后的半径用于新标靶",
+  "en": "Use the scale-checked radii for new targets"
+ },
+ {
+  "zh": "我确认已放入正确的空白盘",
+  "en": "I have inserted the correct blank disc"
+ },
+ {
+  "zh": "铼德 BD-R 10x",
+  "en": "Ritek BD-R 10x"
+ },
+ {
+  "zh": "铼德 BD-R 12x",
+  "en": "Ritek BD-R 12x"
+ },
+ {
+  "zh": "蓝光写入参数已经设置。",
+  "en": "Blu-ray write parameters are already set."
+ },
+ {
+  "zh": "源流读取={0} 秒，",
+  "en": "source read={0} s, "
+ },
+ {
+  "zh": "WRITE={0} 秒",
+  "en": "WRITE={0} s"
+ },
+ {
+  "zh": "再次检查当前盘片兼容性",
+  "en": "Re-check current disc compatibility"
+ },
+ {
+  "zh": "（{0} MB/s）…",
+  "en": " ({0} MB/s)…"
+ },
+ {
+  "zh": "DVD 写入调用已返回",
+  "en": "DVD write call returned"
+ },
+ {
+  "zh": "准备并锁定 CD 介质",
+  "en": "Prepare and lock the CD"
+ },
+ {
+  "zh": "设置 DVD 刻录速度",
+  "en": "Set DVD write speed"
+ },
+ {
+  "zh": "设备设置速度={0}×",
+  "en": "Device speed setting={0}×"
+ },
+ {
+  "zh": "（光驱报告：{0}）。",
+  "en": "(drive reports: {0})."
+ },
+ {
+  "zh": "估算半径并读取角度标记",
+  "en": "Estimate radii and read angle marks"
+ },
+ {
+  "zh": "短圆弧编号无效或重复。",
+  "en": "A short arc index is invalid or repeated."
+ },
+ {
+  "zh": "看不清 / 无明显弯曲",
+  "en": "Unclear / no visible bend"
+ },
+ {
+  "zh": "带弯曲扇区的粗标定图案",
+  "en": "Coarse calibration pattern with curved sectors"
+ },
+ {
+  "zh": "十字线最多包含四条臂。",
+  "en": "A cross has at most four arms."
+ },
+ {
+  "zh": "控制点坐标或权重无效。",
+  "en": "Invalid control-point coordinates or weights."
+ },
+ {
+  "zh": "曲线旋转或臂编号无效。",
+  "en": "Invalid curve rotation or arm index."
+ },
+ {
+  "zh": "采用为新标靶的初始半径",
+  "en": "Use as initial radii for new targets"
+ },
+ {
+  "zh": "当前标靶没有宽定位环。",
+  "en": "This target has no wide positioning bands."
+ },
+ {
+  "zh": "正在比对内外两段扇区…",
+  "en": "Checking inner and outer swept sectors…"
+ },
+ {
+  "zh": "标定图案 ID 无效。",
+  "en": "The calibration pattern ID is invalid."
+ },
+ {
+  "zh": "控制块或角点编号无效。",
+  "en": "The control block or corner index is invalid."
+ },
+ {
+  "zh": "同名输出路径已是目录：",
+  "en": "An output path is already a directory:"
+ },
+ {
+  "zh": "照片没有可读取的图像。",
+  "en": "The photo contains no readable image."
+ },
+ {
+  "zh": "{0}必须是非负整数。",
+  "en": "{0} must be a nonnegative integer."
+ },
+ {
+  "zh": "正在准备防断流缓冲区…",
+  "en": "Preparing the underrun protection buffer…"
+ },
+ {
+  "zh": "无法打开应用数据目录：",
+  "en": "Could not open the app data folder:"
+ },
+ {
+  "zh": "工程路径必须包含目录。",
+  "en": "The project path must include a directory."
+ },
+ {
+  "zh": "图层不能是 null。",
+  "en": "A layer cannot be null."
+ },
+ {
+  "zh": "正在下载更新：{0}%",
+  "en": "Downloading update: {0}%"
+ },
+ {
+  "zh": " · 反转 3T/6T",
+  "en": "· Inverted 3T/6T"
+ },
+ {
+  "zh": " · 标准 3T/6T",
+  "en": "· Standard 3T/6T"
+ },
+ {
+  "zh": "CD 音轨 · 未交织",
+  "en": "CD audio track · Not interleaved"
+ },
+ {
+  "zh": "DVD 源图片不存在。",
+  "en": "The DVD source image does not exist."
+ },
+ {
+  "zh": "sRGB 线性化 · ",
+  "en": "sRGB linearization ·"
+ },
+ {
+  "zh": "内半径必须小于外半径。",
+  "en": "The inner radius must be smaller than the outer radius."
+ },
+ {
+  "zh": "参数已变化，准备刷新…",
+  "en": "Parameters changed. Preparing to refresh…"
+ },
+ {
+  "zh": "标定参数不是蓝光目标。",
+  "en": "The calibration parameters do not describe a Blu-ray target."
+ },
+ {
+  "zh": "标定轮廓超出照片范围。",
+  "en": "The calibration outline is outside the photo."
+ },
+ {
+  "zh": "生成的 DVD ISO",
+  "en": "generated DVD ISO"
+ },
+ {
+  "zh": "耗时 {0:F1} 秒",
+  "en": "Elapsed {0:F1} seconds"
+ },
+ {
+  "zh": "自动（最低速率，推荐）",
+  "en": "Automatic (lowest speed, recommended)"
+ },
+ {
+  "zh": "，实际速度={0}。\n",
+  "en": ", actual speed={0}."
+ },
+ {
+  "zh": " · sRGB 线性化",
+  "en": "· sRGB linearization"
+ },
+ {
+  "zh": "CD ISO 输出位置",
+  "en": "CD ISO output location"
+ },
+ {
+  "zh": "外半径必须大于内半径。",
+  "en": "The outer radius must be greater than the inner radius."
+ },
+ {
+  "zh": "将保存为：{0}{1}",
+  "en": "Will save as: {0}{1}"
+ },
+ {
+  "zh": "正在生成 CD 音轨…",
+  "en": "Generating CD audio track…"
+ },
+ {
+  "zh": "正在生成蓝光 ISO…",
+  "en": "Generating Blu-ray ISO…"
+ },
+ {
+  "zh": "蓝光 ISO 输出位置",
+  "en": "Blu-ray ISO output location"
+ },
+ {
+  "zh": "请先在设计页导入图片。",
+  "en": "Import an image on the Design page first."
+ },
+ {
+  "zh": "还没有最近使用的模板。",
+  "en": "No recently used templates yet."
+ },
+ {
+  "zh": "选择生成的蓝光 ISO",
+  "en": "Select a generated Blu-ray ISO"
+ },
+ {
+  "zh": "标准 80min CD",
+  "en": "Standard 80 min CD"
+ },
+ {
+  "zh": "铼德医疗水蓝盘（实测）",
+  "en": "Ritek Medical Aqua (measured)"
+ },
+ {
+  "zh": "标准 74min CD",
+  "en": "Standard 74 min CD"
+ },
+ {
+  "zh": "从已量圆环估算内外半径",
+  "en": "Estimate both radii from measured rings"
+ },
+ {
+  "zh": "任务详情 / 运行日志",
+  "en": "Task details / Log"
+ },
+ {
+  "zh": "内半径 r0 (mm)",
+  "en": "Inner r0 (mm)"
+ },
+ {
+  "zh": "外半径 r1 (mm)",
+  "en": "Outer r1 (mm)"
+ },
+ {
+  "zh": "同时导出 CUE 文件",
+  "en": "Also export a CUE file"
+ },
+ {
+  "zh": "写入文件不会改动盘片。",
+  "en": "Writing a file does not modify the disc."
+ },
+ {
+  "zh": "；Firmware=",
+  "en": "; Firmware="
+ },
+ {
+  "zh": "正在等待刻录机状态…",
+  "en": "Waiting for recorder status…"
+ },
+ {
+  "zh": "所选光驱中没有盘片。",
+  "en": "There is no disc in the selected drive."
+ },
+ {
+  "zh": "已取消清除盘片数据。",
+  "en": "Clearing the disc was cancelled."
+ },
+ {
+  "zh": "关闭 CD 刻录会话",
+  "en": "Close the CD burn session"
+ },
+ {
+  "zh": "准备 BD-R 刻录",
+  "en": "Prepare BD-R burn"
+ },
+ {
+  "zh": "锁定 BD-R 盘片",
+  "en": "Lock the BD-R disc"
+ },
+ {
+  "zh": "设置 CD 刻录速度",
+  "en": "Set CD write speed"
+ },
+ {
+  "zh": "DVD Sense：",
+  "en": "DVD sense: "
+ },
+ {
+  "zh": "自定义 DVD 参数",
+  "en": "Custom DVD parameters"
+ },
+ {
+  "zh": "轨距系数无效：{0}",
+  "en": "Invalid track-pitch coefficients: {0}"
+ },
+ {
+  "zh": "已标 {0}/3 点",
+  "en": "{0}/3 points marked"
+ },
+ {
+  "zh": "清除单线点，重选方向",
+  "en": "Clear radial clicks and change direction"
+ },
+ {
+  "zh": "曲线编号无效或重复。",
+  "en": "A curve ID is invalid or duplicated."
+ },
+ {
+  "zh": "曲线点数量超出限制。",
+  "en": "The number of curve points exceeds the limit."
+ },
+ {
+  "zh": "控制点数量超出限制。",
+  "en": "The number of control points exceeds the limit."
+ },
+ {
+  "zh": "启用 CD 延迟交织",
+  "en": "Use CD delay interleaving"
+ },
+ {
+  "zh": "新标靶初始参数已更新",
+  "en": "Updated initial parameters for the next target"
+ },
+ {
+  "zh": "将修正参数用于新标靶",
+  "en": "Use refined parameters for a new target"
+ },
+ {
+  "zh": "短圆弧量取记录无效。",
+  "en": "The short-arc measurement record is invalid."
+ },
+ {
+  "zh": "轮廓中存在无效坐标。",
+  "en": "The outline contains invalid coordinates."
+ },
+ {
+  "zh": "照片轮廓控制点无效。",
+  "en": "The photo outline control points are invalid."
+ },
+ {
+  "zh": "旋转必须是有限数值。",
+  "en": "Rotation must be a finite number."
+ },
+ {
+  "zh": "生成暂存目录不存在：",
+  "en": "Staging directory does not exist:"
+ },
+ {
+  "zh": "请选择一张盘片照片。",
+  "en": "Select a disc photo."
+ },
+ {
+  "zh": "{0}不是有效数字。",
+  "en": "{0} is not a valid number."
+ },
+ {
+  "zh": "{0}必须大于 0。",
+  "en": "{0} must be greater than 0."
+ },
+ {
+  "zh": "{0}必须是正整数。",
+  "en": "{0} must be a positive integer."
+ },
+ {
+  "zh": "本工程的参数已更新。",
+  "en": "The project parameters have been updated."
+ },
+ {
+  "zh": "界面文字已立即更新。",
+  "en": "The interface text has been updated immediately."
+ },
+ {
+  "zh": "已改用默认缓存目录。",
+  "en": "Using the default cache folder."
+ },
+ {
+  "zh": "界面外观与语言偏好。",
+  "en": "Appearance and language preferences."
+ },
+ {
+  "zh": "DVD 兼容性：关闭",
+  "en": "DVD compatibility: off"
+ },
+ {
+  "zh": "必须是 16 的倍数",
+  "en": "must be a multiple of 16"
+ },
+ {
+  "zh": "发现新版本 {0}。",
+  "en": "Version {0} is available."
+ },
+ {
+  "zh": "检查更新失败：{0}",
+  "en": "Update check failed: {0}"
+ },
+ {
+  "zh": "下载更新失败：{0}",
+  "en": "Update download failed: {0}"
+ },
+ {
+  "zh": "CD 源图片不存在。",
+  "en": "The CD source image does not exist."
+ },
+ {
+  "zh": "光盘镜像|*.iso",
+  "en": "Disc images|*.iso"
+ },
+ {
+  "zh": "实时预览失败：{0}",
+  "en": "Live preview failed: {0}"
+ },
+ {
+  "zh": "小光盘 · 8 cm",
+  "en": "Mini disc · 8 cm"
+ },
+ {
+  "zh": "确保磁盘预留适量空间",
+  "en": "Make sure sufficient disk space is available"
+ },
+ {
+  "zh": "请先在设计页导入图片",
+  "en": "Import an image on the Design page first"
+ },
+ {
+  "zh": "请求速度：{0}\n\n",
+  "en": "Requested speed: {0}"
+ },
+ {
+  "zh": "失败：退出码 {0}",
+  "en": "Failed: exit code {0}"
+ },
+ {
+  "zh": "实时 — MiB/s",
+  "en": "Current — MiB/s"
+ },
+ {
+  "zh": "工程文件已移动或删除",
+  "en": "Project file moved or deleted"
+ },
+ {
+  "zh": "已保存为预设：{0}",
+  "en": "Saved as preset: {0}"
+ },
+ {
+  "zh": "影调预览失败：{0}",
+  "en": "Tone preview failed: {0}"
+ },
+ {
+  "zh": "恢复该盘型的默认几何",
+  "en": "Restore default geometry for this disc type"
+ },
+ {
+  "zh": "扇区数必须是正整数。",
+  "en": "The sector count must be a positive integer."
+ },
+ {
+  "zh": "无法保存预设：{0}",
+  "en": "Cannot save preset: {0}"
+ },
+ {
+  "zh": "无法删除预设：{0}",
+  "en": "Cannot delete preset: {0}"
+ },
+ {
+  "zh": "正在按当前影调渲染…",
+  "en": "Rendering with the current tone settings…"
+ },
+ {
+  "zh": "部分图层图片无法读取",
+  "en": "Some layer images could not be read"
+ },
+ {
+  "zh": "自定义参数（未保存）",
+  "en": "Custom parameters (unsaved)"
+ },
+ {
+  "zh": "沿一条半径点六个交界",
+  "en": "Mark six band edges on one radius"
+ },
+ {
+  "zh": "将此套参数保存为预设",
+  "en": "Save parameters as preset"
+ },
+ {
+  "zh": "还有 {0} 条通知",
+  "en": "{0} more notifications"
+ },
+ {
+  "zh": "释放刻录机独占访问",
+  "en": "Release exclusive recorder access"
+ },
+ {
+  "zh": "；Product=",
+  "en": "; Product="
+ },
+ {
+  "zh": "正在验证刻录数据…",
+  "en": "Verifying burned data…"
+ },
+ {
+  "zh": "检查当前盘片兼容性",
+  "en": "Check current disc compatibility"
+ },
+ {
+  "zh": "准备 DVD 盘片",
+  "en": "Prepare the DVD"
+ },
+ {
+  "zh": "写入 DVD 数据",
+  "en": "Write DVD data"
+ },
+ {
+  "zh": "0x{0}：{1}",
+  "en": "0x{0}: {1}"
+ },
+ {
+  "zh": "准备 DVD 刻录",
+  "en": "Prepare DVD burn"
+ },
+ {
+  "zh": "自定义 CD 参数",
+  "en": "Custom CD parameters"
+ },
+ {
+  "zh": "{0} 不能为空。",
+  "en": "{0} must not be empty."
+ },
+ {
+  "zh": "清除全部交界并重标",
+  "en": "Clear all boundaries and start over"
+ },
+ {
+  "zh": "短圆弧测量值无效。",
+  "en": "A short arc measurement is invalid."
+ },
+ {
+  "zh": "用完整短弧估算半径",
+  "en": "Estimate radii from complete arcs"
+ },
+ {
+  "zh": "沿辅助线点{0}。",
+  "en": "Click the {0} along the guide."
+ },
+ {
+  "zh": "导出示意图 PNG",
+  "en": "Export schematic PNG"
+ },
+ {
+  "zh": "沿可见交界修正半径",
+  "en": "Refine radii along visible boundaries"
+ },
+ {
+  "zh": "标定会话文件过大。",
+  "en": "The calibration record file is too large."
+ },
+ {
+  "zh": "发生未处理的异常：",
+  "en": "Unhandled exception:"
+ },
+ {
+  "zh": "矫正画布半径无效。",
+  "en": "Invalid rectification canvas radius."
+ },
+ {
+  "zh": "查看光驱与光盘详情",
+  "en": "Show drive and disc details"
+ },
+ {
+  "zh": "DVD 兼容性档位",
+  "en": "DVD compatibility level"
+ },
+ {
+  "zh": "更新文件校验失败。",
+  "en": "The update file failed verification."
+ },
+ {
+  "zh": "无法启动更新程序。",
+  "en": "The updater could not be started."
+ },
+ {
+  "zh": "请手动下载新版本。",
+  "en": "Download the new version manually."
+ },
+ {
+  "zh": " · 文件：{0}",
+  "en": "· Files: {0}"
+ },
+ {
+  "zh": "DVD 相对一次项",
+  "en": "DVD relative linear coefficient"
+ },
+ {
+  "zh": "DVD 相对三次项",
+  "en": "DVD relative cubic coefficient"
+ },
+ {
+  "zh": "DVD 相对二次项",
+  "en": "DVD relative quadratic coefficient"
+ },
+ {
+  "zh": "DVD 轨距一次项",
+  "en": "DVD pitch linear coefficient"
+ },
+ {
+  "zh": "DVD 轨距三次项",
+  "en": "DVD pitch cubic coefficient"
+ },
+ {
+  "zh": "DVD 轨距二次项",
+  "en": "DVD pitch quadratic coefficient"
+ },
+ {
+  "zh": "已有任务正在运行。",
+  "en": "A task is already running."
+ },
+ {
+  "zh": "搜索范围（{0}）",
+  "en": "Search range ({0})"
+ },
+ {
+  "zh": "正在生成图片预览…",
+  "en": "Generating image preview…"
+ },
+ {
+  "zh": "正在生成标定文件…",
+  "en": "Generating calibration file…"
+ },
+ {
+  "zh": "没有可应用的候选。",
+  "en": "No candidate is available to apply."
+ },
+ {
+  "zh": "生成的蓝光 ISO",
+  "en": "generated Blu-ray ISO"
+ },
+ {
+  "zh": "蓝光源图片不存在。",
+  "en": "The Blu-ray source image does not exist."
+ },
+ {
+  "zh": "请先勾选刻录确认。",
+  "en": "Select the burn confirmation checkbox first."
+ },
+ {
+  "zh": "请先选择 {0}。",
+  "en": "Select {0} first."
+ },
+ {
+  "zh": "CD 音轨输出位置",
+  "en": "CD track output location"
+ },
+ {
+  "zh": "内置预设不能删除。",
+  "en": "Built-in presets cannot be deleted."
+ },
+ {
+  "zh": "已删除预设：{0}",
+  "en": "Deleted preset: {0}"
+ },
+ {
+  "zh": "用扇区核对照片尺度",
+  "en": "Check photo scale against the sector"
+ },
+ {
+  "zh": "确认矫正并进入标定",
+  "en": "Confirm rectification and calibrate"
+ },
+ {
+  "zh": "选用本照片的粗估值",
+  "en": "Use the ring estimate from this photo"
+ },
+ {
+  "zh": "导出尺寸 (px)",
+  "en": "Output size (px)"
+ },
+ {
+  "zh": "从当前参数新建标靶",
+  "en": "Create target from parameters"
+ },
+ {
+  "zh": "确认矫正，开始描线",
+  "en": "Confirm and trace curves"
+ },
+ {
+  "zh": "解除盘片弹出保护",
+  "en": "Release eject lock"
+ },
+ {
+  "zh": "恢复介质变化通知",
+  "en": "Restore media change notification"
+ },
+ {
+  "zh": "释放蓝光写入引擎",
+  "en": "Release the Blu-ray write engine"
+ },
+ {
+  "zh": "蓝光刻录已取消。",
+  "en": "Blu-ray burn cancelled."
+ },
+ {
+  "zh": "（写入前检查）。",
+  "en": " (checked before writing)."
+ },
+ {
+  "zh": "预填充生成缓冲区",
+  "en": "Pre-fill the generation buffer"
+ },
+ {
+  "zh": "选择最低刻录速度",
+  "en": "Select the lowest write speed"
+ },
+ {
+  "zh": "；Actual=",
+  "en": "; Actual="
+ },
+ {
+  "zh": "准备 CD 刻录",
+  "en": "Prepare CD burn"
+ },
+ {
+  "zh": "拖动圆弧对齐交界",
+  "en": "Drag an arc to each boundary"
+ },
+ {
+  "zh": "新建边界标定图案",
+  "en": "Create boundary calibration target"
+ },
+ {
+  "zh": "读取失败。{0}",
+  "en": "Unable to read the disc. {0}"
+ },
+ {
+  "zh": "请选择盘片类型。",
+  "en": "Select a disc type."
+ },
+ {
+  "zh": "照片变换不可逆。",
+  "en": "The photo transform cannot be inverted."
+ },
+ {
+  "zh": "十字线记录无效。",
+  "en": "The cross-trace record is invalid."
+ },
+ {
+  "zh": "控制块编号无效。",
+  "en": "The control block index is invalid."
+ },
+ {
+  "zh": "标定组编号无效。",
+  "en": "The calibration group index is invalid."
+ },
+ {
+  "zh": "来自设计页合成图",
+  "en": "Composite from Design"
+ },
+ {
+  "zh": "刻录机开始写入。",
+  "en": "The recorder has started writing."
+ },
+ {
+  "zh": "重启应用后生效。",
+  "en": "Takes effect after restarting the app."
+ },
+ {
+  "zh": "选择工程保存位置",
+  "en": "Select project location"
+ },
+ {
+  "zh": "选择默认工程位置",
+  "en": "Select default project location"
+ },
+ {
+  "zh": "请填写绝对路径。",
+  "en": "Enter an absolute path."
+ },
+ {
+  "zh": "打开应用数据目录",
+  "en": "Open app data folder"
+ },
+ {
+  "zh": "光驱报告剩余扇区",
+  "en": "Drive-reported free sectors"
+ },
+ {
+  "zh": "工程名不能为空。",
+  "en": "The project name cannot be empty."
+ },
+ {
+  "zh": "未找到更新信息。",
+  "en": "No update information was found."
+ },
+ {
+  "zh": "更新目录不可用。",
+  "en": "The update folder is unavailable."
+ },
+ {
+  "zh": "DVD 总扇区数",
+  "en": "DVD total sectors"
+ },
+ {
+  "zh": "确认清除盘片数据",
+  "en": "Confirm loss of disc data"
+ },
+ {
+  "zh": "反转 3T/6T",
+  "en": "Inverted 3T/6T"
+ },
+ {
+  "zh": "完成：流式刻录 ",
+  "en": "Completed: streaming burn"
+ },
+ {
+  "zh": "尚未创建标定图案",
+  "en": "No calibration pattern yet"
+ },
+ {
+  "zh": "已取消：流式刻录",
+  "en": "Canceled: streaming burn"
+ },
+ {
+  "zh": "搜索范围（自动）",
+  "en": "Search range (automatic)"
+ },
+ {
+  "zh": "极性={0}。\n",
+  "en": "Polarity={0}."
+ },
+ {
+  "zh": "标准 3T/6T",
+  "en": "Standard 3T/6T"
+ },
+ {
+  "zh": "检测刻录机失败：",
+  "en": "Recorder detection failed:"
+ },
+ {
+  "zh": "正在检测刻录机…",
+  "en": "Detecting recorders…"
+ },
+ {
+  "zh": "确认开始流式刻录",
+  "en": "Confirm streaming burn"
+ },
+ {
+  "zh": "请先选择刻录机。",
+  "en": "Select a recorder first."
+ },
+ {
+  "zh": "预览 - DVD",
+  "en": "Preview - DVD"
+ },
+ {
+  "zh": "预览 - {0}",
+  "en": "Preview - {0}"
+ },
+ {
+  "zh": "请填写预设名称。",
+  "en": "Enter a preset name."
+ },
+ {
+  "zh": "请选择保存位置。",
+  "en": "Choose a save location."
+ },
+ {
+  "zh": "圈号（从内到外）",
+  "en": "Ring (inside to outside)"
+ },
+ {
+  "zh": "取消选中环的测量",
+  "en": "Clear selected measurement"
+ },
+ {
+  "zh": "恢复记录中的初值",
+  "en": "Restore initial values from the record"
+ },
+ {
+  "zh": "前往设计导入图片",
+  "en": "Import images in Design"
+ },
+ {
+  "zh": "CD-DA 编码",
+  "en": "CD-DA encoding"
+ },
+ {
+  "zh": "内半径 (mm)",
+  "en": "Inner r (mm)"
+ },
+ {
+  "zh": "外半径 (mm)",
+  "en": "Outer r (mm)"
+ },
+ {
+  "zh": "导出图案 PNG",
+  "en": "Export pattern PNG"
+ },
+ {
+  "zh": "标定记录（高级）",
+  "en": "Calibration session (advanced)"
+ },
+ {
+  "zh": "拟合三次轨距分布",
+  "en": "Fit cubic track pitch"
+ },
+ {
+  "zh": "数据超出光盘容量",
+  "en": "Data exceeds the disc capacity"
+ },
+ {
+  "zh": "sRGB 线性化",
+  "en": "sRGB linearization"
+ },
+ {
+  "zh": "检查刻录机支持",
+  "en": "Check recorder support"
+ },
+ {
+  "zh": "可选写入速度：",
+  "en": "Available write speeds:"
+ },
+ {
+  "zh": "自定义蓝光参数",
+  "en": "Custom Blu-ray parameters"
+ },
+ {
+  "zh": "由内向外的弯向",
+  "en": "Bend from inner to outer edge"
+ },
+ {
+  "zh": "同心圆与十字线",
+  "en": "Concentric rings and cross"
+ },
+ {
+  "zh": "新建粗标定图案",
+  "en": "Create coarse calibration target"
+ },
+ {
+  "zh": "{0} 号内缘",
+  "en": "Band {0} inner"
+ },
+ {
+  "zh": "{0} 号外缘",
+  "en": "Band {0} outer"
+ },
+ {
+  "zh": "当前可见边界段",
+  "en": "Current boundary segment"
+ },
+ {
+  "zh": "标定会话为空。",
+  "en": "The calibration record is empty."
+ },
+ {
+  "zh": "正在准备刻录…",
+  "en": "Preparing to burn…"
+ },
+ {
+  "zh": "照片尺寸无效。",
+  "en": "Invalid photo dimensions."
+ },
+ {
+  "zh": "标定参数已应用",
+  "en": "Calibration applied"
+ },
+ {
+  "zh": "语言设置已保存",
+  "en": "Language preference saved"
+ },
+ {
+  "zh": "贡献者：{0}",
+  "en": "Contributor: {0}"
+ },
+ {
+  "zh": "缓存位置不可用",
+  "en": "Cache location unavailable"
+ },
+ {
+  "zh": "无法保存设置：",
+  "en": "Could not save settings:"
+ },
+ {
+  "zh": "界面外观偏好。",
+  "en": "Appearance and language preferences."
+ },
+ {
+  "zh": "ATIP 引入",
+  "en": "ATIP lead-in"
+ },
+ {
+  "zh": "ATIP 引出",
+  "en": "ATIP lead-out"
+ },
+ {
+  "zh": "不能超过 60",
+  "en": "must not exceed 60"
+ },
+ {
+  "zh": "标定盘刻录日志",
+  "en": "Calibration disc recording log"
+ },
+ {
+  "zh": "已是最新版本。",
+  "en": "You are using the latest version."
+ },
+ {
+  "zh": "更新信息无效。",
+  "en": "The update information is invalid."
+ },
+ {
+  "zh": "检查更新超时。",
+  "en": "The update check timed out."
+ },
+ {
+  "zh": "下载更新超时。",
+  "en": "The update download timed out."
+ },
+ {
+  "zh": "上次更新未完成",
+  "en": "The last update did not finish"
+ },
+ {
+  "zh": "DVD 内半径",
+  "en": "DVD inner radius"
+ },
+ {
+  "zh": "DVD 外半径",
+  "en": "DVD outer radius"
+ },
+ {
+  "zh": "DVD 扇区数",
+  "en": "DVD sector count"
+ },
+ {
+  "zh": "{0} 源图片",
+  "en": "{0} source image"
+ },
+ {
+  "zh": "失败：流式刻录",
+  "en": "Failed: streaming burn"
+ },
+ {
+  "zh": "导入标定盘照片",
+  "en": "Import calibration disc photo"
+ },
+ {
+  "zh": "标定操作未完成",
+  "en": "Calibration operation did not complete"
+ },
+ {
+  "zh": "正在导出图案…",
+  "en": "Exporting pattern…"
+ },
+ {
+  "zh": "正在读取照片…",
+  "en": "Reading photo…"
+ },
+ {
+  "zh": "流式刻录未完成",
+  "en": "Streaming burn did not complete"
+ },
+ {
+  "zh": "请先创建图案。",
+  "en": "Create a pattern first."
+ },
+ {
+  "zh": "请选择刻录机。",
+  "en": "Select a recorder."
+ },
+ {
+  "zh": "预览 - BD",
+  "en": "Preview - BD"
+ },
+ {
+  "zh": "预览 - CD",
+  "en": "Preview - CD"
+ },
+ {
+  "zh": "从默认参数开始",
+  "en": "Start with default parameters"
+ },
+ {
+  "zh": "尚未运行任务。",
+  "en": "No jobs have run yet."
+ },
+ {
+  "zh": "有未保存的更改",
+  "en": "Unsaved changes"
+ },
+ {
+  "zh": "请填写{0}。",
+  "en": "Enter {0}."
+ },
+ {
+  "zh": "请填写工程名。",
+  "en": "Enter a project name."
+ },
+ {
+  "zh": "打开标定工作区",
+  "en": "Open Calibration"
+ },
+ {
+  "zh": "生成镜像／音轨",
+  "en": "Generate image / track"
+ },
+ {
+  "zh": "显示或隐藏图层",
+  "en": "Show or hide layer"
+ },
+ {
+  "zh": "显示 / 隐藏",
+  "en": "Show / Hide"
+ },
+ {
+  "zh": "测量时间不足",
+  "en": "not enough measurement time"
+ },
+ {
+  "zh": "刻录机已接收",
+  "en": "Accepted by recorder"
+ },
+ {
+  "zh": "光驱 {0}",
+  "en": "Drive {0}"
+ },
+ {
+  "zh": "创建刻录格式",
+  "en": "Create the burn format"
+ },
+ {
+  "zh": "重标当前交界",
+  "en": "Remeasure boundary"
+ },
+ {
+  "zh": "读取可见条纹",
+  "en": "Read visible marks"
+ },
+ {
+  "zh": "标定轮廓预览",
+  "en": "Calibration contour preview"
+ },
+ {
+  "zh": "其他标定参数",
+  "en": "Additional calibration parameters"
+ },
+ {
+  "zh": "清空最近工程",
+  "en": "Clear recent projects"
+ },
+ {
+  "zh": "发生内部错误",
+  "en": "Internal error"
+ },
+ {
+  "zh": "选择输出位置",
+  "en": "Select output location"
+ },
+ {
+  "zh": "选择缓存位置",
+  "en": "Select cache location"
+ },
+ {
+  "zh": "目录不存在：",
+  "en": "Directory does not exist:"
+ },
+ {
+  "zh": "默认工程位置",
+  "en": "Default project location"
+ },
+ {
+  "zh": "下一可写地址",
+  "en": "Next writable address"
+ },
+ {
+  "zh": "1 · 轻度",
+  "en": "1 · Light"
+ },
+ {
+  "zh": "2 · 强力",
+  "en": "2 · Strong"
+ },
+ {
+  "zh": "3 · 分区",
+  "en": "3 · Zone"
+ },
+ {
+  "zh": "旧版周期保护",
+  "en": "Legacy periodic guard"
+ },
+ {
+  "zh": "内置盘片预设",
+  "en": "Built-in disc presets"
+ },
+ {
+  "zh": "必须大于 0",
+  "en": "must be greater than 0"
+ },
+ {
+  "zh": "正在检查更新",
+  "en": "Checking for updates"
+ },
+ {
+  "zh": "已取消更新。",
+  "en": "Update cancelled."
+ },
+ {
+  "zh": "无法安装更新",
+  "en": "The update could not be installed"
+ },
+ {
+  "zh": "几何总扇区数",
+  "en": "Geometry sectors"
+ },
+ {
+  "zh": "实时预览失败",
+  "en": "Live preview failed"
+ },
+ {
+  "zh": "CD 内半径",
+  "en": "CD inner radius"
+ },
+ {
+  "zh": "CD 外半径",
+  "en": "CD outer radius"
+ },
+ {
+  "zh": "CD 扇区数",
+  "en": "CD sector count"
+ },
+ {
+  "zh": "CD 数据盘",
+  "en": "CD data disc"
+ },
+ {
+  "zh": "{0} 扇区",
+  "en": "{0} sectors"
+ },
+ {
+  "zh": "打开标定记录",
+  "en": "Open calibration record"
+ },
+ {
+  "zh": "操作已取消。",
+  "en": "Operation canceled."
+ },
+ {
+  "zh": "流式刻录完成",
+  "en": "Streaming burn complete"
+ },
+ {
+  "zh": "等待 {0}",
+  "en": "Waiting for {0}"
+ },
+ {
+  "zh": "自动（推荐）",
+  "en": "Automatic (recommended)"
+ },
+ {
+  "zh": "蓝光总扇区数",
+  "en": "Blu-ray total sectors"
+ },
+ {
+  "zh": "图片无法导入",
+  "en": "Cannot import image"
+ },
+ {
+  "zh": "打开其他工程",
+  "en": "Open another project"
+ },
+ {
+  "zh": "无法保存工程",
+  "en": "Cannot save project"
+ },
+ {
+  "zh": "无法创建工程",
+  "en": "Cannot create project"
+ },
+ {
+  "zh": "无法打开工程",
+  "en": "Cannot open project"
+ },
+ {
+  "zh": "版本 {0}",
+  "en": "Version {0}"
+ },
+ {
+  "zh": "设计合成失败",
+  "en": "Design composition failed"
+ },
+ {
+  "zh": "预设加载失败",
+  "en": "Preset loading failed"
+ },
+ {
+  "zh": "同侧三点量环",
+  "en": "Measure with three points on one side"
+ },
+ {
+  "zh": "打开输出位置",
+  "en": "Open output folder"
+ },
+ {
+  "zh": "查看读回预览",
+  "en": "Preview output"
+ },
+ {
+  "zh": "预设详细信息",
+  "en": "Preset details"
+ },
+ {
+  "zh": "设计页合成图",
+  "en": "Design composite"
+ },
+ {
+  "zh": "刻录机与速度",
+  "en": "Recorder and speed"
+ },
+ {
+  "zh": "开始流式刻录",
+  "en": "Start streaming burn"
+ },
+ {
+  "zh": "下一步：刻录",
+  "en": "Next: Burn"
+ },
+ {
+  "zh": "输出 ISO",
+  "en": "Output ISO"
+ },
+ {
+  "zh": "下一步：导出",
+  "en": "Next: Export"
+ },
+ {
+  "zh": "当前工程参数",
+  "en": "Geometry"
+ },
+ {
+  "zh": "从列表中移除",
+  "en": "Remove from list"
+ },
+ {
+  "zh": "查看刻录图案",
+  "en": "Burn pattern"
+ },
+ {
+  "zh": "查看矫正预览",
+  "en": "Rectified preview"
+ },
+ {
+  "zh": "叠加拟合曲线",
+  "en": "Fitted curves"
+ },
+ {
+  "zh": "前往流式刻录",
+  "en": "Open streaming burn"
+ },
+ {
+  "zh": "保存标定记录",
+  "en": "Save calibration session"
+ },
+ {
+  "zh": "导入盘片照片",
+  "en": "Import disc photo"
+ },
+ {
+  "zh": "描曲线并反推",
+  "en": "Trace & solve"
+ },
+ {
+  "zh": "返回修正照片",
+  "en": "Back to photo correction"
+ },
+ {
+  "zh": "应用标定参数",
+  "en": "Apply calibration"
+ },
+ {
+  "zh": "旋转 (°)",
+  "en": "Rotation (°)"
+ },
+ {
+  "zh": "缩放 (%)",
+  "en": "Scale (%)"
+ },
+ {
+  "zh": "下一步：预览",
+  "en": "Next: Preview"
+ },
+ {
+  "zh": "连接刻录机",
+  "en": "Connect to the recorder"
+ },
+ {
+  "zh": "段 {0}",
+  "en": "S{0}"
+ },
+ {
+  "zh": "从光盘读取",
+  "en": "Read from disc"
+ },
+ {
+  "zh": "点 {0}",
+  "en": "Point {0}"
+ },
+ {
+  "zh": "选择源图片",
+  "en": "Select source image"
+ },
+ {
+  "zh": "每扇区采样",
+  "en": "Samples per sector"
+ },
+ {
+  "zh": "路径无效：",
+  "en": "Invalid path:"
+ },
+ {
+  "zh": "未插入光盘",
+  "en": "No disc"
+ },
+ {
+  "zh": "媒体 ID",
+  "en": "Media ID"
+ },
+ {
+  "zh": "刻录标定盘",
+  "en": "Burn calibration disc"
+ },
+ {
+  "zh": "下载并安装",
+  "en": "Download and install"
+ },
+ {
+  "zh": "更新已取消",
+  "en": "Update cancelled"
+ },
+ {
+  "zh": "可用扇区数",
+  "en": "Usable sectors"
+ },
+ {
+  "zh": "CD 音轨",
+  "en": "CD audio track"
+ },
+ {
+  "zh": "擦除并刻录",
+  "en": "Erase and record"
+ },
+ {
+  "zh": "实测内半径",
+  "en": "Measured inner radius"
+ },
+ {
+  "zh": "实测外半径",
+  "en": "Measured outer radius"
+ },
+ {
+  "zh": "操作未执行",
+  "en": "Operation not performed"
+ },
+ {
+  "zh": "生成内半径",
+  "en": "Generated inner radius"
+ },
+ {
+  "zh": "生成外半径",
+  "en": "Generated outer radius"
+ },
+ {
+  "zh": "相对一次项",
+  "en": "Relative linear coefficient"
+ },
+ {
+  "zh": "相对三次项",
+  "en": "Relative cubic coefficient"
+ },
+ {
+  "zh": "相对二次项",
+  "en": "Relative quadratic coefficient"
+ },
+ {
+  "zh": "蓝光内半径",
+  "en": "Blu-ray inner radius"
+ },
+ {
+  "zh": "蓝光外半径",
+  "en": "Blu-ray outer radius"
+ },
+ {
+  "zh": "预览已导出",
+  "en": "Preview exported"
+ },
+ {
+  "zh": "任务已取消",
+  "en": "Job cancelled"
+ },
+ {
+  "zh": "任务未完成",
+  "en": "Job incomplete"
+ },
+ {
+  "zh": "工程已创建",
+  "en": "Project created"
+ },
+ {
+  "zh": "正在取消…",
+  "en": "Cancelling…"
+ },
+ {
+  "zh": "正在运行…",
+  "en": "Running…"
+ },
+ {
+  "zh": "请检查输入",
+  "en": "Check your input"
+ },
+ {
+  "zh": "撤销上一点",
+  "en": "Undo last point"
+ },
+ {
+  "zh": "第三方声明",
+  "en": "Third-party notices"
+ },
+ {
+  "zh": "刻录前确认",
+  "en": "Before burning"
+ },
+ {
+  "zh": "保存为预设",
+  "en": "Save as preset"
+ },
+ {
+  "zh": "参数已更新",
+  "en": "Parameters updated"
+ },
+ {
+  "zh": "从模板开始",
+  "en": "Start from a template"
+ },
+ {
+  "zh": "删除选中点",
+  "en": "Delete point"
+ },
+ {
+  "zh": "生成标定盘",
+  "en": "Create target"
+ },
+ {
+  "zh": "{0} 层",
+  "en": "{0} layers"
+ },
+ {
+  "zh": "正在刻录",
+  "en": "Burning"
+ },
+ {
+  "zh": "当前量取",
+  "en": "Arc to measure"
+ },
+ {
+  "zh": "{0}内",
+  "en": "{0}i"
+ },
+ {
+  "zh": "{0}外",
+  "en": "{0}o"
+ },
+ {
+  "zh": "当前交界",
+  "en": "Boundary"
+ },
+ {
+  "zh": "标定操作",
+  "en": "Calibration operation"
+ },
+ {
+  "zh": "边界标定",
+  "en": "Boundary calibration"
+ },
+ {
+  "zh": "另描一段",
+  "en": "Start another segment"
+ },
+ {
+  "zh": "删除这段",
+  "en": "Delete this segment"
+ },
+ {
+  "zh": "盘片预设",
+  "en": "Disc preset"
+ },
+ {
+  "zh": "盘片几何",
+  "en": "Disc geometry"
+ },
+ {
+  "zh": "导入图片",
+  "en": "Import images"
+ },
+ {
+  "zh": "预览尺寸",
+  "en": "Preview size"
+ },
+ {
+  "zh": "切换预设",
+  "en": "Switch preset"
+ },
+ {
+  "zh": "覆盖参数",
+  "en": "Replace parameters"
+ },
+ {
+  "zh": "清空缓存",
+  "en": "Clear cache"
+ },
+ {
+  "zh": "跟随系统",
+  "en": "System"
+ },
+ {
+  "zh": "简体中文",
+  "en": "简体中文"
+ },
+ {
+  "zh": "恢复默认",
+  "en": "Reset"
+ },
+ {
+  "zh": "缓存位置",
+  "en": "Cache location"
+ },
+ {
+  "zh": "繁體中文",
+  "en": "繁體中文"
+ },
+ {
+  "zh": "可用扇区",
+  "en": "Usable sectors"
+ },
+ {
+  "zh": "光驱信息",
+  "en": "Drive information"
+ },
+ {
+  "zh": "介质类型",
+  "en": "Media type"
+ },
+ {
+  "zh": "读取速度",
+  "en": "Read speeds"
+ },
+ {
+  "zh": "写入速度",
+  "en": "Write speeds"
+ },
+ {
+  "zh": "旧版桥接",
+  "en": "Legacy bridge"
+ },
+ {
+  "zh": "不能为空",
+  "en": "cannot be empty"
+ },
+ {
+  "zh": "返回标定",
+  "en": "Back to calibration"
+ },
+ {
+  "zh": "应用更新",
+  "en": "Application update"
+ },
+ {
+  "zh": "前往导出",
+  "en": "Go to Export"
+ },
+ {
+  "zh": "前往设计",
+  "en": "Go to Design"
+ },
+ {
+  "zh": "导出失败",
+  "en": "Export failed"
+ },
+ {
+  "zh": "延迟交织",
+  "en": "Delayed interleaving"
+ },
+ {
+  "zh": "总扇区数",
+  "en": "Total sectors"
+ },
+ {
+  "zh": "标定参数",
+  "en": "Calibration parameters"
+ },
+ {
+  "zh": "确认刻录",
+  "en": "Confirm burn"
+ },
+ {
+  "zh": "等待开始",
+  "en": "Ready to start"
+ },
+ {
+  "zh": "输出预览",
+  "en": "Output preview"
+ },
+ {
+  "zh": "任务完成",
+  "en": "Task completed"
+ },
+ {
+  "zh": "创建工程",
+  "en": "Create project"
+ },
+ {
+  "zh": "刻录完成",
+  "en": "Burn complete"
+ },
+ {
+  "zh": "实时更新",
+  "en": "Live update"
+ },
+ {
+  "zh": "工程设置",
+  "en": "Project settings"
+ },
+ {
+  "zh": "打开工程",
+  "en": "Open project"
+ },
+ {
+  "zh": "新建工程",
+  "en": "New project"
+ },
+ {
+  "zh": "流式刻录",
+  "en": "Streaming burn"
+ },
+ {
+  "zh": "生成镜像",
+  "en": "Generate image"
+ },
+ {
+  "zh": "生成音轨",
+  "en": "Generate track"
+ },
+ {
+  "zh": "空白工程",
+  "en": "Blank project"
+ },
+ {
+  "zh": "返回主页",
+  "en": "Return home"
+ },
+ {
+  "zh": "默认参数",
+  "en": "Default parameters"
+ },
+ {
+  "zh": "重标此圈",
+  "en": "Remeasure ring"
+ },
+ {
+  "zh": "精细标定",
+  "en": "Fine calibration"
+ },
+ {
+  "zh": "圆弧方向",
+  "en": "Arc orientation"
+ },
+ {
+  "zh": "检查更新",
+  "en": "Check for updates"
+ },
+ {
+  "zh": "开源组件",
+  "en": "Open-source components"
+ },
+ {
+  "zh": "清空日志",
+  "en": "Clear log"
+ },
+ {
+  "zh": "任务详情",
+  "en": "Task details"
+ },
+ {
+  "zh": "删除预设",
+  "en": "Delete preset"
+ },
+ {
+  "zh": "换用预设",
+  "en": "Change preset"
+ },
+ {
+  "zh": "保存位置",
+  "en": "Save location"
+ },
+ {
+  "zh": "写入内容",
+  "en": "Content to write"
+ },
+ {
+  "zh": "标定图案",
+  "en": "Calibration pattern"
+ },
+ {
+  "zh": "刻录速度",
+  "en": "Write speed"
+ },
+ {
+  "zh": "读取盘片",
+  "en": "Read disc"
+ },
+ {
+  "zh": "取消刻录",
+  "en": "Cancel burn"
+ },
+ {
+  "zh": "预设名称",
+  "en": "Preset name"
+ },
+ {
+  "zh": "输出文件",
+  "en": "Output file"
+ },
+ {
+  "zh": "设计投影",
+  "en": "Design projection"
+ },
+ {
+  "zh": "成品读回",
+  "en": "Output readback"
+ },
+ {
+  "zh": "预览精度",
+  "en": "Preview quality"
+ },
+ {
+  "zh": "刷新预览",
+  "en": "Refresh preview"
+ },
+ {
+  "zh": "导出预览",
+  "en": "Export preview"
+ },
+ {
+  "zh": "返回工程",
+  "en": "Back to project"
+ },
+ {
+  "zh": "最近工程",
+  "en": "Recent projects"
+ },
+ {
+  "zh": "标定照片",
+  "en": "Calibration photo"
+ },
+ {
+  "zh": "适合窗口",
+  "en": "Fit to window"
+ },
+ {
+  "zh": "实体外缘",
+  "en": "Physical outer edge"
+ },
+ {
+  "zh": "实体内缘",
+  "en": "Physical inner edge"
+ },
+ {
+  "zh": "清空曲线",
+  "en": "Clear curves"
+ },
+ {
+  "zh": "实拍输入",
+  "en": "Photograph"
+ },
+ {
+  "zh": "参数预测",
+  "en": "Prediction"
+ },
+ {
+  "zh": "偏离较大",
+  "en": "Large deviation"
+ },
+ {
+  "zh": "外部刻录",
+  "en": "External burning"
+ },
+ {
+  "zh": "选择位置",
+  "en": "Choose location"
+ },
+ {
+  "zh": "照片矫正",
+  "en": "Rectify photo"
+ },
+ {
+  "zh": "盘片尺寸",
+  "en": "Disc size"
+ },
+ {
+  "zh": "计算矫正",
+  "en": "Calculate rectification"
+ },
+ {
+  "zh": "反推参数",
+  "en": "Solve parameters"
+ },
+ {
+  "zh": "取消计算",
+  "en": "Cancel calculation"
+ },
+ {
+  "zh": "删除图层",
+  "en": "Delete layer"
+ },
+ {
+  "zh": "随盘文件",
+  "en": "Disc files"
+ },
+ {
+  "zh": "文件位置",
+  "en": "File placement"
+ },
+ {
+  "zh": "外缘出血",
+  "en": "Outer-edge bleed"
+ },
+ {
+  "zh": "暂无预览",
+  "en": "No preview"
+ },
+ {
+  "zh": "抖动强度",
+  "en": "Dithering"
+ },
+ {
+  "zh": "灰阶档位",
+  "en": "Gray levels"
+ },
+ {
+  "zh": "关闭通知",
+  "en": "Dismiss notification"
+ },
+ {
+  "zh": "查看日志",
+  "en": "View log"
+ },
+ {
+  "zh": "数据轨",
+  "en": "data track"
+ },
+ {
+  "zh": "蓝光盘",
+  "en": "Blu-ray disc"
+ },
+ {
+  "zh": "内侧弧",
+  "en": "Inner arc"
+ },
+ {
+  "zh": "中间弧",
+  "en": "Middle arc"
+ },
+ {
+  "zh": "外侧弧",
+  "en": "Outer arc"
+ },
+ {
+  "zh": "顺时针",
+  "en": "Clockwise"
+ },
+ {
+  "zh": "逆时针",
+  "en": "Counterclockwise"
+ },
+ {
+  "zh": "续点端",
+  "en": "Continue here"
+ },
+ {
+  "zh": "编辑…",
+  "en": "Edit…"
+ },
+ {
+  "zh": "最大化",
+  "en": "Maximize"
+ },
+ {
+  "zh": "已用 ",
+  "en": "Used:"
+ },
+ {
+  "zh": "未封闭",
+  "en": "Open"
+ },
+ {
+  "zh": "已封闭",
+  "en": "Closed"
+ },
+ {
+  "zh": "制造商",
+  "en": "Manufacturer"
+ },
+ {
+  "zh": "可擦写",
+  "en": "Rewritable"
+ },
+ {
+  "zh": "已复制",
+  "en": "Copied"
+ },
+ {
+  "zh": "内半径",
+  "en": "Inner radius"
+ },
+ {
+  "zh": "外半径",
+  "en": "Outer radius"
+ },
+ {
+  "zh": "扇区数",
+  "en": "Sector count"
+ },
+ {
+  "zh": "未交织",
+  "en": "Not interleaved"
+ },
+ {
+  "zh": "纯音轨",
+  "en": "Audio track only"
+ },
+ {
+  "zh": "逆交织",
+  "en": "Deinterleaved"
+ },
+ {
+  "zh": "不保存",
+  "en": "Don't save"
+ },
+ {
+  "zh": "完成：",
+  "en": "Completed:"
+ },
+ {
+  "zh": "已取消",
+  "en": "Cancelled"
+ },
+ {
+  "zh": "未命名",
+  "en": "Untitled"
+ },
+ {
+  "zh": "粗标定",
+  "en": "Coarse calibration"
+ },
+ {
+  "zh": "工程名",
+  "en": "Project name"
+ },
+ {
+  "zh": "浏览…",
+  "en": "Browse…"
+ },
+ {
+  "zh": "刻录机",
+  "en": "Recorder"
+ },
+ {
+  "zh": "未保存",
+  "en": "Unsaved"
+ },
+ {
+  "zh": "源图片",
+  "en": "Source image"
+ },
+ {
+  "zh": "选择…",
+  "en": "Select…"
+ },
+ {
+  "zh": "待开始",
+  "en": "Not started"
+ },
+ {
+  "zh": "进行中",
+  "en": "In progress"
+ },
+ {
+  "zh": "已完成",
+  "en": "Complete"
+ },
+ {
+  "zh": "图层名",
+  "en": "Layer name"
+ },
+ {
+  "zh": "文件夹",
+  "en": "Folder"
+ },
+ {
+  "zh": "2 级",
+  "en": "2 levels"
+ },
+ {
+  "zh": "4 级",
+  "en": "4 levels"
+ },
+ {
+  "zh": "最小化",
+  "en": "Minimize"
+ },
+ {
+  "zh": "）。",
+  "en": ")."
+ },
+ {
+  "zh": "校验",
+  "en": "Verify"
+ },
+ {
+  "zh": "音轨",
+  "en": "audio track"
+ },
+ {
+  "zh": "浏览",
+  "en": "Browse"
+ },
+ {
+  "zh": "设计",
+  "en": "Design"
+ },
+ {
+  "zh": "预览",
+  "en": "Preview"
+ },
+ {
+  "zh": "导出",
+  "en": "Export"
+ },
+ {
+  "zh": "刻录",
+  "en": "Burn"
+ },
+ {
+  "zh": "标定",
+  "en": "Calibrate"
+ },
+ {
+  "zh": "还原",
+  "en": "Restore"
+ },
+ {
+  "zh": "设置",
+  "en": "Settings"
+ },
+ {
+  "zh": "通用",
+  "en": "General"
+ },
+ {
+  "zh": "存储",
+  "en": "Storage"
+ },
+ {
+  "zh": "外观",
+  "en": "Appearance"
+ },
+ {
+  "zh": "主题",
+  "en": "Theme"
+ },
+ {
+  "zh": "深色",
+  "en": "Dark"
+ },
+ {
+  "zh": "浅色",
+  "en": "Light"
+ },
+ {
+  "zh": "语言",
+  "en": "Language"
+ },
+ {
+  "zh": "位置",
+  "en": "Locations"
+ },
+ {
+  "zh": "缓存",
+  "en": "Cache"
+ },
+ {
+  "zh": "取消",
+  "en": "Cancel"
+ },
+ {
+  "zh": "保存",
+  "en": "Save"
+ },
+ {
+  "zh": "空白",
+  "en": "Blank"
+ },
+ {
+  "zh": "其他",
+  "en": "Other"
+ },
+ {
+  "zh": "扇区",
+  "en": "Sectors"
+ },
+ {
+  "zh": "光驱",
+  "en": "Drive"
+ },
+ {
+  "zh": "型号",
+  "en": "Model"
+ },
+ {
+  "zh": "固件",
+  "en": "Firmware"
+ },
+ {
+  "zh": "盘符",
+  "en": "Drive letters"
+ },
+ {
+  "zh": "状态",
+  "en": "State"
+ },
+ {
+  "zh": "会话",
+  "en": "Sessions"
+ },
+ {
+  "zh": "返回",
+  "en": "Back"
+ },
+ {
+  "zh": "内圈",
+  "en": "inner ring"
+ },
+ {
+  "zh": "半径",
+  "en": "Radius"
+ },
+ {
+  "zh": "外圈",
+  "en": "outer ring"
+ },
+ {
+  "zh": "关闭",
+  "en": "Close"
+ },
+ {
+  "zh": "就绪",
+  "en": "Ready"
+ },
+ {
+  "zh": "工程",
+  "en": "Project"
+ },
+ {
+  "zh": "最近",
+  "en": "Recent"
+ },
+ {
+  "zh": "确定",
+  "en": "OK"
+ },
+ {
+  "zh": "蓝光",
+  "en": "Blu-ray"
+ },
+ {
+  "zh": "关于",
+  "en": "About"
+ },
+ {
+  "zh": "自定",
+  "en": "Custom"
+ },
+ {
+  "zh": "盘型",
+  "en": "Disc type"
+ },
+ {
+  "zh": "刷新",
+  "en": "Refresh"
+ },
+ {
+  "zh": "卷标",
+  "en": "Volume label"
+ },
+ {
+  "zh": "清空",
+  "en": "Clear"
+ },
+ {
+  "zh": "缩小",
+  "en": "Zoom out"
+ },
+ {
+  "zh": "放大",
+  "en": "Zoom in"
+ },
+ {
+  "zh": "图层",
+  "en": "Layers"
+ },
+ {
+  "zh": "属性",
+  "en": "Properties"
+ },
+ {
+  "zh": "影调",
+  "en": "Tone"
+ },
+ {
+  "zh": "亮度",
+  "en": "Brightness"
+ },
+ {
+  "zh": "制盘",
+  "en": "Disc making"
+ }
+]

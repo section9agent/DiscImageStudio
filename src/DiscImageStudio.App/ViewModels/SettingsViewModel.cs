@@ -190,7 +190,7 @@ public partial class SettingsViewModel : ObservableObject
                 5 => L.Turkish,
                 6 => L.Spanish,
                 7 => L.Czech,
-                _ => L.SystemLanguage,
+                _ => L.English,
             },
             Theme = ThemeIndex switch
             {
