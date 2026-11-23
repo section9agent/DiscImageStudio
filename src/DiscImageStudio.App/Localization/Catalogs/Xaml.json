@@ -127,7 +127,7 @@
   },
   "Xaml.FineCalibrationPurpose": {
     "zh-CN": "沿一条十字臂描点，拟合盘片参数",
-    "en": "Fine-tunes so radial lines burn straight",
+    "en": "Fine-tunes so radial lines come out straight",
     "zh-TW": "沿一條十字臂描點，擬合光碟參數",
     "ja": "十字線の腕を1本なぞってディスクのパラメーターを推定",
     "tr": "Çarpının bir kolunu izleyerek disk parametrelerini belirleyin",
@@ -1351,7 +1351,7 @@
   },
   "Xaml.CreateCalibrationDisc": {
     "zh-CN": "生成标定盘",
-    "en": "Make test disc",
+    "en": "Make test pattern",
     "zh-TW": "產生校準光碟",
     "ja": "キャリブレーション ディスクを作成",
     "tr": "Hedef oluştur",
