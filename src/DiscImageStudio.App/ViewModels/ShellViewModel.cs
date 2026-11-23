@@ -53,7 +53,7 @@ public partial class ShellViewModel : ObservableObject
         State.SelectDefaultPresets();
         // Fork addition: one music + hidden art model shared by Design, Export and Burn.
         HiddenArt = new HiddenArtViewModel(this, State, () => ExportViewModel.BuildCdParameters(State),
-            () => Design.EnsureExportCompositeAsync());
+            () => Design!.EnsureExportCompositeAsync());
         HiddenArt.Edited += MarkProjectDirty;
         Design = new DesignViewModel(this, State, dispatcher);
         LivePreview = new LivePreviewViewModel(_dispatcher, this, State);
