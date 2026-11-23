@@ -223,6 +223,7 @@ FilePlacementPreviewTests.Run();
 DesignComposerTests.Run();
 CdAudioCompatibilityTests.Run();
 CdHiddenArtTests.Run();
+CalibrationAssistTests.Run();
 CdParallelAudioTests.Run();
 CdDataImageTests.Run();
 VolumeLabelTests.Run();

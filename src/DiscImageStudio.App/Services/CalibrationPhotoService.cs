@@ -70,6 +70,33 @@ public static class CalibrationPhotoService
         return new(Array.AsReadOnly(Make(1)), Array.AsReadOnly(Make(0.125)));
     }
 
+    /// <summary>Fork addition: finds the disc rim and centre hole so the rectification points
+    /// start on them (see <see cref="CalibrationPhotoEdgeDetector"/>); falls back to the fixed
+    /// circle placement of <see cref="SuggestContours"/> where nothing is found.</summary>
+    public static (CalibrationPhotoContours Contours, CalibrationPhotoEdgeDetection Detection) DetectContours(
+        BitmapSource image, int count = 8, CancellationToken cancellationToken = default)
+    {
+        (byte[] pixels, int stride) = CopyBgra(image);
+        CalibrationPhotoEdgeDetection detection = CalibrationPhotoEdgeDetector.Detect(pixels, image.PixelWidth,
+            image.PixelHeight, stride, count, cancellationToken);
+        CalibrationPhotoContours contours = detection.OuterFound
+            ? new(detection.Outer, detection.Hole)
+            : SuggestContours(image, count, cancellationToken);
+        return (contours, detection);
+    }
+
+    /// <summary>The image's pixels as top-down BGRA.</summary>
+    public static (byte[] Pixels, int Stride) CopyBgra(BitmapSource image)
+    {
+        ArgumentNullException.ThrowIfNull(image);
+        BitmapSource converted = image.Format == PixelFormats.Bgra32 ? image
+            : new FormatConvertedBitmap(image, PixelFormats.Bgra32, null, 0);
+        int stride = checked(converted.PixelWidth * 4);
+        byte[] pixels = new byte[checked(stride * converted.PixelHeight)];
+        converted.CopyPixels(pixels, stride, 0);
+        return (pixels, stride);
+    }
+
     public static BitmapSource Rectify(BitmapSource image, CalibrationPhotoTransform transform,
         double canvasOuterRadiusMm, int pixelSize = 0, CancellationToken cancellationToken = default)
     {

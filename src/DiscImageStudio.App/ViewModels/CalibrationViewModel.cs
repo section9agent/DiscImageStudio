@@ -55,6 +55,7 @@ public partial class CalibrationViewModel : ObservableObject
         CancelCommand = new RelayCommand(() => _cancellation?.Cancel(), () => _cancellation is not null);
         ApplyParametersCommand = new RelayCommand(ApplyParameters, CanApplyParameters);
         InitializePhotoCommands();
+        InitializeGuide();
         InitializeRingCommands();
         InitializeCapacityCommands();
         RefreshCoarseSetup();
@@ -1184,6 +1185,7 @@ public partial class CalibrationViewModel : ObservableObject
         CancelCommand.NotifyCanExecuteChanged(); RefreshApplyParametersState();
         RefreshPhotoCommands();
         RefreshRingCommands();
+        NotifyGuide();
     }
 
     public sealed record CoarseCandidate(string Label, CalibrationParameters Parameters,

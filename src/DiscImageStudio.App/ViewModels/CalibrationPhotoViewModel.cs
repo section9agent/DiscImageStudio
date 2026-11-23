@@ -27,6 +27,9 @@ public partial class CalibrationViewModel
     [ObservableProperty] private BitmapSource? _photoImage;
     [ObservableProperty] private BitmapSource? _rectifiedPhoto;
     [ObservableProperty] private bool _isRectificationReady;
+    /// <summary>Fork addition: what the automatic edge finder reported for the current photo.</summary>
+    [ObservableProperty] private string _photoDetectionMessage = string.Empty;
+    [ObservableProperty] private bool _photoEdgesFound;
     [ObservableProperty] private bool _previewRectification;
     [ObservableProperty] private double _photoCanvasRadiusMm = 63;
     [ObservableProperty] private IReadOnlyList<CalibrationPhotoBoundaryPoint> _photoBoundaryPoints = [];
@@ -163,6 +166,9 @@ public partial class CalibrationViewModel
         ResetBoundarySegments();
         IsRectificationReady = false; PreviewRectification = false; IsPhotoStep = true;
         RectificationSummary = string.Empty;
+        PhotoDetectionMessage = string.Empty;
+        PhotoEdgesFound = false;
+        _rectifiedPixels = null;
         RefreshPhotoCommands();
     }
 
@@ -192,14 +198,17 @@ public partial class CalibrationViewModel
             var result = await Task.Run(() =>
             {
                 var image = CalibrationPhotoService.Load(path, cancellationToken: token);
-                var contours = CalibrationPhotoService.SuggestContours(image, 8, token);
-                return (Image: image, Contours: contours, Png: EncodePhoto(image));
+                var (contours, detection) = CalibrationPhotoService.DetectContours(image, 8, token);
+                return (Image: image, Contours: contours, Detection: detection, Png: EncodePhoto(image));
             }, token);
             token.ThrowIfCancellationRequested();
             InvalidatePhotoRectification();
             PhotoImage = result.Image; _photoPng = result.Png;
             SetBoundaryPoints(result.Contours.Outer, result.Contours.Hole);
-            _statusMessage = L.T("照片已导入。请把两组控制点拖到光盘实体外缘和实体内缘，然后计算矫正。");
+            PhotoDetectionMessage = result.Detection.Message;
+            PhotoEdgesFound = result.Detection.OuterFound && result.Detection.HoleFound;
+            _statusMessage = PhotoEdgesFound ? result.Detection.Message
+                : L.T("照片已导入。请把两组控制点拖到光盘实体外缘和实体内缘，然后计算矫正。");
             RefreshCommands();
         });
     }
@@ -294,23 +303,32 @@ public partial class CalibrationViewModel
         else
         {
             if (edit.Index != -1 || points.Count >= 4000) return;
-            int id = points.Count == 0 ? 0 : points.Max(p => p.Index) + 1;
-            if (HasBoundarySegments)
+            // Fork addition: with snapping on, a click lands on the line's centre (fine stage)
+            // or traces the whole band edge it was placed on (boundary stage).
+            IReadOnlyList<CalibrationPoint> additions = SnapToLines && edit.InsertBeforeIndex is null
+                ? SnappedAdditions(points, arm, edit.XMm, edit.YMm)
+                : [new CalibrationPoint(edit.XMm, edit.YMm)];
+            foreach (CalibrationPoint addition in additions)
             {
-                int insertAt;
-                if (edit.InsertBeforeIndex is int before)
+                if (points.Count >= 4000) break;
+                int id = points.Count == 0 ? 0 : points.Max(p => p.Index) + 1;
+                if (HasBoundarySegments)
                 {
-                    insertAt = points.FindIndex(p => p.Arm == arm && p.Index == before);
-                    if (insertAt < 0) return; // A stale insertion hint must not connect another segment.
+                    int insertAt;
+                    if (edit.InsertBeforeIndex is int before)
+                    {
+                        insertAt = points.FindIndex(p => p.Arm == arm && p.Index == before);
+                        if (insertAt < 0) return; // A stale insertion hint must not connect another segment.
+                    }
+                    else
+                    {
+                        int last = points.FindLastIndex(p => p.Arm == arm);
+                        insertAt = last < 0 ? points.Count : last + 1;
+                    }
+                    points.Insert(insertAt, new(arm, id, addition.X, addition.Y));
                 }
-                else
-                {
-                    int last = points.FindLastIndex(p => p.Arm == arm);
-                    insertAt = last < 0 ? points.Count : last + 1;
-                }
-                points.Insert(insertAt, new(arm, id, edit.XMm, edit.YMm));
+                else points.Add(new(arm, id, addition.X, addition.Y));
             }
-            else points.Add(new(arm, id, edit.XMm, edit.YMm));
         }
         // Boundary paths keep their explicit neighbours through every edit. Numerical
         // radial ordering belongs to the fitter, never to the user's visible polyline.
@@ -319,6 +337,51 @@ public partial class CalibrationViewModel
             : points.OrderBy(p => p.Arm).ThenBy(p => p.XMm * p.XMm + p.YMm * p.YMm).ToArray();
         InvalidateFit();
         RefreshCommands();
+    }
+
+    // ---- Fork addition: snap-to-line ----
+
+    /// <summary>Clicks snap to the burned line (fine stage) or trace the band edge they hit
+    /// (boundary stage). Off places points exactly where clicked, as before.</summary>
+    [ObservableProperty] private bool _snapToLines = true;
+
+    private (BitmapSource Source, byte[] Pixels, int Stride)? _rectifiedPixels;
+
+    private IReadOnlyList<CalibrationPoint> SnappedAdditions(List<CalibrationTracePoint> existing, int arm,
+        double xMm, double yMm)
+    {
+        CalibrationPoint click = new(xMm, yMm);
+        if (RectifiedPhoto is not { } rectified) return [click];
+        if (_rectifiedPixels is not { } cache || !ReferenceEquals(cache.Source, rectified))
+        {
+            (byte[] pixels, int stride) = CalibrationPhotoService.CopyBgra(rectified);
+            _rectifiedPixels = cache = (rectified, pixels, stride);
+        }
+
+        double outer = SelectedPhysicalDiscSize.OuterRadiusMm;
+        if (!HasBoundarySegments)
+        {
+            return [CalibrationLineTracer.Snap(cache.Pixels, rectified.PixelWidth, rectified.PixelHeight, cache.Stride,
+                PhotoCanvasRadiusMm, click, CalibrationTraceFeature.Line) ?? click];
+        }
+
+        IReadOnlyList<CalibrationPoint> path = CalibrationLineTracer.Trace(cache.Pixels, rectified.PixelWidth,
+            rectified.PixelHeight, cache.Stride, PhotoCanvasRadiusMm, click, CalibrationTraceFeature.Edge,
+            minRadiusMm: 8, maxRadiusMm: outer - 1);
+        if (path.Count < 2) return [click];
+        // Continue the segment from its current end: the end of the path nearest to the
+        // segment's last point comes first, and points already on the segment are skipped.
+        List<CalibrationTracePoint> segment = existing.Where(p => p.Arm == arm).ToList();
+        List<CalibrationPoint> ordered = path.ToList();
+        if (segment.Count > 0)
+        {
+            CalibrationTracePoint last = segment[^1];
+            double toFirst = Math.Pow(path[0].X - last.XMm, 2) + Math.Pow(path[0].Y - last.YMm, 2);
+            double toLast = Math.Pow(path[^1].X - last.XMm, 2) + Math.Pow(path[^1].Y - last.YMm, 2);
+            if (toLast < toFirst) ordered.Reverse();
+        }
+
+        return ordered.Where(p => segment.All(q => Math.Pow(q.XMm - p.X, 2) + Math.Pow(q.YMm - p.Y, 2) > 0.16)).ToArray();
     }
 
     private void ClearTraces()

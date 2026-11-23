@@ -2,7 +2,7 @@
   "HalfDisc.Stage": {
     "zh-CN": "边界标定",
     "zh-TW": "邊界校準",
-    "en": "Boundary calibration",
+    "en": "Round 2 · Refine edges",
     "ja": "境界校正",
     "tr": "Sınır kalibrasyonu",
     "es": "Calibración por límites",
@@ -38,7 +38,7 @@
   "HalfDisc.Purpose": {
     "zh-CN": "沿可见交界修正半径",
     "zh-TW": "沿可見交界修正半徑",
-    "en": "Refine radii along visible boundaries",
+    "en": "Pins down the track spacing from wavy band edges",
     "ja": "見える境界に沿って半径を補正",
     "tr": "Görünen sınırlar boyunca yarıçapları düzelt",
     "es": "Ajustar radios siguiendo los límites visibles",

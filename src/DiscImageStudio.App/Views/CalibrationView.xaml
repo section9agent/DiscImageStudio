@@ -26,7 +26,8 @@
                 </WrapPanel>
             </controls:PageHeader.Actions>
         </controls:PageHeader>
-        <WrapPanel Grid.Row="1" Margin="0,0,0,10">
+        <StackPanel Grid.Row="1">
+        <WrapPanel Margin="0,0,0,10">
             <RadioButton x:Name="CoarsePhase" GroupName="CalibrationPhase"
                          IsChecked="{Binding IsCoarseMode, Mode=OneWay}" Command="{Binding SelectCoarseModeCommand}"
                          AutomationProperties.Name="{loc:Text Xaml.CoarseCalibrationPhase}" Margin="0,0,28,6">
@@ -52,6 +53,68 @@
                 </StackPanel>
             </RadioButton>
         </WrapPanel>
+        <!-- Fork addition: plain-language guide. It reads the page's state, says what to do
+             next and offers a button for it; the step cards below are unchanged. -->
+        <controls:VisibilityGate IsOpen="{Binding ShowGuide}">
+            <Border Background="{DynamicResource Surface2Brush}" BorderBrush="{DynamicResource DividerBrush}"
+                    BorderThickness="1" CornerRadius="{StaticResource RadiusPanel}" Padding="14,10" Margin="0,0,0,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding GuideRoundTitle}" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,16,0" />
+                            <ItemsControl ItemsSource="{Binding GuideSteps}" Focusable="False" VerticalAlignment="Center">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Margin="0,0,14,0">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource CompactHint}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsActive}" Value="True">
+                                                            <Setter Property="FontWeight" Value="SemiBold" />
+                                                            <Setter Property="Foreground" Value="{DynamicResource PrimaryBrush}" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                            <Run Text="{Binding Glyph, Mode=OneWay}" /> <Run Text="{Binding Label, Mode=OneWay}" />
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                        <TextBlock Text="{Binding GuideInstruction}" TextWrapping="Wrap" Margin="0,6,0,0" MaxWidth="900"
+                                   HorizontalAlignment="Left" />
+                        <controls:VisibilityGate IsOpen="{Binding GuideShowsSnap}">
+                            <CheckBox Content="Snap clicks to the burned lines" IsChecked="{Binding SnapToLines}" Margin="0,6,0,0" />
+                        </controls:VisibilityGate>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="16,0,0,0">
+                        <controls:VisibilityGate IsOpen="{Binding HasGuideSecondary}">
+                            <Button Style="{StaticResource SecondaryButton}" Content="{Binding GuideSecondaryLabel}"
+                                    Command="{Binding GuideSecondaryCommand}" Margin="0,0,8,0" />
+                        </controls:VisibilityGate>
+                        <Button Style="{StaticResource PrimaryButton}" Content="{Binding GuidePrimaryLabel}"
+                                Command="{Binding GuidePrimaryCommand}" />
+                        <Button Style="{StaticResource CompactButton}" Content="Hide guide" Margin="8,0,0,0"
+                                Command="{Binding HideGuideCommand}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </controls:VisibilityGate>
+        <controls:VisibilityGate IsOpen="{Binding ShowGuide}" Inverted="True">
+            <Button Style="{StaticResource CompactButton}" Content="Show calibration guide" HorizontalAlignment="Left"
+                    Margin="0,0,0,10" Command="{Binding ShowGuideCommand}" />
+        </controls:VisibilityGate>
+        </StackPanel>
         <!-- One scroll surface: in the wide layout the work area is exactly the viewport tall
              (the step column is an accordion that never grows past it), in the narrow layout
              it stacks and the page scrolls as one. -->

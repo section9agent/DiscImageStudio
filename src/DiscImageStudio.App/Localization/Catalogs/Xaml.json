@@ -100,7 +100,7 @@
   },
   "Xaml.CoarseCalibrationPhase": {
     "zh-CN": "粗标定",
-    "en": "Coarse calibration",
+    "en": "Round 1 · Rough size",
     "zh-TW": "粗校準",
     "ja": "概略校正",
     "tr": "Kaba kalibrasyon",
@@ -109,7 +109,7 @@
   },
   "Xaml.CoarseCalibrationPurpose": {
     "zh-CN": "沿一条半径点六个交界",
-    "en": "Mark six band edges on one radius",
+    "en": "Finds where the recording area starts and ends",
     "zh-TW": "沿一條半徑點六個交界",
     "ja": "同じ半径方向の帯の境界を6点指定",
     "tr": "Aynı yarıçap üzerinde altı bant kenarı işaretleyin",
@@ -118,7 +118,7 @@
   },
   "Xaml.FineCalibrationPhase": {
     "zh-CN": "精细标定",
-    "en": "Fine calibration",
+    "en": "Round 3 · Straighten lines",
     "zh-TW": "精細校準",
     "ja": "十字線の精密校正",
     "tr": "Hassas kalibrasyon",
@@ -127,7 +127,7 @@
   },
   "Xaml.FineCalibrationPurpose": {
     "zh-CN": "沿一条十字臂描点，拟合盘片参数",
-    "en": "Fit disc parameters from one traced cross arm",
+    "en": "Fine-tunes so radial lines burn straight",
     "zh-TW": "沿一條十字臂描點，擬合光碟參數",
     "ja": "十字線の腕を1本なぞってディスクのパラメーターを推定",
     "tr": "Çarpının bir kolunu izleyerek disk parametrelerini belirleyin",
@@ -1351,7 +1351,7 @@
   },
   "Xaml.CreateCalibrationDisc": {
     "zh-CN": "生成标定盘",
-    "en": "Create target",
+    "en": "Make test disc",
     "zh-TW": "產生校準光碟",
     "ja": "キャリブレーション ディスクを作成",
     "tr": "Hedef oluştur",
@@ -1459,7 +1459,7 @@
   },
   "Xaml.RectifyPhoto": {
     "zh-CN": "照片矫正",
-    "en": "Rectify photo",
+    "en": "Straighten photo",
     "zh-TW": "相片校正",
     "ja": "写真の補正",
     "tr": "Fotoğraf düzeltme",
