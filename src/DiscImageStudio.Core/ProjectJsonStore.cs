@@ -48,6 +48,22 @@ public sealed record ProjectOutputs(
 /// that bit.</summary>
 public sealed record ProjectBluRaySettings(bool InvertMapping = false);
 
+/// <summary>Music plus hidden art on one audio CD (fork feature): where the picture goes,
+/// the songs in play order (absolute WAV paths) and the ring settings. Null on every other
+/// project, and on CD projects that only carry art.</summary>
+public sealed record ProjectHiddenArt(
+    string Placement,
+    IReadOnlyList<string> Music,
+    bool TwoSecondGaps = true,
+    double PregapArtRadiusMm = 32,
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] double? SessionArtRadiusMm = null,
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] long? SessionStartSector = null)
+{
+    public const string WholeDisc = "whole";
+    public const string HiddenPregap = "pregap";
+    public const string SecondSession = "session2";
+}
+
 /// <summary>The on-disk project (.discproj): everything needed to reopen a disc design and
 /// regenerate its outputs. Images stay referenced by absolute path.
 /// <see cref="Tone"/> is null for files written before tone mapping existed; those projects
@@ -66,7 +82,8 @@ public sealed record ProjectDocument(
     DateTimeOffset CreatedUtc,
     DateTimeOffset ModifiedUtc,
     ToneProfile? Tone = null,
-    ProjectBluRaySettings? BluRay = null)
+    ProjectBluRaySettings? BluRay = null,
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] ProjectHiddenArt? HiddenArt = null)
 {
     public const string CdFamily = "cd";
     public const string DvdFamily = "dvd";
@@ -216,6 +233,22 @@ public static class ProjectJsonStore
         if (!document.IsBluRay && document.BluRay is not null)
         {
             throw DiagnosticMessage.InvalidData($"bluRay 设置只用于蓝光工程。");
+        }
+
+        if (document.HiddenArt is { } hiddenArt)
+        {
+            if (document.Family != OpticalDiscFamily.CompactDisc)
+                throw DiagnosticMessage.InvalidData($"hiddenArt is only valid for CD projects.");
+            if (hiddenArt.Placement is not (ProjectHiddenArt.WholeDisc or ProjectHiddenArt.HiddenPregap
+                or ProjectHiddenArt.SecondSession))
+                throw DiagnosticMessage.InvalidData(
+                    $"hiddenArt.placement must be '{ProjectHiddenArt.WholeDisc}', '{ProjectHiddenArt.HiddenPregap}' or '{ProjectHiddenArt.SecondSession}'.");
+            if (hiddenArt.Music is null || hiddenArt.Music.Any(string.IsNullOrWhiteSpace))
+                throw DiagnosticMessage.InvalidData($"hiddenArt.music must be a list of WAV paths.");
+            if (!double.IsFinite(hiddenArt.PregapArtRadiusMm) || hiddenArt.PregapArtRadiusMm <= 0
+                || hiddenArt.SessionArtRadiusMm is { } radius && (!double.IsFinite(radius) || radius <= 0)
+                || hiddenArt.SessionStartSector is <= 0)
+                throw DiagnosticMessage.InvalidData($"hiddenArt radii and the session start must be positive numbers.");
         }
 
         if (string.IsNullOrWhiteSpace(document.Name))

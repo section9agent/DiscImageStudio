@@ -21,15 +21,18 @@ public sealed record HiddenArtTrackItem(CdMusicTrack Track)
         CultureInfo.InvariantCulture);
 }
 
-/// <summary>Export-page card for music plus hidden art on one audio CD: art in track 1's
-/// pre-gap (burned with IMAPI2) or in a second session (burned with cdrecord). The picture,
-/// geometry and tone come from the project like a normal CD export.</summary>
+/// <summary>Music plus hidden art on one audio CD: art in track 1's pre-gap (burned with
+/// IMAPI2) or in a second session (burned with cdrecord). One instance lives on the shell:
+/// the Design page edits the songs and rings (and the canvas shades the music), Export
+/// generates the files, Burn burns, and the settings are saved in the project file. The
+/// picture, geometry and tone come from the project like a normal CD export.</summary>
 public partial class HiddenArtViewModel : ObservableObject
 {
     private readonly ShellViewModel _shell;
     private readonly DiscParametersState _state;
     private readonly Func<CdDiscParameters> _parameters;
     private readonly Func<Task<string>> _composite;
+    private bool _applying;
 
     internal HiddenArtViewModel(ShellViewModel shell, DiscParametersState state,
         Func<CdDiscParameters> parameters, Func<Task<string>> composite)
@@ -48,10 +51,110 @@ public partial class HiddenArtViewModel : ObservableObject
         ReadSessionStartCommand = new AsyncRelayCommand(ReadSessionStartAsync, CanEdit);
         BurnCommand = new AsyncRelayCommand(BurnAsync, CanEdit);
         _shell.BusyChanged += NotifyCommands;
-        _state.PropertyChanged += (_, _) => UpdateLayout();
+        _state.PropertyChanged += (_, args) =>
+        {
+            if (args.PropertyName is nameof(DiscParametersState.CdOutputPath) or nameof(DiscParametersState.CdTrackPath)) return;
+            UpdateLayout();
+        };
+        Tracks.CollectionChanged += (_, _) =>
+        {
+            OnPropertyChanged(nameof(HasTracks));
+            OnPropertyChanged(nameof(MusicTotalText));
+            MarkEdited();
+        };
         CdRecordPath = CdRecord.Locate() ?? string.Empty;
         UpdateLayout();
     }
+
+    /// <summary>A saved setting changed (songs, placement, rings); the shell marks the project dirty.</summary>
+    public event Action? Edited;
+
+    /// <summary>The layout was recomputed (inputs or disc geometry changed); the design canvas
+    /// redraws its music rings.</summary>
+    public event Action? LayoutChanged;
+
+    /// <summary>The current valid layout and the geometry it was planned on, or null.</summary>
+    public CdHiddenArtPlan? CurrentPlan { get; private set; }
+
+    public CdDiscParameters? CurrentParameters { get; private set; }
+
+    public bool HasTracks => Tracks.Count > 0;
+
+    public string MusicTotalText
+    {
+        get
+        {
+            long sectors = Tracks.Sum(item => item.Track.Sectors);
+            return Tracks.Count == 0 ? "No songs yet."
+                : $"{Tracks.Count} song(s), {TimeSpan.FromSeconds(sectors / 75.0).ToString(@"h\:mm\:ss", CultureInfo.InvariantCulture)} of music";
+        }
+    }
+
+    /// <summary>The project-file form of these settings; null when there is nothing to keep.</summary>
+    internal ProjectHiddenArt? Capture()
+    {
+        if (!IsHidden && Tracks.Count == 0) return null;
+        return new ProjectHiddenArt(
+            Placement switch
+            {
+                CdArtPlacement.HiddenPregap => ProjectHiddenArt.HiddenPregap,
+                CdArtPlacement.SecondSession => ProjectHiddenArt.SecondSession,
+                _ => ProjectHiddenArt.WholeDisc,
+            },
+            Tracks.Select(item => item.Track.Path).ToArray(),
+            TwoSecondGaps,
+            TryParsePositive(PregapArtRadius) ?? 32,
+            TryParsePositive(SessionArtRadius),
+            long.TryParse(SessionStart.Trim(), NumberStyles.Integer, CultureInfo.InvariantCulture, out long start) && start > 0
+                ? start : null);
+    }
+
+    /// <summary>Loads a project's settings (null resets to the original whole-disc mode).
+    /// Returns songs that could not be loaded, so the shell can say which.</summary>
+    internal IReadOnlyList<string> Apply(ProjectHiddenArt? saved)
+    {
+        _applying = true;
+        List<string> missing = [];
+        try
+        {
+            Tracks.Clear();
+            PlacementIndex = saved?.Placement switch
+            {
+                ProjectHiddenArt.HiddenPregap => 1,
+                ProjectHiddenArt.SecondSession => 2,
+                _ => 0,
+            };
+            TwoSecondGaps = saved?.TwoSecondGaps ?? true;
+            PregapArtRadius = (saved?.PregapArtRadiusMm ?? 32).ToString("0.##", CultureInfo.InvariantCulture);
+            SessionArtRadius = saved?.SessionArtRadiusMm?.ToString("0.##", CultureInfo.InvariantCulture) ?? string.Empty;
+            SessionStart = saved?.SessionStartSector?.ToString(CultureInfo.InvariantCulture) ?? string.Empty;
+            foreach (string path in saved?.Music ?? [])
+            {
+                try { Tracks.Add(new HiddenArtTrackItem(CdMusicTrack.Load(path))); }
+                catch (Exception exception) when (exception is IOException or InvalidDataException
+                                                      or UnauthorizedAccessException or ArgumentException)
+                {
+                    missing.Add(path);
+                }
+            }
+        }
+        finally
+        {
+            _applying = false;
+        }
+
+        UpdateLayout();
+        return missing;
+    }
+
+    private void MarkEdited()
+    {
+        if (!_applying) Edited?.Invoke();
+    }
+
+    private static double? TryParsePositive(string text)
+        => double.TryParse(text.Trim(), NumberStyles.Float, CultureInfo.InvariantCulture, out double value)
+           && double.IsFinite(value) && value > 0 ? value : null;
 
     public ObservableCollection<HiddenArtTrackItem> Tracks { get; } = [];
 
@@ -139,11 +242,36 @@ public partial class HiddenArtViewModel : ObservableObject
 
     public string BurnButtonText => IsSecondSession ? "Burn both sessions (cdrecord)" : "Burn disc (Windows IMAPI)";
 
-    partial void OnPlacementIndexChanged(int value) => UpdateLayout();
-    partial void OnTwoSecondGapsChanged(bool value) => UpdateLayout();
-    partial void OnPregapArtRadiusChanged(string value) => UpdateLayout();
-    partial void OnSessionArtRadiusChanged(string value) => UpdateLayout();
-    partial void OnSessionStartChanged(string value) => UpdateLayout();
+    partial void OnPlacementIndexChanged(int value)
+    {
+        UpdateLayout();
+        MarkEdited();
+    }
+
+    partial void OnTwoSecondGapsChanged(bool value)
+    {
+        UpdateLayout();
+        MarkEdited();
+    }
+
+    partial void OnPregapArtRadiusChanged(string value)
+    {
+        UpdateLayout();
+        MarkEdited();
+    }
+
+    partial void OnSessionArtRadiusChanged(string value)
+    {
+        UpdateLayout();
+        MarkEdited();
+    }
+
+    partial void OnSessionStartChanged(string value)
+    {
+        UpdateLayout();
+        MarkEdited();
+    }
+
 
     /// <summary>Builds the layout from the current inputs; throws with a readable message.</summary>
     internal CdHiddenArtPlan BuildPlan(CdDiscParameters parameters, long? measuredSessionStart = null)
@@ -255,26 +383,39 @@ public partial class HiddenArtViewModel : ObservableObject
 
     private void UpdateLayout()
     {
+        if (_applying) return;
+        CurrentPlan = null;
+        CurrentParameters = null;
         if (!IsHidden)
         {
             IsLayoutValid = false;
             LayoutSummary = string.Empty;
-            return;
+        }
+        else if (_state.HasCdFiles)
+        {
+            IsLayoutValid = false;
+            LayoutSummary = "Music + hidden art needs an audio CD: clear the disc files folder first.";
+        }
+        else
+        {
+            try
+            {
+                CdDiscParameters parameters = _parameters();
+                CdHiddenArtPlan plan = BuildPlan(parameters);
+                LayoutSummary = plan.Describe(parameters);
+                IsLayoutValid = true;
+                CurrentPlan = plan;
+                CurrentParameters = parameters;
+            }
+            catch (Exception exception) when (exception is ArgumentException or FormatException or OverflowException
+                                                  or InvalidOperationException)
+            {
+                LayoutSummary = exception.Message;
+                IsLayoutValid = false;
+            }
         }
 
-        try
-        {
-            CdDiscParameters parameters = _parameters();
-            CdHiddenArtPlan plan = BuildPlan(parameters);
-            LayoutSummary = plan.Describe(parameters);
-            IsLayoutValid = true;
-        }
-        catch (Exception exception) when (exception is ArgumentException or FormatException or OverflowException
-                                              or InvalidOperationException)
-        {
-            LayoutSummary = exception.Message;
-            IsLayoutValid = false;
-        }
+        LayoutChanged?.Invoke();
     }
 
     private static double ParseRadius(string text)

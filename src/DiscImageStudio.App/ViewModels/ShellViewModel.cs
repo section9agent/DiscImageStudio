@@ -51,6 +51,10 @@ public partial class ShellViewModel : ObservableObject
         State.PropertyChanged += State_PropertyChanged;
         _presetLoadWarning = State.TryLoadPresets();
         State.SelectDefaultPresets();
+        // Fork addition: one music + hidden art model shared by Design, Export and Burn.
+        HiddenArt = new HiddenArtViewModel(this, State, () => ExportViewModel.BuildCdParameters(State),
+            () => Design.EnsureExportCompositeAsync());
+        HiddenArt.Edited += MarkProjectDirty;
         Design = new DesignViewModel(this, State, dispatcher);
         LivePreview = new LivePreviewViewModel(_dispatcher, this, State);
         Home = new HomeViewModel(this, State, _recentProjects);
@@ -92,6 +96,9 @@ public partial class ShellViewModel : ObservableObject
 
     public DiscParametersState State { get; }
     internal IOpticalDiscBurner OpticalBurner { get; }
+
+    /// <summary>Fork addition: music + hidden art settings shared by Design, Export and Burn.</summary>
+    public HiddenArtViewModel HiddenArt { get; }
 
     public DesignViewModel Design { get; }
 
@@ -630,6 +637,7 @@ public partial class ShellViewModel : ObservableObject
         IReadOnlyDictionary<string, (ImageSource? Image, ImageSource? Thumbnail)>? preloadedLayers = null)
     {
         _isApplyingProject = true;
+        IReadOnlyList<string> missingSongs = [];
         try
         {
             CurrentProject = document;
@@ -640,10 +648,17 @@ public partial class ShellViewModel : ObservableObject
             LivePreview.SetDiscType(document.Family, clearResult: true);
             ProjectSession.ApplyToState(document, State);
             Design.LoadLayers(document.Layers, preloadedLayers);
+            missingSongs = HiddenArt.Apply(document.IsCd ? document.HiddenArt : null);
         }
         finally
         {
             _isApplyingProject = false;
+        }
+
+        if (missingSongs.Count > 0)
+        {
+            ShowToast("Some songs are missing", "These music files could not be loaded and were left out:\n"
+                + string.Join("\n", missingSongs), ToastKind.Warning);
         }
 
         _recentProjects.Record(new RecentProjectEntry(
@@ -777,6 +792,7 @@ public partial class ShellViewModel : ObservableObject
             Outputs = ProjectSession.CaptureOutputs(current, State),
             Tone = ProjectSession.CaptureTone(current, State),
             BluRay = ProjectSession.CaptureBluRay(current, State),
+            HiddenArt = current.IsCd ? this.HiddenArt.Capture() : null,
             Layers = Design.CaptureLayers(),
             ThumbnailPngBase64 = await Design.RenderThumbnailAsync() ?? current.ThumbnailPngBase64,
             ModifiedUtc = DateTimeOffset.Now,

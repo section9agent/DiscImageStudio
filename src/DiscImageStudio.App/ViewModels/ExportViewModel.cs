@@ -31,7 +31,7 @@ public partial class ExportViewModel : ObservableObject
         _shell = shell;
         _state = state;
         _design = design;
-        HiddenArt = new HiddenArtViewModel(shell, state, BuildCdParameters, () => _design.EnsureExportCompositeAsync());
+        HiddenArt = shell.HiddenArt;
         HiddenArt.PropertyChanged += (_, args) =>
         {
             if (args.PropertyName == nameof(HiddenArtViewModel.PlacementIndex))
@@ -252,14 +252,16 @@ public partial class ExportViewModel : ObservableObject
     }
 
     /// <summary>The project's CD generation geometry; shared with the hidden-art card.</summary>
-    private CdDiscParameters BuildCdParameters() => new(
-        ParameterParser.ParsePositiveDouble(_state.CdInnerRadius, L.T("内半径")),
-        ParameterParser.ParsePositiveDouble(_state.CdOuterRadius, L.T("外半径")),
-        ParameterParser.ParsePositiveLong(_state.CdSectors, L.T("总扇区数")),
-        PitchLinear: ParameterParser.ParseDouble(_state.CdPitchLinear, L.T("相对一次项")),
-        PitchQuadratic: ParameterParser.ParseDouble(_state.CdPitchQuadratic, L.T("相对二次项")),
-        PitchCubic: ParameterParser.ParseDouble(_state.CdPitchCubic, L.T("相对三次项")),
-        UsableSectors: _state.GetUsableSectors(OpticalDiscFamily.CompactDisc));
+    private CdDiscParameters BuildCdParameters() => BuildCdParameters(_state);
+
+    internal static CdDiscParameters BuildCdParameters(DiscParametersState state) => new(
+        ParameterParser.ParsePositiveDouble(state.CdInnerRadius, L.T("内半径")),
+        ParameterParser.ParsePositiveDouble(state.CdOuterRadius, L.T("外半径")),
+        ParameterParser.ParsePositiveLong(state.CdSectors, L.T("总扇区数")),
+        PitchLinear: ParameterParser.ParseDouble(state.CdPitchLinear, L.T("相对一次项")),
+        PitchQuadratic: ParameterParser.ParseDouble(state.CdPitchQuadratic, L.T("相对二次项")),
+        PitchCubic: ParameterParser.ParseDouble(state.CdPitchCubic, L.T("相对三次项")),
+        UsableSectors: state.GetUsableSectors(OpticalDiscFamily.CompactDisc));
 
     private async Task GenerateDvdAsync(string compositePath)
     {

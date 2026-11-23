@@ -320,6 +320,34 @@ public class DiscDesignCanvas : FrameworkElement
         {
             DrawDataRegions(drawingContext, center, dataRegions);
         }
+
+        if (_design.MusicRegions is { } musicRegions)
+        {
+            DrawMusicRegions(drawingContext, center, musicRegions);
+        }
+    }
+
+    /// <summary>Fork addition: rings taken by the music (and the session gap) on a music +
+    /// hidden art CD, drawn over the artwork so it is obvious which part of the design is lost.
+    /// Each ring is labelled at its top edge.</summary>
+    private void DrawMusicRegions(DrawingContext context, Point center, IReadOnlyList<DesignViewModel.MusicRegionMm> regions)
+    {
+        foreach (DesignViewModel.MusicRegionMm region in regions)
+        {
+            double outer = ScreenLength(region.OuterRadiusMm);
+            double inner = ScreenLength(region.InnerRadiusMm);
+            if (outer <= inner || inner < 0) continue;
+            PathGeometry ring = new() { FillRule = FillRule.EvenOdd };
+            ring.Figures.Add(DiscRenderCore.CircleFigure(center, outer));
+            ring.Figures.Add(DiscRenderCore.CircleFigure(center, inner));
+            context.DrawGeometry(region.IsSessionGap ? DiscTheme.SessionGapRegion : DiscTheme.MusicRegion,
+                new Pen(DiscTheme.MusicRegionEdge, 1), ring);
+            if (outer - inner < 12) continue;
+            FormattedText label = new(region.IsSessionGap ? "session gap" : "music",
+                System.Globalization.CultureInfo.InvariantCulture, FlowDirection.LeftToRight,
+                new Typeface("Segoe UI"), 11, DiscTheme.MusicRegionEdge, VisualTreeHelper.GetDpi(this).PixelsPerDip);
+            context.DrawText(label, new Point(center.X - (label.Width / 2), center.Y - ((outer + inner) / 2) - (label.Height / 2)));
+        }
     }
 
     private void DrawLayer(DrawingContext context, DesignLayerViewModel layer)

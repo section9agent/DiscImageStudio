@@ -58,6 +58,7 @@ public partial class DesignViewModel : ObservableObject
         _compositeTimer = new DispatcherTimer { Interval = CompositeDebounce };
         _dataRegionTimer = new DispatcherTimer { Interval = DataRegionDebounce };
         _shell.PropertyChanged += Shell_PropertyChanged;
+        _shell.HiddenArt.LayoutChanged += RecomputeMusicRegions;
         _state.PropertyChanged += State_PropertyChanged;
         _compositeTimer.Tick += (_, _) =>
         {
@@ -122,6 +123,39 @@ public partial class DesignViewModel : ObservableObject
     private string _dataRegionOverflowText = string.Empty;
 
     public RelayCommand BrowseDataCommand => _shell.Export.BrowseDataCommand;
+
+    // ---- Fork addition: music + hidden art ----
+
+    /// <summary>Songs and rings for a music + hidden art CD (the shell's shared model).</summary>
+    public HiddenArtViewModel HiddenArt => _shell.HiddenArt;
+
+    /// <summary>A ring the music (or the gap between sessions) occupies, in millimetres. Art
+    /// drawn there never reaches the disc, so the canvas shades it.</summary>
+    public sealed record MusicRegionMm(double InnerRadiusMm, double OuterRadiusMm, bool IsSessionGap);
+
+    /// <summary>Null unless a valid music + hidden art layout is active on a CD project.</summary>
+    [ObservableProperty]
+    private IReadOnlyList<MusicRegionMm>? _musicRegions;
+
+    private void RecomputeMusicRegions()
+    {
+        IReadOnlyList<MusicRegionMm>? regions = null;
+        if (IsCd && _shell.HiddenArt.CurrentPlan is { } plan && _shell.HiddenArt.CurrentParameters is { } parameters)
+        {
+            double Radius(long sector)
+                => parameters.RadiusFromByte(Math.Clamp(sector, 0, parameters.Sectors) * CdDiscParameters.BytesPerSector);
+            regions = plan.Placement == CdArtPlacement.HiddenPregap
+                ? new[] { new MusicRegionMm(Radius(plan.MusicStartSector), Radius(plan.MusicEndSector), false) }
+                : new[]
+                {
+                    new MusicRegionMm(Radius(0), Radius(plan.MusicEndSector), false),
+                    new MusicRegionMm(Radius(plan.MusicEndSector), Radius(plan.ArtStartSector), true),
+                };
+        }
+
+        MusicRegions = regions;
+        CanvasChanged?.Invoke();
+    }
 
     public ObservableCollection<DesignLayerViewModel> Layers { get; } = [];
 
@@ -454,6 +488,7 @@ public partial class DesignViewModel : ObservableObject
         RefreshGeometry();
         _dataRegionTimer.Stop();
         RecomputeDataRegion();
+        RecomputeMusicRegions();
     }
 
     /// <summary>The overflow warning is the only localized guide text; refresh it on language

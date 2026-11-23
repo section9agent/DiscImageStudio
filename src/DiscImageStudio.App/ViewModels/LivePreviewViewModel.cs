@@ -799,6 +799,14 @@ public partial class LivePreviewViewModel : ObservableObject
                 };
             }
             bool overlay = metadata is not null && metadata.Parameters.Sectors == parameters.Sectors;
+            // Fork addition: a music + hidden art track sits at an offset on the disc; read it
+            // back there and shade the rest of the disc, which holds the music.
+            long hiddenArtStartByte = 0;
+            long hiddenArtStart = 0;
+            long hiddenArtEnd = 0;
+            bool hiddenArt = !dataImage && CdHiddenArt.TryReadTrackPlacement(trackPath, out hiddenArtStartByte,
+                out hiddenArtStart, out hiddenArtEnd) && hiddenArtStart < parameters.OutputSectors;
+            overlay |= hiddenArt;
             await StaWorker.RunAsync(() =>
             {
                 if (dataImage)
@@ -813,7 +821,11 @@ public partial class LivePreviewViewModel : ObservableObject
                 {
                     CdTrackGenerator.PreviewTrack(
                         trackPath, outputPath, parameters, outputSize,
-                        CdDiscParameters.BytesPerSector / samplesPerSector, deinterleave, cancellationToken);
+                        CdDiscParameters.BytesPerSector / samplesPerSector, deinterleave, cancellationToken,
+                        hiddenArtStartByte);
+                    if (hiddenArt)
+                        FileRegionPreviewOverlay.ApplyCd(outputPath, parameters, checked((uint)hiddenArtStart),
+                            checked((uint)Math.Min(hiddenArtEnd, parameters.OutputSectors)), cancellationToken);
                 }
                 return 0;
             });

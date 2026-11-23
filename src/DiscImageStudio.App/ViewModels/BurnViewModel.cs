@@ -117,8 +117,14 @@ public partial class BurnViewModel : ObservableObject
                 OnFamilyInputsChanged();
             }
         };
+        _shell.HiddenArt.PropertyChanged += (_, args) =>
+        {
+            if (args.PropertyName is nameof(HiddenArtViewModel.PlacementIndex)) OnHiddenArtBurnChanged();
+        };
         _state.PropertyChanged += (_, args) =>
         {
+            if (args.PropertyName is nameof(DiscParametersState.IsCdAudioMode) or nameof(DiscParametersState.CdDataDirectory))
+                OnHiddenArtBurnChanged();
             if (!UseCalibrationPattern && args.PropertyName is
                 nameof(DiscParametersState.DvdReadCompatibility) or nameof(DiscParametersState.DvdReadCompatibilityMode))
             {
@@ -193,6 +199,18 @@ public partial class BurnViewModel : ObservableObject
         ? _shell.Calibration.Target?.Parameters.Kind == CalibrationDiscKind.Dvd
         : _shell.CurrentProject?.IsDvd ?? false;
 
+    /// <summary>Fork addition: the shared music + hidden art model.</summary>
+    public HiddenArtViewModel HiddenArt => _shell.HiddenArt;
+
+    /// <summary>True when this project burns music plus hidden art instead of a whole-disc
+    /// art track; the page then shows the hidden-art burn card in place of the normal flow.</summary>
+    public bool IsHiddenArtBurn => !UseCalibrationPattern
+        && (_shell.CurrentProject?.IsCd ?? false)
+        && _state.IsCdAudioMode
+        && _shell.HiddenArt.IsHidden;
+
+    public bool IsNormalBurn => !IsHiddenArtBurn;
+
     public bool IsBluRayBurn => UseCalibrationPattern
         ? _shell.Calibration.Target?.Parameters.Kind == CalibrationDiscKind.BluRay
         : _shell.CurrentProject?.IsBluRay ?? false;
@@ -260,8 +278,15 @@ public partial class BurnViewModel : ObservableObject
     /// the derived family, so confirmation, summary and speeds all have to re-derive.</summary>
     public void OnCalibrationTargetChanged() => OnFamilyInputsChanged();
 
+    private void OnHiddenArtBurnChanged()
+    {
+        OnPropertyChanged(nameof(IsHiddenArtBurn));
+        OnPropertyChanged(nameof(IsNormalBurn));
+    }
+
     private void OnFamilyInputsChanged()
     {
+        OnHiddenArtBurnChanged();
         OnPropertyChanged(nameof(IsDvdBurn));
         OnPropertyChanged(nameof(DvdReadCompatibility));
         OnPropertyChanged(nameof(DvdReadCompatibilityMode));

@@ -219,7 +219,8 @@ public sealed class CdDiscModule : IOpticalDiscModule
             options.GetInt("size", 1600),
             options.GetInt("byte-step", 48),
             options.GetBoolean("deinterleave", true),
-            cancellationToken);
+            cancellationToken,
+            CdHiddenArt.TryReadTrackPlacement(track, out long hiddenArtStartByte, out _, out _) ? hiddenArtStartByte : 0);
         return new DiscJobResult(
             ModuleId,
             request.Command,

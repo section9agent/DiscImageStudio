@@ -27,6 +27,14 @@ internal static class DiscTheme
     /// soft tint because the ring must stay visible over arbitrary artwork.</summary>
     public static Brush DataRegion => Resolve("DiscDataRegionBrush", 0x66, 0x33, 0x85, 0xFF);
 
+    /// <summary>Fork addition: rings the music (and the session gap) take on a music + hidden
+    /// art CD. Nearly opaque, because art drawn there never reaches the disc.</summary>
+    public static Brush MusicRegion => Resolve("DiscMusicRegionBrush", 0xCC, 0x3A, 0x1F, 0x5C);
+
+    public static Brush SessionGapRegion => Resolve("DiscSessionGapRegionBrush", 0xCC, 0x15, 0x15, 0x1C);
+
+    public static Brush MusicRegionEdge => Resolve("DiscMusicRegionEdgeBrush", 0xFF, 0xFF, 0x7A, 0xD9);
+
     /// <summary>Footprint marker for a layer whose image file cannot be decoded.</summary>
     public static Brush MissingImage => Resolve("DangerBrush", 0xF3, 0x12, 0x60);
 

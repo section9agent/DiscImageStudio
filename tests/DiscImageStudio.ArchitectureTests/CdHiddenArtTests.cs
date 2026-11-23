@@ -29,6 +29,8 @@ internal static class CdHiddenArtTests
             TestValidation(parameters, music);
             TestCdRecordParsing();
             TestCdRecordArguments(music);
+            TestProjectRoundTrip(directory, music);
+            TestTrackPlacementSidecar(directory);
         }
         finally
         {
@@ -116,6 +118,44 @@ internal static class CdHiddenArtTests
         Require(CdRecord.Join(["dev=1,0,0", @"C:\My Music\a.wav"]) == "dev=1,0,0 \"C:\\My Music\\a.wav\"", "arguments with spaces are quoted");
     }
 
+    private static void TestProjectRoundTrip(string directory, CdMusicTrack[] music)
+    {
+        ProjectDocument document = new(
+            ProjectJsonStore.CurrentSchemaVersion, "hidden art", ProjectDocument.CdFamily,
+            new ProjectGeometry(24.5, 56.8, 359_849), [],
+            new ProjectOutputs(Path.Combine(directory, "out.wav"), false, string.Empty, "CD", false),
+            null, null, DateTimeOffset.UnixEpoch, DateTimeOffset.UnixEpoch,
+            HiddenArt: new ProjectHiddenArt(ProjectHiddenArt.SecondSession, [music[0].Path, music[1].Path],
+                TwoSecondGaps: false, PregapArtRadiusMm: 31.5, SessionArtRadiusMm: 52, SessionStartSector: 12_345));
+        string path = Path.Combine(directory, "hidden.discproj");
+        ProjectJsonStore.Save(path, document);
+        ProjectHiddenArt? loaded = ProjectJsonStore.Load(path).HiddenArt;
+        Require(loaded is not null && loaded.Placement == ProjectHiddenArt.SecondSession
+                && loaded.Music.SequenceEqual([music[0].Path, music[1].Path]) && !loaded.TwoSecondGaps
+                && loaded.PregapArtRadiusMm == 31.5 && loaded.SessionArtRadiusMm == 52 && loaded.SessionStartSector == 12_345,
+            "hidden-art settings survive project save/load");
+        ProjectJsonStore.Save(path, document with { HiddenArt = null });
+        Require(!File.ReadAllText(path).Contains("hiddenArt", StringComparison.OrdinalIgnoreCase)
+                && ProjectJsonStore.Load(path).HiddenArt is null,
+            "projects without hidden art keep their old file format");
+        Throws(() => ProjectJsonStore.Save(path, document with { HiddenArt = document.HiddenArt! with { Placement = "sideways" } }),
+            "an unknown placement is rejected");
+    }
+
+    private static void TestTrackPlacementSidecar(string directory)
+    {
+        Require(CdHiddenArt.TryReadTrackPlacement(Path.Combine(directory, "pregap", "art.wav"), out long pregapStart,
+                    out long pregapArtStart, out long pregapArtEnd)
+                && pregapStart == -150L * CdDiscParameters.BytesPerSector && pregapArtStart == 0 && pregapArtEnd > 0,
+            "a pre-gap track reads back from 150 sectors before LBA 0");
+        Require(CdHiddenArt.TryReadTrackPlacement(Path.Combine(directory, "session2", "art.wav"), out long sessionStart,
+                    out long sessionArtStart, out _)
+                && sessionArtStart == 12_345 && sessionStart == 12_345L * CdDiscParameters.BytesPerSector,
+            "a session 2 track reads back from its session start");
+        Require(!CdHiddenArt.TryReadTrackPlacement(Path.Combine(directory, "a.wav"), out _, out _, out _),
+            "an ordinary track has no hidden-art placement");
+    }
+
     private static byte[] Reference(string directory, string image, CdDiscParameters parameters, long sectors)
     {
         string path = Path.Combine(directory, $"reference-{sectors}.wav");
@@ -174,6 +214,7 @@ internal static class CdHiddenArtTests
         try { action(); }
         catch (ArgumentException) { return; }
         catch (InvalidDataException) { return; }
+        catch (System.Text.Json.JsonException) { return; }
         throw new InvalidOperationException("Expected an exception: " + name);
     }
 

@@ -276,6 +276,37 @@ public static class CdHiddenArt
         return new CdHiddenArtResult(output, cue, script, planPath, summary.Elapsed, plan.Describe(parameters));
     }
 
+    /// <summary>Where a hidden-art art track sits on the disc, from the plan sidecar written
+    /// next to it: the disc byte of the file's first sample (negative for a pre-gap file, which
+    /// starts with the 150 silent lead-in sectors) and the art's sector range. False for any
+    /// other track.</summary>
+    public static bool TryReadTrackPlacement(string trackPath, out long discStartByte,
+        out long artStartSector, out long artEndSector)
+    {
+        discStartByte = 0;
+        artStartSector = 0;
+        artEndSector = 0;
+        string sidecar = Path.GetFullPath(trackPath) + ".hidden-art.json";
+        if (!File.Exists(sidecar)) return false;
+        try
+        {
+            using JsonDocument document = JsonDocument.Parse(File.ReadAllText(sidecar));
+            JsonElement root = document.RootElement;
+            if (root.GetProperty("format").GetString() != "hidden-art-plan-v1") return false;
+            artStartSector = root.GetProperty(nameof(CdHiddenArtPlan.ArtStartSector)).GetInt64();
+            artEndSector = root.GetProperty(nameof(CdHiddenArtPlan.ArtEndSector)).GetInt64();
+            discStartByte = root.GetProperty("placement").GetString() == nameof(CdArtPlacement.HiddenPregap)
+                ? -CdHiddenArtPlan.StandardPregapSectors * CdDiscParameters.BytesPerSector
+                : artStartSector * CdDiscParameters.BytesPerSector;
+            return artEndSector > artStartSector;
+        }
+        catch (Exception exception) when (exception is JsonException or KeyNotFoundException
+                                              or InvalidOperationException or IOException or FormatException)
+        {
+            return false;
+        }
+    }
+
     /// <summary>CUE sheet for ImgBurn/cdrdao-style DAO burners: the picture is INDEX 00 of
     /// track 1, song 1 starts at INDEX 01.</summary>
     public static string BuildPregapCue(string artWavePath, CdHiddenArtPlan plan)

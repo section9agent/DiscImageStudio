@@ -565,7 +565,8 @@ public static class CdTrackGenerator
         int outputSize,
         int byteStep,
         bool deinterleave,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default,
+        long discStartByte = 0)
     {
         actual.Validate();
         if (outputSize is < 64 or > 8192)
@@ -599,7 +600,11 @@ public static class CdTrackGenerator
             (audioOffset, audioLength) = CdWaveFile.ReadAudioRange(input);
         }
 
-        long maximumBytes = Math.Min(actual.TotalBytes, audioLength);
+        // A hidden-art track does not start at disc byte 0 (fork addition): file byte i is
+        // disc byte discStartByte + i. Sector-aligned offsets keep the interleave phase intact.
+        if (discStartByte % CdDiscParameters.BytesPerSector != 0)
+            throw new ArgumentOutOfRangeException(nameof(discStartByte), "The track start must be sector aligned.");
+        long maximumBytes = Math.Min(actual.TotalBytes - discStartByte, audioLength);
         if (deinterleave)
         {
             SplatDeinterleaved(
@@ -612,7 +617,8 @@ public static class CdTrackGenerator
                 outputSize,
                 byteStep,
                 preview,
-                cancellationToken);
+                cancellationToken,
+                discStartByte);
         }
         else
         {
@@ -625,7 +631,8 @@ public static class CdTrackGenerator
                 outputSize,
                 byteStep,
                 preview,
-                cancellationToken);
+                cancellationToken,
+                discStartByte);
         }
 
         WritePng(Path.GetFullPath(outputPath), outputSize, preview.CreatePixels());
@@ -641,7 +648,8 @@ public static class CdTrackGenerator
         int outputSize,
         int byteStep,
         GrayPreview preview,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        long discStartByte)
     {
         byte[] buffer = new byte[1024 * 1024];
         long globalOffset = 0;
@@ -665,8 +673,8 @@ public static class CdTrackGenerator
             int first = remainder == 0 ? 0 : checked((int)(byteStep - remainder));
             for (int index = first; index < bytesRead; index += byteStep)
             {
-                long globalByte = globalOffset + index;
-                Splat(actual, outputSize, preview, globalByte, buffer[index]);
+                long globalByte = discStartByte + globalOffset + index;
+                if (globalByte >= 0) Splat(actual, outputSize, preview, globalByte, buffer[index]);
             }
 
             globalOffset += bytesRead;
@@ -687,7 +695,8 @@ public static class CdTrackGenerator
         int outputSize,
         int byteStep,
         GrayPreview preview,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        long discStartByte)
     {
         const int WindowBytes = 1024 * 1024;
         int lookAhead = CddaInterleaveTable.MaximumFileOffset;
@@ -723,7 +732,7 @@ public static class CdTrackGenerator
                     continue;
                 }
 
-                Splat(actual, outputSize, preview, logical, buffer[local]);
+                if (discStartByte + logical >= 0) Splat(actual, outputSize, preview, discStartByte + logical, buffer[local]);
             }
         }
     }
