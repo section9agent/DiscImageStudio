@@ -305,7 +305,7 @@ public partial class CalibrationViewModel
             if (edit.Index != -1 || points.Count >= 4000) return;
             // Fork addition: with snapping on, a click lands on the line's centre (fine stage)
             // or traces the whole band edge it was placed on (boundary stage).
-            IReadOnlyList<CalibrationPoint> additions = SnapToLines && edit.InsertBeforeIndex is null
+            IReadOnlyList<CalibrationPoint> additions = SnapToLines && edit.FromPointer && edit.InsertBeforeIndex is null
                 ? SnappedAdditions(points, arm, edit.XMm, edit.YMm)
                 : [new CalibrationPoint(edit.XMm, edit.YMm)];
             foreach (CalibrationPoint addition in additions)

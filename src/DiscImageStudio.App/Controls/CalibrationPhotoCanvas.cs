@@ -15,9 +15,11 @@ public sealed record CalibrationPhotoBoundaryPoint(CalibrationPhotoBoundaryKind 
 public sealed record CalibrationBoundaryEdit(CalibrationPhotoBoundaryKind Boundary, int Index, double X, double Y);
 public sealed record CalibrationTracePoint(int Arm, int Index, double XMm, double YMm);
 /// <summary>Index -1 adds a point before InsertBeforeIndex, or at the segment end when null.
-/// Existing indices identify a point without changing its neighbours.</summary>
+/// Existing indices identify a point without changing its neighbours.
+/// FromPointer marks a new point placed with the mouse; only those may be snapped to the burned
+/// line (fork addition), so programmatic edits keep their exact coordinates.</summary>
 public sealed record CalibrationTraceEdit(int Arm, int Index, double XMm, double YMm, bool Remove = false,
-    int? InsertBeforeIndex = null);
+    int? InsertBeforeIndex = null, bool FromPointer = false);
 public sealed record CalibrationRingArc(int RingIndex, double RadiusMm, bool IsConfirmed,
     IReadOnlyList<CalibrationPoint>? Points = null)
 {
@@ -375,12 +377,13 @@ public sealed class CalibrationPhotoCanvas : FrameworkElement
         bool continueFixedEnd = IsBoundarySegmentMode && _traceContinuation is not null;
         var previousIds = IsBoundarySegmentMode ? (TracePoints ?? []).Select(p => p.Index).ToHashSet() : null;
         var edit = new CalibrationTraceEdit(SelectedTraceArm, -1, point.X, point.Y,
-            InsertBeforeIndex: IsBoundarySegmentMode ? insertion.BeforeIndex : null);
+            InsertBeforeIndex: IsBoundarySegmentMode ? insertion.BeforeIndex : null, FromPointer: true);
         if (TraceEditedCommand?.CanExecute(edit) != true) return false;
         TraceEditedCommand.Execute(edit);
         if (IsBoundarySegmentMode)
         {
-            var added = TracePoints?.FirstOrDefault(p => p.Arm == SelectedTraceArm && !previousIds!.Contains(p.Index));
+            // A snapped click can trace several points; the segment's new end is the one to continue from.
+            var added = TracePoints?.LastOrDefault(p => p.Arm == SelectedTraceArm && !previousIds!.Contains(p.Index));
             if (added is null) return false;
             _selectedTrace = (added.Arm, added.Index);
             _traceLastExtension = IsTraceEndpoint(added.Arm, added.Index) ? _selectedTrace : null;
