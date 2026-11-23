@@ -65,7 +65,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding GuideRoundTitle}" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,16,0" />
+                            <TextBlock Text="{Binding GuideRoundTitle}" FontSize="14" Foreground="{DynamicResource TextPrimaryBrush}" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,16,0" />
                             <ItemsControl ItemsSource="{Binding GuideSteps}" Focusable="False" VerticalAlignment="Center">
                                 <ItemsControl.ItemsPanel>
                                     <ItemsPanelTemplate>
@@ -91,7 +91,7 @@
                                 </ItemsControl.ItemTemplate>
                             </ItemsControl>
                         </StackPanel>
-                        <TextBlock Text="{Binding GuideInstruction}" TextWrapping="Wrap" Margin="0,6,0,0" MaxWidth="900"
+                        <TextBlock Text="{Binding GuideInstruction}" FontSize="14" LineHeight="21" Foreground="{DynamicResource TextPrimaryBrush}" TextWrapping="Wrap" Margin="0,6,0,0" MaxWidth="900"
                                    HorizontalAlignment="Left" />
                         <controls:VisibilityGate IsOpen="{Binding GuideShowsSnap}">
                             <CheckBox Content="Snap clicks to the burned lines" IsChecked="{Binding SnapToLines}" Margin="0,6,0,0" />
