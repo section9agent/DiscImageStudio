@@ -1,4 +1,4 @@
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -196,6 +196,12 @@ public partial class OpticalDriveViewModel : ObservableObject
             {
                 // Window closed or a burn took the recorder mid-probe.
             }
+            catch (Exception exception) when (IsMomentarilyBusy(exception))
+            {
+                // Fork: right after a disc goes in, Windows (AutoPlay/Explorer) briefly locks the
+                // recorder or the drive is still spinning up. The polling timer retries shortly,
+                // so this is not worth a warning in the log.
+            }
             catch (Exception exception)
             {
                 if (!_probeFailureReported)
@@ -229,6 +235,11 @@ public partial class OpticalDriveViewModel : ObservableObject
             }
         }
     }
+
+    // E_IMAPI_RECORDER_MEDIA_BECOMING_READY, E_IMAPI_RECORDER_LOCKED, E_IMAPI_RECORDER_MEDIA_BUSY.
+    private static bool IsMomentarilyBusy(Exception exception) =>
+        exception is System.IO.IOException { HResult: unchecked((int)0xC0AA0205) or unchecked((int)0xC0AA0210)
+            or unchecked((int)0xC0AA0300) };
 
     private void MarkInitialProbeComplete()
     {
