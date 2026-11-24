@@ -42,6 +42,7 @@ internal static class CalibrationAssistTests
                 }
             }
 
+            TestWideLineSnap();
             Throws(() => CalibrationPhotoEdgeDetector.Detect(new byte[10], 100, 100, 400), "a short pixel buffer is rejected");
             CalibrationPhotoEdgeDetection blank = CalibrationPhotoEdgeDetector.Detect(new byte[200 * 200 * 4], 200, 200, 800);
             Require(!blank.OuterFound && blank.Outer.Count == 8 && blank.Hole.Count == 8,
@@ -140,6 +141,40 @@ internal static class CalibrationAssistTests
         }
 
         throw new InvalidOperationException("Calibration assist test: cannot locate DiscImageStudio.slnx.");
+    }
+
+    /// <summary>A rectified photo of the 6 mm wide round 3 stripe, pointing up from the hub.</summary>
+    private static void TestWideLineSnap()
+    {
+        const int size = 1200;
+        const double radius = 60, step = 2 * radius / size;
+        byte[] pixels = new byte[size * size * 4];
+        var noise = new Random(7);
+        for (int y = 0; y < size; y++)
+            for (int x = 0; x < size; x++)
+            {
+                double mx = ((x + 0.5) * step) - radius, my = ((y + 0.5) * step) - radius;
+                // A slight curl, as a burn with a small leftover error would show.
+                double centre = 0.02 * (my * my) / 30;
+                bool dark = my < -10 && Math.Abs(mx - centre) <= CalibrationTarget.SingleRadialLineWidthMm / 2;
+                byte value = (byte)Math.Clamp((dark ? 70 : 190) + noise.Next(-12, 13), 0, 255);
+                int i = ((y * size) + x) * 4;
+                pixels[i] = pixels[i + 1] = pixels[i + 2] = value;
+                pixels[i + 3] = 255;
+            }
+
+        foreach (double y in new[] { -15.0, -30, -45 })
+            foreach (double offset in new[] { -2.2, 0.4, 2.5 })
+            {
+                double centre = 0.02 * (y * y) / 30;
+                CalibrationPoint? snapped = CalibrationLineTracer.SnapBand(pixels, size, size, size * 4, radius,
+                    new(centre + offset, y), CalibrationTarget.SingleRadialLineWidthMm);
+                Require(snapped is { } p && Math.Abs(p.X - centre) < 0.2,
+                    $"a click {offset:+0.0;-0.0} mm off the wide line at {-y} mm snaps to its centre");
+            }
+
+        Require(CalibrationLineTracer.SnapBand(pixels, size, size, size * 4, radius, new(12, -30),
+            CalibrationTarget.SingleRadialLineWidthMm) is null, "a click beside the wide line is left where it is");
     }
 
     private static void Throws(Action action, string name)

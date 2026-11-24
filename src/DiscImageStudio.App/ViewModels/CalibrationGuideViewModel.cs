@@ -75,7 +75,11 @@ public partial class CalibrationViewModel
             1 => "Start here. Pick your disc type and preset in step 1, then make a test disc. "
                  + "This round finds where the recording area starts and ends.",
             2 => "Make the round 2 test disc. It burns wavy band edges that pin down the track spacing.",
-            _ => "Make the round 3 test disc. It burns a thin cross so the last bit of curvature can be straightened out.",
+            _ => UseWideFineLine
+                ? "Make the round 3 test disc. With the wide line chosen it burns one 6 mm stripe from the hub outwards, "
+                  + "which shows up even where a thin cross smears away."
+                : "Make the round 3 test disc. It burns a thin cross so the last bit of curvature can be straightened out. "
+                  + "If your burner only shows the cross near the hub, tick \"Wide line\" in step 1 instead.",
         },
         1 => "Burn the test disc on a blank disc from the same batch, then photograph the whole disc, rim and centre "
              + "hole included, against a plain background. Import the photo when you have it.",
@@ -92,8 +96,11 @@ public partial class CalibrationViewModel
                  + "describes, then solve.",
             2 => "Click on each wavy band edge. With snapping on, one click follows the whole edge; click again past "
                  + "any spot where it stopped. Then solve.",
-            _ => "Click along the thin cross line from near the centre to the outside; each click snaps onto the line. "
-                 + "About a dozen spread-out points is enough. Then solve.",
+            _ => _target?.HasSingleRadialLine == true
+                ? "Click along the wide stripe from near the centre to the outside; each click snaps to the middle of the "
+                  + "stripe. About a dozen spread-out points is enough. Then solve."
+                : "Click along the thin cross line from near the centre to the outside; each click snaps onto the line. "
+                  + "About a dozen spread-out points is enough. Then solve.",
         },
         _ => GuideRound < 3
             ? "Result ready. Apply it so the next test disc uses the new values, then go on to the next round."
@@ -152,7 +159,7 @@ public partial class CalibrationViewModel
         nameof(PhotoImage), nameof(IsPhotoStep), nameof(IsRectificationReady), nameof(IsCoarseMode),
         nameof(IsIntermediateMode), nameof(IsFineMode), nameof(PhotoEdgesFound), nameof(PhotoDetectionMessage),
         nameof(StepOneState), nameof(StepThreeState), nameof(TracePoints), nameof(CoarseSummary),
-        nameof(RingSolveLabel), nameof(IsBusy),
+        nameof(RingSolveLabel), nameof(IsBusy), nameof(UseWideFineLine), nameof(NeedsStageTarget),
     ];
 
     private bool _notifyingGuide;

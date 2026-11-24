@@ -443,6 +443,14 @@
                                 <controls:VisibilityGate IsOpen="{Binding IsCoarseMode}">
                                     <TextBlock Text="{Binding CoarseSetupHint}" Style="{StaticResource CompactHint}" TextWrapping="Wrap" Margin="0,0,0,8" />
                                 </controls:VisibilityGate>
+                                <controls:VisibilityGate IsOpen="{Binding IsFineMode}">
+                                    <StackPanel Margin="0,0,0,8">
+                                        <CheckBox IsChecked="{Binding UseWideFineLine}" Style="{StaticResource CompactCheckBox}"
+                                                  Content="Wide line (easier to burn)" />
+                                        <TextBlock Style="{StaticResource CompactHint}" Margin="22,2,0,0"
+                                                   Text="One 6 mm stripe instead of the thin cross. Use it if only the start of the cross shows up. It corrects the inner and outer radius but not the track pitch curve." />
+                                    </StackPanel>
+                                </controls:VisibilityGate>
                                 <Button Command="{Binding CreateTargetCommand}" HorizontalAlignment="Stretch" Margin="0,0,0,10">
                                     <Button.Style>
                                         <Style TargetType="Button" BasedOn="{StaticResource CompactPrimaryButton}">

@@ -359,6 +359,9 @@ public partial class CalibrationViewModel
         }
 
         double outer = SelectedPhysicalDiscSize.OuterRadiusMm;
+        if (_target?.HasSingleRadialLine == true)
+            return [CalibrationLineTracer.SnapBand(cache.Pixels, rectified.PixelWidth, rectified.PixelHeight, cache.Stride,
+                PhotoCanvasRadiusMm, click, CalibrationTarget.SingleRadialLineWidthMm) ?? click];
         if (!HasBoundarySegments)
         {
             return [CalibrationLineTracer.Snap(cache.Pixels, rectified.PixelWidth, rectified.PixelHeight, cache.Stride,

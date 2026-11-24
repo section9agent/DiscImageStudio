@@ -96,6 +96,67 @@ public static class CalibrationLineTracer
         return Initial(image, clickMm, feature) is { } start ? new CalibrationPoint(start.X, start.Y) : null;
     }
 
+    /// <summary>Snaps a click inside a broad radial stripe (the wide round 3 line) onto the stripe's
+    /// centre: the midpoint of the two colour edges that straddle the click across the radius.
+    /// Null when no pair of edges about one stripe width apart surrounds the click.</summary>
+    public static CalibrationPoint? SnapBand(byte[] bgra, int width, int height, int stride, double canvasRadiusMm,
+        CalibrationPoint clickMm, double bandWidthMm)
+    {
+        if (!(bandWidthMm > 0)) throw new ArgumentOutOfRangeException(nameof(bandWidthMm));
+        Image image = new(bgra, width, height, stride, canvasRadiusMm);
+        double radius = Math.Sqrt((clickMm.X * clickMm.X) + (clickMm.Y * clickMm.Y));
+        if (radius < 1) return null;
+        // The stripe runs roughly along the radius, so its edges are found across it.
+        double nx = -clickMm.Y / radius, ny = clickMm.X / radius;
+        Profile profile = Measure(image, clickMm.X, clickMm.Y, nx, ny, 1.3 * bandWidthMm, 0.05, CalibrationTraceFeature.Edge);
+        IReadOnlyList<Peak> peaks = profile.All(0);
+        if (peaks.Count < 2) return null;
+        // Real stripe edges stand well clear of the surface texture between them.
+        double floor = Math.Max(0.25 * peaks.Max(p => p.Strength), 3 * profile.Median());
+        Peak? left = null, right = null;
+        double best = 0;
+        foreach (Peak l in peaks.Where(p => p.Offset <= 0 && p.Strength >= floor))
+            foreach (Peak r in peaks.Where(p => p.Offset >= 0 && p.Strength >= floor))
+            {
+                double gap = r.Offset - l.Offset;
+                if (gap < 0.5 * bandWidthMm || gap > 1.5 * bandWidthMm) continue;
+                if (!IsStripe(image, clickMm, nx, ny, l.Offset, r.Offset)) continue;
+                double score = Math.Min(l.Strength, r.Strength) / (1 + Math.Abs(gap - bandWidthMm));
+                if (score > best) (best, left, right) = (score, l, r);
+            }
+
+        if (left is not { } a || right is not { } z) return null;
+        double middle = (a.Offset + z.Offset) / 2;
+        return new CalibrationPoint(clickMm.X + (nx * middle), clickMm.Y + (ny * middle));
+    }
+
+    /// <summary>The span between the two edges is one shade and both sides another, with the
+    /// difference well above the texture noise on each side.</summary>
+    private static bool IsStripe(Image image, CalibrationPoint click, double nx, double ny, double from, double to)
+    {
+        double gap = to - from, margin = 0.15 * gap;
+        static (double Mean, double Spread) Stats(List<double> v)
+        {
+            double mean = v.Average();
+            return (mean, Math.Sqrt(v.Sum(x => (x - mean) * (x - mean)) / v.Count));
+        }
+
+        List<double> Sample(double a, double b)
+        {
+            List<double> result = [];
+            for (double t = a; t <= b; t += 0.05)
+                result.Add(image.Gray(click.X + (nx * t), click.Y + (ny * t)));
+            return result;
+        }
+
+        var inside = Stats(Sample(from + margin, to - margin));
+        var before = Stats(Sample(from - (0.5 * gap), from - margin));
+        var after = Stats(Sample(to + margin, to + (0.5 * gap)));
+        double noise = Math.Max(Math.Max(inside.Spread, Math.Max(before.Spread, after.Spread)), 1);
+        double d1 = inside.Mean - before.Mean, d2 = inside.Mean - after.Mean;
+        return Math.Sign(d1) == Math.Sign(d2) && Math.Min(Math.Abs(d1), Math.Abs(d2)) > 3 * noise;
+    }
+
     private readonly record struct Start(double X, double Y, double Dx, double Dy, double Strength);
 
     /// <summary>The direction whose perpendicular profile has the sharpest, most consistent
@@ -179,6 +240,19 @@ public static class CalibrationLineTracer
             double shift = denominator == 0 ? 0 : 0.5 * (values[best - 1] - values[best + 1]) / denominator;
             return new Peak(offsets[best] + (shift * (offsets[1] - offsets[0])), values[best]);
         }
+
+        public double Median()
+        {
+            double[] sorted = values.Order().ToArray();
+            return sorted[sorted.Length / 2];
+        }
+
+        public IReadOnlyList<Peak> All(double floor) => Peaks(floor).Select(i =>
+        {
+            double denominator = values[i - 1] - (2 * values[i]) + values[i + 1];
+            double shift = denominator == 0 ? 0 : 0.5 * (values[i - 1] - values[i + 1]) / denominator;
+            return new Peak(offsets[i] + (shift * (offsets[1] - offsets[0])), values[i]);
+        }).ToArray();
 
         /// <summary>A comparable second line in the window: a crossing or a close neighbour.</summary>
         public bool Ambiguous(Peak chosen, double floor)

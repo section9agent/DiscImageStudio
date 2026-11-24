@@ -12,16 +12,22 @@ public partial class CalibrationViewModel
     public bool IsIntermediateMode => _stage == CalibrationStage.SingleLine;
     public bool IsFineMode => _stage == CalibrationStage.Fine;
     public RelayCommand SelectIntermediateModeCommand { get; private set; } = null!;
-    public bool IsFineStep => IsTraceStep && IsFineMode && _target is { HasCrossArms: true, HasSingleRadialLine: false, HasBoundaryPattern: false };
+    // Fork: a wide radial line made from round 3 is measured there like the cross. Any other one-line
+    // target (an older round 2 record) keeps its round 2 workflow, so round 3 never burns it by accident.
+    private string? _roundThreeWideLineId;
+    private bool IsRoundThreeWideLine => _target is { HasSingleRadialLine: true } t && t.Id == _roundThreeWideLineId;
+    private bool IsRoundThreeTarget => _target is { HasCrossArms: true, HasBoundaryPattern: false }
+        && (!_target.HasSingleRadialLine || IsRoundThreeWideLine);
+    public bool IsFineStep => IsTraceStep && IsFineMode && IsRoundThreeTarget;
     public bool IsLineFitStep => IsFineStep || (IsTraceStep && IsIntermediateMode && (_target?.HasSingleRadialLine == true || HasBoundarySegments));
     public bool HasBoundarySegments => _target?.HasBoundaryPattern == true;
     public bool IsBoundarySegmentStep => IsLineFitStep && HasBoundarySegments;
-    public bool CanFitDvdPitch => IsFineMode && _target is not null;
+    public bool CanFitDvdPitch => IsFineMode && _target is not null && !IsRoundThreeWideLine;
 
     private bool TargetMatchesStage => _stage switch
     {
         CalibrationStage.SingleLine => _target?.HasSingleRadialLine == true || HasBoundarySegments,
-        CalibrationStage.Fine => _target is { HasCrossArms: true, HasSingleRadialLine: false, HasBoundaryPattern: false },
+        CalibrationStage.Fine => IsRoundThreeTarget,
         // Old combination targets could be used both for ring measurements and cross fitting.
         _ => _target is { HasAngleSweep: true } or { SchemaVersion: <= 12 },
     };
@@ -29,7 +35,8 @@ public partial class CalibrationViewModel
     private bool CanUseStageTarget() => CanUseTarget() && TargetMatchesStage && (!IsCoarseMode || _target!.HasAngleSweep);
 
     public string TraceMarkingHint => (_target?.HasWavyBoundary == true ? L.T("WavyBoundary.Trace") + Environment.NewLine : string.Empty)
-        + L.T(HasBoundarySegments ? "HalfDisc.Trace" : IsIntermediateMode ? "SingleLine.Trace" : "Xaml.PlacePointsEvenlyAlongAClearCurveFromInside");
+        + L.T(HasBoundarySegments ? "HalfDisc.Trace"
+            : IsIntermediateMode || IsRoundThreeWideLine ? "SingleLine.Trace" : "Xaml.PlacePointsEvenlyAlongAClearCurveFromInside");
     public string TraceConfirmationLabel => L.T(HasBoundarySegments ? "HalfDisc.Confirm" : "Xaml.ICheckedTheFullCurveItsShapeAndTurns");
     public string ApplyTraceLabel => L.T(IsIntermediateMode ? "SingleLine.Apply" : "Xaml.ApplyCalibration");
 
@@ -69,7 +76,8 @@ public partial class CalibrationViewModel
     private void RestoreStage(CalibrationSession session)
     {
         var target = session.Target;
-        var stage = target.HasSingleRadialLine || target.HasBoundaryPattern ? CalibrationStage.SingleLine
+        var stage = target.Id == _roundThreeWideLineId ? CalibrationStage.Fine
+            : target.HasSingleRadialLine || target.HasBoundaryPattern ? CalibrationStage.SingleLine
             : !target.HasCrossArms ? CalibrationStage.Coarse
             : target.Artwork == CalibrationArtwork.ReferenceCross ? CalibrationStage.Fine
             : session.Photo?.IsCoarseMode == true || (session.Photo is null && target.HasAngularReference)

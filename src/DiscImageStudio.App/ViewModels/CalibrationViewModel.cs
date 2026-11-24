@@ -75,6 +75,9 @@ public partial class CalibrationViewModel : ObservableObject
     }
 
     [ObservableProperty] private string _selectedDiscType = "CD";
+    /// <summary>Fork addition: round 3 burns one 6 mm radial stripe instead of the thin cross. It shows up on
+    /// burners whose thin arms smear away, and fits the inner and outer radius but not the pitch curve.</summary>
+    [ObservableProperty] private bool _useWideFineLine;
     public DiscParametersState Parameters => _state;
     public string SetupPitchLinear
     {
@@ -372,11 +375,13 @@ public partial class CalibrationViewModel : ObservableObject
             {
                 CalibrationStage.Coarse => CalibrationArtwork.AngleSweepBands,
                 CalibrationStage.SingleLine => CalibrationArtwork.WavyBoundary,
-                CalibrationStage.Fine => CalibrationArtwork.ReferenceCross,
+                CalibrationStage.Fine => UseWideFineLine ? CalibrationArtwork.SingleRadialLine : CalibrationArtwork.ReferenceCross,
                 _ => throw new InvalidOperationException(),
             };
-            InstallTarget(CalibrationTarget.Create(parameters, artwork: artwork,
-                dvdReadCompatibilityMode: _state.DvdReadCompatibilityMode),
+            var created = CalibrationTarget.Create(parameters, artwork: artwork,
+                dvdReadCompatibilityMode: _state.DvdReadCompatibilityMode);
+            if (artwork == CalibrationArtwork.SingleRadialLine) _roundThreeWideLineId = created.Id;
+            InstallTarget(created,
                 new(RadiusRangeMm: artwork == CalibrationArtwork.WavyBoundary ? .01 : .02,
                     AutoRange: artwork == CalibrationArtwork.WavyBoundary ? false : null), _state.CdInterleave);
             _sessionPath = null;

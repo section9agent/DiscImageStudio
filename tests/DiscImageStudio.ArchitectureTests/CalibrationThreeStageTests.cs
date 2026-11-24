@@ -109,6 +109,21 @@ internal static class CalibrationThreeStageTests
             await model.LoadSessionFromAsync(finePath);
             Require(model.IsFineMode && model.Target?.Id == fine.Id && model.GenerateImageCommand.CanExecute(null),
                 "a no-photo reference record restores fine mode");
+
+            // Fork: round 3 can burn one wide radial line instead of the thin cross.
+            model.SelectFineModeCommand.Execute(null);
+            model.UseWideFineLine = true;
+            model.CreateTargetCommand.Execute(null);
+            var wide = model.Target!;
+            Require(wide.HasSingleRadialLine && wide.Id != fine.Id && model.IsFineMode && model.GenerateImageCommand.CanExecute(null)
+                && !model.CanFitDvdPitch && wide.Parameters.InnerRadiusMm == fine.Parameters.InnerRadiusMm,
+                "round 3 creates a burnable wide line with the current radii and no pitch-curve fit");
+            string widePath = Path.Combine(directory, "wide.calibration.json");
+            model.SaveSessionTo(widePath);
+            await model.LoadSessionFromAsync(coarsePath);
+            await model.LoadSessionFromAsync(widePath);
+            Require(model.IsFineMode && model.Target?.Id == wide.Id, "the round 3 wide line reopens in round 3");
+            model.UseWideFineLine = false;
         }
         finally { model.OnWindowClosed(); }
     }
