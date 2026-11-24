@@ -54,6 +54,7 @@ internal static class CalibrationRingFitterTests
         TestFineArtwork();
         TestArcSamples();
         TestLocalWideBandEdges();
+        TestWideEdgeOutlier();
         TestAlternatingBandEdges();
         TestDataDiscBandEdges();
         Console.WriteLine("calibration-rings: manual observations, radial coverage, 8 cm DVD and CD/DVD/BD coarse fits passed");
@@ -133,6 +134,29 @@ internal static class CalibrationRingFitterTests
         Require(!CalibrationRingFitter.Fit(target, edges[1..]).Succeeded, "a missing innermost edge cannot silently stand in for the pair");
         edges[1] = new(1, edges[1].RadiusMm + target.VisibleRings[1].WidthMm);
         Require(!CalibrationRingFitter.Fit(target, edges).Succeeded, "a middle band measured at its opposite edge fails the independent check");
+    }
+
+    private static void TestWideEdgeOutlier()
+    {
+        var seed = new CalibrationParameters(CalibrationDiscKind.Cd, 24.5, 56.8, 359848, 1200);
+        var target = CalibrationTarget.Create(seed, artwork: CalibrationArtwork.WideAddressBands);
+        const double inner = 24.837775, outer = 58.020875;
+        double[] progress = [.035, .305, .705, .17, .51, .955];
+        CalibrationRingObservation[] Edges(int shifted, double byMm) => progress.Select((q, id) =>
+        {
+            double r = Math.Sqrt(inner * inner + q * (outer * outer - inner * inner)) + (id == shifted ? byMm : 0);
+            return new CalibrationRingObservation(id, r, [OnCircle(r, 320)]);
+        }).ToArray();
+        Require(CalibrationRingFitter.FindWideEdgeOutlier(target, Edges(-1, 0)) is null, "consistent band edges have no outlier");
+        foreach (var (id, offset) in new[] { (1, .8), (4, -.7) })
+        {
+            var edges = Edges(id, offset);
+            Require(!CalibrationRingFitter.Fit(target, edges).Succeeded, "a shifted middle edge fails the 0.40 mm check");
+            var outlier = CalibrationRingFitter.FindWideEdgeOutlier(target, edges);
+            Require(outlier is { } o && o.RingIndex == id && Math.Abs(o.OffsetMm - offset) < .05
+                && o.InnerReferenceIndex == 0 && o.OuterReferenceIndex == 5,
+                "the outlier names the shifted edge, its direction and the two reference edges");
+        }
     }
 
     private static void TestAlternatingBandEdges()

@@ -13,8 +13,40 @@ public sealed record CalibrationRing(int RingIndex, double RadiusMm, double Widt
 public sealed record CalibrationRingObservation(int RingIndex, double RadiusMm,
     [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] IReadOnlyList<CalibrationPoint>? Points = null);
 
+/// <summary>The band edge that disagrees most with the straight line through the innermost and
+/// outermost measured edges (fork addition, used to explain the 0.40 mm consistency failure).</summary>
+public sealed record CalibrationWideEdgeOutlier(int RingIndex, double MeasuredMm, double PredictedMm,
+    int InnerReferenceIndex, int OuterReferenceIndex)
+{
+    public double OffsetMm => MeasuredMm - PredictedMm;
+}
+
 public static partial class CalibrationRingFitter
 {
+    /// <summary>Repeats Fit's wide-band consistency check and names the interior edge with the
+    /// largest disagreement, or null when every edge is within 0.40 mm (or the check does not apply).</summary>
+    public static CalibrationWideEdgeOutlier? FindWideEdgeOutlier(CalibrationTarget target,
+        IReadOnlyList<CalibrationRingObservation> observations)
+    {
+        ArgumentNullException.ThrowIfNull(target);
+        ArgumentNullException.ThrowIfNull(observations);
+        if (!target.HasWideAddressBands || observations.Count < 3
+            || observations.Any(p => p is null || (uint)p.RingIndex >= (uint)MeasurementCount(target) || !double.IsFinite(p.RadiusMm)))
+            return null;
+        var ordered = observations.OrderBy(p => WideEdgeProgress(target, p.RingIndex)).ToArray();
+        double[] progress = ordered.Select(p => WideEdgeProgress(target, p.RingIndex)).ToArray();
+        CalibrationWideEdgeOutlier? worst = null;
+        for (int i = 1; i < ordered.Length - 1; i++)
+        {
+            double predicted = InterpolateWideRadius(progress[i], progress[0], ordered[0].RadiusMm,
+                progress[^1], ordered[^1].RadiusMm);
+            double offset = Math.Abs(ordered[i].RadiusMm - predicted);
+            if (offset > .40 && (worst is null || offset > Math.Abs(worst.OffsetMm)))
+                worst = new(ordered[i].RingIndex, ordered[i].RadiusMm, predicted, ordered[0].RingIndex, ordered[^1].RingIndex);
+        }
+        return worst;
+    }
+
     public static int MeasurementCount(CalibrationTarget target) =>
         target.HasWideAddressBands ? 2 * target.VisibleRings.Count : target.VisibleRings.Count;
 

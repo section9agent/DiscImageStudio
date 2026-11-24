@@ -73,6 +73,20 @@ public partial class CalibrationViewModel
             ? L.Format(IsIntermediateMode ? "HalfDisc.RecordSeed" : "Phases.RecordSeed", centre.InnerRadiusMm, centre.OuterRadiusMm)
             : L.T("Phases.PendingSeed");
 
+    /// <summary>Fork addition: names the band edge behind the 0.40 mm consistency failure, where it
+    /// was marked, where the other edges put it, and what to re-mark.</summary>
+    private string WideEdgeOutlierDetail()
+    {
+        if (!HasWideBandTarget || _target is null || _ringFit?.Succeeded != false) return "";
+        if (CalibrationRingFitter.FindWideEdgeOutlier(_target, RingObservations()) is not { } outlier) return "";
+        static string Badge(int id) => L.Format(id < 3 ? "BandEdges.InnerBadge" : "BandEdges.OuterBadge", id % 3 + 1);
+        return "\n" + L.Format(outlier.OffsetMm > 0 ? "BandEdges.OutlierOut" : "BandEdges.OutlierIn",
+            CalibrationRingArc.WideEdgeLabel(outlier.RingIndex), Badge(outlier.RingIndex),
+            outlier.MeasuredMm, outlier.PredictedMm, Math.Abs(outlier.OffsetMm),
+            CalibrationRingArc.WideEdgeLabel(outlier.InnerReferenceIndex),
+            CalibrationRingArc.WideEdgeLabel(outlier.OuterReferenceIndex));
+    }
+
     public string CoarseSummary
     {
         get
@@ -84,7 +98,7 @@ public partial class CalibrationViewModel
                 return L.Format(HasWideBandTarget ? (_target!.SchemaVersion == 11 ? "BandEdges.CountLegacy" : "BandEdges.Count") : "Rings.Count",
                     count, RingArcs.Count);
             if (_ringFit.Candidates.FirstOrDefault() is not { } best)
-                return string.Join("\n", _ringFit.Warnings.Select(L.T));
+                return string.Join("\n", _ringFit.Warnings.Select(L.T)) + WideEdgeOutlierDetail();
             if (HasWideBandTarget)
             {
                 string radii = L.Format("WideBands.Result", best.Parameters.InnerRadiusMm, best.Parameters.OuterRadiusMm);

@@ -713,7 +713,7 @@
  },
  {
   "zh": "交界位置与其余边缘推算的位置相差超过 0.40 mm，请核对带号和读边。",
-  "en": "A boundary differs by over 0.40 mm from the position predicted by the others. Check band IDs and edge readings."
+  "en": "The band edges you marked don't line up: one is more than 0.40 mm away from where the others say it should be."
  },
  {
   "zh": "多段边界覆盖的是相同的半径范围，请在至少 4 处互不重叠的半径位置选段。",
